@@ -1,0 +1,12 @@
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe.config
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.pdb
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.AssemblyReference.cache
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.HomePage.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Properties.Resources.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.GenerateResource.cache
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.CoreCompileInputs.cache
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\FontAwesome.Sharp.dll
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
