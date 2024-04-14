@@ -1,0 +1,17 @@
+E:\formLogin\frmLogin\frmLogin\bin\Debug\net8.0-windows\frmLogin.exe
+E:\formLogin\frmLogin\frmLogin\bin\Debug\net8.0-windows\frmLogin.deps.json
+E:\formLogin\frmLogin\frmLogin\bin\Debug\net8.0-windows\frmLogin.runtimeconfig.json
+E:\formLogin\frmLogin\frmLogin\bin\Debug\net8.0-windows\frmLogin.dll
+E:\formLogin\frmLogin\frmLogin\bin\Debug\net8.0-windows\frmLogin.pdb
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.Form1.resources
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.Properties.Resources.resources
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.csproj.GenerateResource.cache
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.GeneratedMSBuildEditorConfig.editorconfig
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.AssemblyInfoInputs.cache
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.AssemblyInfo.cs
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.csproj.CoreCompileInputs.cache
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.dll
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\refint\frmLogin.dll
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.pdb
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\frmLogin.genruntimeconfig.cache
+E:\formLogin\frmLogin\frmLogin\obj\Debug\net8.0-windows\ref\frmLogin.dll
