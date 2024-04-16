@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\formLogin\\frmLogin\\frmLogin\\frmLogin.csproj": {}
+    "C:\\Users\\DN_Hocvien\\Desktop\\Hoang_LTG\\BiaAppManagerVTC\\frmLogin\\frmLogin\\frmLogin.csproj": {}
   },
   "projects": {
-    "E:\\formLogin\\frmLogin\\frmLogin\\frmLogin.csproj": {
+    "C:\\Users\\DN_Hocvien\\Desktop\\Hoang_LTG\\BiaAppManagerVTC\\frmLogin\\frmLogin\\frmLogin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\formLogin\\frmLogin\\frmLogin\\frmLogin.csproj",
+        "projectUniqueName": "C:\\Users\\DN_Hocvien\\Desktop\\Hoang_LTG\\BiaAppManagerVTC\\frmLogin\\frmLogin\\frmLogin.csproj",
         "projectName": "frmLogin",
-        "projectPath": "E:\\formLogin\\frmLogin\\frmLogin\\frmLogin.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\formLogin\\frmLogin\\frmLogin\\obj\\",
+        "projectPath": "C:\\Users\\DN_Hocvien\\Desktop\\Hoang_LTG\\BiaAppManagerVTC\\frmLogin\\frmLogin\\frmLogin.csproj",
+        "packagesPath": "C:\\Users\\DN_Hocvien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DN_Hocvien\\Desktop\\Hoang_LTG\\BiaAppManagerVTC\\frmLogin\\frmLogin\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DN_Hocvien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
