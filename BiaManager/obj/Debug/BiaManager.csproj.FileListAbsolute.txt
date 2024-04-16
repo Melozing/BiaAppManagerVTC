@@ -10,3 +10,16 @@ E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\FontAwesome.Sharp.dll
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.AssemblyReference.cache
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormLogin.resources
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.HomePage.resources
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Properties.Resources.resources
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.GenerateResource.cache
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.CoreCompileInputs.cache
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe.config
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.pdb
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
+C:\Users\DN_Hocvien\Desktop\Hoang_LTG\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
