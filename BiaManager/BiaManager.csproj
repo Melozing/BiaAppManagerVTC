@@ -85,6 +85,9 @@
     </Compile>
     <Compile Include="MainFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +120,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\attachment_145244312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgroud.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anonymous Mask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Photo Gallery.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
