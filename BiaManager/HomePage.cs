@@ -20,12 +20,7 @@ namespace BiaManager
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         //Struct Color
