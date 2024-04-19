@@ -63,6 +63,16 @@ namespace BiaManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8713724 {
+            get {
+                object obj = ResourceManager.GetObject("8713724", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Anonymous_Mask {
             get {
                 object obj = ResourceManager.GetObject("Anonymous Mask", resourceCulture);
@@ -86,6 +96,16 @@ namespace BiaManager.Properties {
         internal static System.Drawing.Bitmap bgroud {
             get {
                 object obj = ResourceManager.GetObject("bgroud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bida1 {
+            get {
+                object obj = ResourceManager.GetObject("bida1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
