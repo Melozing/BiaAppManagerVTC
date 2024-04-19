@@ -83,7 +83,8 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainFunction.cs" />
+    <Compile Include="Script\ConnectDatabase.cs" />
+    <Compile Include="Script\MainFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
