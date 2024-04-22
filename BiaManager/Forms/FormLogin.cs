@@ -2,7 +2,6 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace BiaManager.Forms
@@ -13,13 +12,6 @@ namespace BiaManager.Forms
         {
             InitializeComponent();
         }
-
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn muốn thoát chương trình !", "Xác nhận",
@@ -47,17 +39,6 @@ namespace BiaManager.Forms
             path.CloseAllFigures();
             this.Region = new Region(path);
 
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                // Gọi hàm ReleaseCapture để giải phóng con trỏ chuột
-                ReleaseCapture();
-                // Gửi một thông điệp tới form cha để di chuyển cửa sổ
-                SendMessage(this.Handle, 0x112, 0xf012, 0);
-            }
         }
 
         Modify modify = new Modify();
@@ -119,12 +100,6 @@ namespace BiaManager.Forms
                 // Giữ hình ảnh tỷ lệ và điều chỉnh kích thước PictureBox
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -1,6 +1,7 @@
-﻿using FontAwesome.Sharp;
+﻿using BiaManager.Forms;
+using BiaManager.Script;
+using FontAwesome.Sharp;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace BiaManager
@@ -45,10 +46,10 @@ namespace BiaManager
             panelSidebarMenu.Controls.Add(leftBorderBtn);
 
             //Form
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //this.Text = string.Empty;
+            this.ControlBox = true;
+            //this.DoubleBuffered = true;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         //Struct Color
@@ -106,7 +107,7 @@ namespace BiaManager
 
         private void OpenChildForm(Form childForm)
         {
-            if (iconCurrentChildForm != null)
+            if (currentChildForm != null)
             {
                 currentChildForm.Close();
             }
@@ -134,6 +135,7 @@ namespace BiaManager
         private void Menu_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color3);
+            OpenChildForm(new FormMenu());
         }
 
         private void Bills_Click(object sender, System.EventArgs e)
@@ -179,20 +181,9 @@ namespace BiaManager
             iconCurrentChildForm.IconColor = Color.MediumPurple;
         }
 
-        //Drag Form
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void panelTittleBar_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void HomePage_Load(object sender, System.EventArgs e)
-        {
-
+            WindowSizeCtrl.MoveWindow(this.Handle);
         }
 
         private void ExitBtn_Click(object sender, System.EventArgs e)
@@ -202,19 +193,12 @@ namespace BiaManager
 
         private void MaximizeBtn_Click(object sender, System.EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;
-            }
+            this.WindowState = WindowSizeCtrl.MinimizeAndScale(this.WindowState);
         }
 
         private void MinimizedIcon_Click(object sender, System.EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            this.WindowState = WindowSizeCtrl.MinimizeAndScale(this.WindowState);
         }
         private void HideMenuIcon_Click(object sender, System.EventArgs e)
         {

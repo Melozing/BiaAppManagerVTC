@@ -54,7 +54,6 @@
             this.panelShadow = new System.Windows.Forms.Panel();
             this.PanelContentParent = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.LogoContent = new System.Windows.Forms.PictureBox();
             this.paneDetail = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
@@ -68,8 +67,6 @@
             this.panelTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.PanelContentParent.SuspendLayout();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +79,7 @@
             this.panelSidebarMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebarMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSidebarMenu.Name = "panelSidebarMenu";
-            this.panelSidebarMenu.Size = new System.Drawing.Size(229, 633);
+            this.panelSidebarMenu.Size = new System.Drawing.Size(253, 633);
             this.panelSidebarMenu.TabIndex = 0;
             // 
             // panelMenuParent
@@ -91,7 +88,7 @@
             this.panelMenuParent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuParent.Location = new System.Drawing.Point(0, 188);
             this.panelMenuParent.Name = "panelMenuParent";
-            this.panelMenuParent.Size = new System.Drawing.Size(229, 445);
+            this.panelMenuParent.Size = new System.Drawing.Size(253, 445);
             this.panelMenuParent.TabIndex = 2;
             // 
             // flowLayoutPanelMenu
@@ -111,7 +108,7 @@
             this.flowLayoutPanelMenu.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(229, 445);
+            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(253, 445);
             this.flowLayoutPanelMenu.TabIndex = 6;
             // 
             // Home
@@ -336,7 +333,7 @@
             this.PanelHideMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHideMenu.Location = new System.Drawing.Point(0, 140);
             this.PanelHideMenu.Name = "PanelHideMenu";
-            this.PanelHideMenu.Size = new System.Drawing.Size(229, 48);
+            this.PanelHideMenu.Size = new System.Drawing.Size(253, 48);
             this.PanelHideMenu.TabIndex = 1;
             // 
             // HideMenuIcon
@@ -355,7 +352,7 @@
             this.HideMenuIcon.Margin = new System.Windows.Forms.Padding(0);
             this.HideMenuIcon.Name = "HideMenuIcon";
             this.HideMenuIcon.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.HideMenuIcon.Size = new System.Drawing.Size(229, 48);
+            this.HideMenuIcon.Size = new System.Drawing.Size(253, 48);
             this.HideMenuIcon.TabIndex = 0;
             this.HideMenuIcon.Text = "Bia Manager";
             this.HideMenuIcon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -368,16 +365,17 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(229, 140);
+            this.panelLogo.Size = new System.Drawing.Size(253, 140);
             this.panelLogo.TabIndex = 0;
             // 
             // btnHome
             // 
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHome.Image = global::BiaManager.Properties.Resources.attachment_145244312;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(80, 40, 80, 40);
-            this.btnHome.Size = new System.Drawing.Size(229, 140);
+            this.btnHome.Size = new System.Drawing.Size(253, 140);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
@@ -393,9 +391,9 @@
             this.panelTittleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTittleBar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelTittleBar.Location = new System.Drawing.Point(229, 0);
+            this.panelTittleBar.Location = new System.Drawing.Point(253, 0);
             this.panelTittleBar.Name = "panelTittleBar";
-            this.panelTittleBar.Size = new System.Drawing.Size(721, 75);
+            this.panelTittleBar.Size = new System.Drawing.Size(697, 75);
             this.panelTittleBar.TabIndex = 1;
             this.panelTittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTittleBar_MouseDown);
             // 
@@ -408,7 +406,7 @@
             this.MaximizeBtn.IconColor = System.Drawing.Color.White;
             this.MaximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MaximizeBtn.IconSize = 23;
-            this.MaximizeBtn.Location = new System.Drawing.Point(657, 12);
+            this.MaximizeBtn.Location = new System.Drawing.Point(630, 12);
             this.MaximizeBtn.Name = "MaximizeBtn";
             this.MaximizeBtn.Size = new System.Drawing.Size(23, 23);
             this.MaximizeBtn.TabIndex = 4;
@@ -425,7 +423,7 @@
             this.MinimizeIconButton.IconColor = System.Drawing.Color.White;
             this.MinimizeIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MinimizeIconButton.IconSize = 23;
-            this.MinimizeIconButton.Location = new System.Drawing.Point(628, 12);
+            this.MinimizeIconButton.Location = new System.Drawing.Point(601, 12);
             this.MinimizeIconButton.Name = "MinimizeIconButton";
             this.MinimizeIconButton.Size = new System.Drawing.Size(23, 23);
             this.MinimizeIconButton.TabIndex = 3;
@@ -442,7 +440,7 @@
             this.ExitBtn.IconColor = System.Drawing.Color.White;
             this.ExitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ExitBtn.IconSize = 23;
-            this.ExitBtn.Location = new System.Drawing.Point(686, 12);
+            this.ExitBtn.Location = new System.Drawing.Point(659, 12);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(23, 23);
             this.ExitBtn.TabIndex = 2;
@@ -476,9 +474,9 @@
             // 
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(229, 75);
+            this.panelShadow.Location = new System.Drawing.Point(253, 75);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(721, 10);
+            this.panelShadow.Size = new System.Drawing.Size(697, 10);
             this.panelShadow.TabIndex = 2;
             // 
             // PanelContentParent
@@ -486,37 +484,25 @@
             this.PanelContentParent.Controls.Add(this.panelContent);
             this.PanelContentParent.Controls.Add(this.paneDetail);
             this.PanelContentParent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContentParent.Location = new System.Drawing.Point(229, 85);
+            this.PanelContentParent.Location = new System.Drawing.Point(253, 85);
             this.PanelContentParent.Name = "PanelContentParent";
-            this.PanelContentParent.Size = new System.Drawing.Size(721, 548);
+            this.PanelContentParent.Size = new System.Drawing.Size(697, 548);
             this.PanelContentParent.TabIndex = 3;
             // 
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelContent.Controls.Add(this.LogoContent);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(398, 548);
+            this.panelContent.Size = new System.Drawing.Size(374, 548);
             this.panelContent.TabIndex = 1;
-            // 
-            // LogoContent
-            // 
-            this.LogoContent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LogoContent.Image = global::BiaManager.Properties.Resources.attachment_145244312;
-            this.LogoContent.Location = new System.Drawing.Point(142, 186);
-            this.LogoContent.Name = "LogoContent";
-            this.LogoContent.Size = new System.Drawing.Size(112, 88);
-            this.LogoContent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoContent.TabIndex = 1;
-            this.LogoContent.TabStop = false;
             // 
             // paneDetail
             // 
             this.paneDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
             this.paneDetail.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneDetail.Location = new System.Drawing.Point(398, 0);
+            this.paneDetail.Location = new System.Drawing.Point(374, 0);
             this.paneDetail.Name = "paneDetail";
             this.paneDetail.Size = new System.Drawing.Size(323, 548);
             this.paneDetail.TabIndex = 0;
@@ -539,6 +525,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(950, 633);
             this.Controls.Add(this.PanelContentParent);
             this.Controls.Add(this.panelShadow);
@@ -548,9 +535,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "HomePage";
             this.ShowIcon = false;
-            this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.HomePage_Load);
             this.panelSidebarMenu.ResumeLayout(false);
             this.panelMenuParent.ResumeLayout(false);
             this.panelMenuParent.PerformLayout();
@@ -562,8 +547,6 @@
             this.panelTittleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.PanelContentParent.ResumeLayout(false);
-            this.panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoContent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -588,7 +571,6 @@
         private System.Windows.Forms.Panel PanelContentParent;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel paneDetail;
-        private System.Windows.Forms.PictureBox LogoContent;
         private FontAwesome.Sharp.IconButton ExitBtn;
         private FontAwesome.Sharp.IconButton MaximizeBtn;
         private FontAwesome.Sharp.IconButton MinimizeIconButton;
