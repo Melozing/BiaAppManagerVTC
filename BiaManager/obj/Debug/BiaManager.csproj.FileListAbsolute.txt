@@ -38,3 +38,6 @@ C:\Manh_G\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 C:\Manh_G\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormLogin.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormTables.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormMenu.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.FoodWidget.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.FoodTabWidget.resources
