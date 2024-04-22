@@ -33,28 +33,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btclose = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.buttonHidePassword = new System.Windows.Forms.Button();
-            this.PasswordBox = new System.Windows.Forms.PictureBox();
-            this.linkLabelForgerPassword = new System.Windows.Forms.LinkLabel();
-            this.UserBox = new System.Windows.Forms.PictureBox();
+            this.AvatarGif = new System.Windows.Forms.PictureBox();
+            this.PanelLoginContent = new System.Windows.Forms.Panel();
             this.labelTittleLogin = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.tbusername = new System.Windows.Forms.TextBox();
-            this.tbpassword = new System.Windows.Forms.TextBox();
-            this.labelUsername = new System.Windows.Forms.Label();
+            this.buttonHidePassword = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.PasswordBox = new System.Windows.Forms.PictureBox();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.tbpassword = new System.Windows.Forms.TextBox();
+            this.UserBox = new System.Windows.Forms.PictureBox();
+            this.tbusername = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.btchangeimg = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.AvatarGif = new System.Windows.Forms.PictureBox();
+            this.linkLabelForgerPassword = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
+            this.PanelLoginContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,65 +99,42 @@
             // 
             this.panelLogin.BackColor = System.Drawing.Color.LightGray;
             this.panelLogin.Controls.Add(this.AvatarGif);
-            this.panelLogin.Controls.Add(this.panel2);
+            this.panelLogin.Controls.Add(this.PanelLoginContent);
             this.panelLogin.Location = new System.Drawing.Point(81, 74);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(286, 408);
             this.panelLogin.TabIndex = 1;
             // 
-            // buttonHidePassword
+            // AvatarGif
             // 
-            this.buttonHidePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonHidePassword.BackColor = System.Drawing.Color.White;
-            this.buttonHidePassword.BackgroundImage = global::BiaManager.Properties.Resources.Anonymous_Mask;
-            this.buttonHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHidePassword.Location = new System.Drawing.Point(225, 122);
-            this.buttonHidePassword.Name = "buttonHidePassword";
-            this.buttonHidePassword.Size = new System.Drawing.Size(20, 20);
-            this.buttonHidePassword.TabIndex = 10;
-            this.buttonHidePassword.UseVisualStyleBackColor = false;
-            this.buttonHidePassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
-            this.buttonHidePassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
+            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AvatarGif.ErrorImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.ErrorImage")));
+            this.AvatarGif.Image = ((System.Drawing.Image)(resources.GetObject("AvatarGif.Image")));
+            this.AvatarGif.InitialImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.InitialImage")));
+            this.AvatarGif.Location = new System.Drawing.Point(0, 0);
+            this.AvatarGif.Name = "AvatarGif";
+            this.AvatarGif.Size = new System.Drawing.Size(286, 183);
+            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AvatarGif.TabIndex = 14;
+            this.AvatarGif.TabStop = false;
             // 
-            // PasswordBox
+            // PanelLoginContent
             // 
-            this.PasswordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PasswordBox.Image = global::BiaManager.Properties.Resources.Password;
-            this.PasswordBox.Location = new System.Drawing.Point(42, 112);
-            this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(30, 30);
-            this.PasswordBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PasswordBox.TabIndex = 12;
-            this.PasswordBox.TabStop = false;
-            // 
-            // linkLabelForgerPassword
-            // 
-            this.linkLabelForgerPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkLabelForgerPassword.AutoSize = true;
-            this.linkLabelForgerPassword.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(68)))), ((int)(((byte)(87)))));
-            this.linkLabelForgerPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabelForgerPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkLabelForgerPassword.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelForgerPassword.Location = new System.Drawing.Point(81, 145);
-            this.linkLabelForgerPassword.Name = "linkLabelForgerPassword";
-            this.linkLabelForgerPassword.Size = new System.Drawing.Size(87, 15);
-            this.linkLabelForgerPassword.TabIndex = 3;
-            this.linkLabelForgerPassword.TabStop = true;
-            this.linkLabelForgerPassword.Text = "quên mật khẩu";
-            // 
-            // UserBox
-            // 
-            this.UserBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UserBox.Image = global::BiaManager.Properties.Resources.Male_User;
-            this.UserBox.Location = new System.Drawing.Point(42, 57);
-            this.UserBox.Name = "UserBox";
-            this.UserBox.Size = new System.Drawing.Size(30, 30);
-            this.UserBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UserBox.TabIndex = 11;
-            this.UserBox.TabStop = false;
+            this.PanelLoginContent.Controls.Add(this.linkLabelForgerPassword);
+            this.PanelLoginContent.Controls.Add(this.labelTittleLogin);
+            this.PanelLoginContent.Controls.Add(this.buttonHidePassword);
+            this.PanelLoginContent.Controls.Add(this.buttonLogin);
+            this.PanelLoginContent.Controls.Add(this.PasswordBox);
+            this.PanelLoginContent.Controls.Add(this.labelUsername);
+            this.PanelLoginContent.Controls.Add(this.tbpassword);
+            this.PanelLoginContent.Controls.Add(this.UserBox);
+            this.PanelLoginContent.Controls.Add(this.tbusername);
+            this.PanelLoginContent.Controls.Add(this.labelPassword);
+            this.PanelLoginContent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelLoginContent.Location = new System.Drawing.Point(0, 183);
+            this.PanelLoginContent.Name = "PanelLoginContent";
+            this.PanelLoginContent.Size = new System.Drawing.Size(286, 225);
+            this.PanelLoginContent.TabIndex = 13;
             // 
             // labelTittleLogin
             // 
@@ -172,44 +149,20 @@
             this.labelTittleLogin.TabIndex = 3;
             this.labelTittleLogin.Text = "Đăng nhập";
             // 
-            // labelPassword
+            // buttonHidePassword
             // 
-            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelPassword.Location = new System.Drawing.Point(80, 102);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(68, 19);
-            this.labelPassword.TabIndex = 7;
-            this.labelPassword.Text = "Mật khẩu";
-            // 
-            // tbusername
-            // 
-            this.tbusername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbusername.Location = new System.Drawing.Point(84, 79);
-            this.tbusername.Name = "tbusername";
-            this.tbusername.Size = new System.Drawing.Size(161, 20);
-            this.tbusername.TabIndex = 2;
-            // 
-            // tbpassword
-            // 
-            this.tbpassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbpassword.Location = new System.Drawing.Point(84, 122);
-            this.tbpassword.Name = "tbpassword";
-            this.tbpassword.Size = new System.Drawing.Size(161, 20);
-            this.tbpassword.TabIndex = 6;
-            this.tbpassword.UseSystemPasswordChar = true;
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelUsername.Location = new System.Drawing.Point(80, 57);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(102, 19);
-            this.labelUsername.TabIndex = 4;
-            this.labelUsername.Text = "Tên đăng nhập";
+            this.buttonHidePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonHidePassword.BackColor = System.Drawing.Color.White;
+            this.buttonHidePassword.BackgroundImage = global::BiaManager.Properties.Resources.Anonymous_Mask;
+            this.buttonHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHidePassword.Location = new System.Drawing.Point(225, 122);
+            this.buttonHidePassword.Name = "buttonHidePassword";
+            this.buttonHidePassword.Size = new System.Drawing.Size(20, 20);
+            this.buttonHidePassword.TabIndex = 10;
+            this.buttonHidePassword.UseVisualStyleBackColor = false;
+            this.buttonHidePassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HidePassword_MouseDown);
+            this.buttonHidePassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HidePassword_MouseUp);
             // 
             // buttonLogin
             // 
@@ -224,7 +177,70 @@
             this.buttonLogin.TabIndex = 8;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.button2_Click);
+            this.buttonLogin.Click += new System.EventHandler(this.Loginbtn_Click);
+            // 
+            // PasswordBox
+            // 
+            this.PasswordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PasswordBox.Image = global::BiaManager.Properties.Resources.Password;
+            this.PasswordBox.Location = new System.Drawing.Point(42, 112);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.Size = new System.Drawing.Size(30, 30);
+            this.PasswordBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PasswordBox.TabIndex = 12;
+            this.PasswordBox.TabStop = false;
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.labelUsername.Location = new System.Drawing.Point(80, 57);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(102, 19);
+            this.labelUsername.TabIndex = 4;
+            this.labelUsername.Text = "Tên đăng nhập";
+            // 
+            // tbpassword
+            // 
+            this.tbpassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbpassword.Location = new System.Drawing.Point(84, 122);
+            this.tbpassword.Name = "tbpassword";
+            this.tbpassword.Size = new System.Drawing.Size(161, 20);
+            this.tbpassword.TabIndex = 6;
+            this.tbpassword.UseSystemPasswordChar = true;
+            // 
+            // UserBox
+            // 
+            this.UserBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UserBox.Image = global::BiaManager.Properties.Resources.Male_User;
+            this.UserBox.Location = new System.Drawing.Point(42, 57);
+            this.UserBox.Name = "UserBox";
+            this.UserBox.Size = new System.Drawing.Size(30, 30);
+            this.UserBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserBox.TabIndex = 11;
+            this.UserBox.TabStop = false;
+            // 
+            // tbusername
+            // 
+            this.tbusername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbusername.Location = new System.Drawing.Point(84, 79);
+            this.tbusername.Name = "tbusername";
+            this.tbusername.Size = new System.Drawing.Size(161, 20);
+            this.tbusername.TabIndex = 2;
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.labelPassword.Location = new System.Drawing.Point(80, 102);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(68, 19);
+            this.labelPassword.TabIndex = 7;
+            this.labelPassword.Text = "Mật khẩu";
             // 
             // btchangeimg
             // 
@@ -254,36 +270,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // panel2
+            // linkLabelForgerPassword
             // 
-            this.panel2.Controls.Add(this.labelTittleLogin);
-            this.panel2.Controls.Add(this.buttonHidePassword);
-            this.panel2.Controls.Add(this.buttonLogin);
-            this.panel2.Controls.Add(this.PasswordBox);
-            this.panel2.Controls.Add(this.labelUsername);
-            this.panel2.Controls.Add(this.linkLabelForgerPassword);
-            this.panel2.Controls.Add(this.tbpassword);
-            this.panel2.Controls.Add(this.UserBox);
-            this.panel2.Controls.Add(this.tbusername);
-            this.panel2.Controls.Add(this.labelPassword);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 183);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 225);
-            this.panel2.TabIndex = 13;
-            // 
-            // AvatarGif
-            // 
-            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AvatarGif.ErrorImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.ErrorImage")));
-            this.AvatarGif.Image = ((System.Drawing.Image)(resources.GetObject("AvatarGif.Image")));
-            this.AvatarGif.InitialImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.InitialImage")));
-            this.AvatarGif.Location = new System.Drawing.Point(0, 0);
-            this.AvatarGif.Name = "AvatarGif";
-            this.AvatarGif.Size = new System.Drawing.Size(286, 183);
-            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AvatarGif.TabIndex = 14;
-            this.AvatarGif.TabStop = false;
+            this.linkLabelForgerPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabelForgerPassword.AutoSize = true;
+            this.linkLabelForgerPassword.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(68)))), ((int)(((byte)(87)))));
+            this.linkLabelForgerPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.linkLabelForgerPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabelForgerPassword.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelForgerPassword.Location = new System.Drawing.Point(81, 145);
+            this.linkLabelForgerPassword.Name = "linkLabelForgerPassword";
+            this.linkLabelForgerPassword.Size = new System.Drawing.Size(87, 15);
+            this.linkLabelForgerPassword.TabIndex = 13;
+            this.linkLabelForgerPassword.TabStop = true;
+            this.linkLabelForgerPassword.Text = "quên mật khẩu";
             // 
             // FormLogin
             // 
@@ -303,12 +303,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelLogin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
+            this.PanelLoginContent.ResumeLayout(false);
+            this.PanelLoginContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,7 +319,6 @@
         private System.Windows.Forms.Button btclose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.LinkLabel linkLabelForgerPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox tbusername;
         private System.Windows.Forms.TextBox tbpassword;
@@ -332,7 +331,8 @@
         private System.Windows.Forms.PictureBox PasswordBox;
         private System.Windows.Forms.Button btchangeimg;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelLoginContent;
         private System.Windows.Forms.PictureBox AvatarGif;
+        private System.Windows.Forms.LinkLabel linkLabelForgerPassword;
     }
 }

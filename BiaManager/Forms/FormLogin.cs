@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiaManager.Script;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -18,13 +19,6 @@ namespace BiaManager.Forms
 
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -66,7 +60,9 @@ namespace BiaManager.Forms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        Modify modify = new Modify();
+
+        private void Loginbtn_Click(object sender, EventArgs e)
         {
             if (tbusername.Text == "")
             {
@@ -80,16 +76,27 @@ namespace BiaManager.Forms
                 tbpassword.Focus();
                 return;
             }
+            else
+            {
+                string query = "Select * from user_account where UserName = '" + tbusername.Text + "'and UserPassword ='" + tbpassword.Text + "'";
+                if (modify.Accounts(query).Count != 0)
+                {
+                    MessageBox.Show("Login Successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("The account you entered does not exist.");
 
-            MessageBox.Show("đã login");
+                }
+            }
         }
 
-        private void button3_MouseDown(object sender, MouseEventArgs e)
+        private void HidePassword_MouseDown(object sender, MouseEventArgs e)
         {
             tbpassword.UseSystemPasswordChar = false;
         }
 
-        private void button3_MouseUp(object sender, MouseEventArgs e)
+        private void HidePassword_MouseUp(object sender, MouseEventArgs e)
         {
             tbpassword.UseSystemPasswordChar = true;
         }
