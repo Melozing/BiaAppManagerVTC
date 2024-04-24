@@ -1,6 +1,7 @@
-﻿using BiaManager.Contants;
+﻿using BiaManager.Model;
 using BiaManager.Script;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -9,14 +10,20 @@ namespace BiaManager.Forms
 {
     public partial class FormLogin : Form
     {
+        DatabaseService databaseService = new DatabaseService();
+
         public FormLogin()
         {
             InitializeComponent();
+
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         private void btclose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn muốn thoát chương trình !", "Xác nhận",
-               MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageFuctionConstans.WarningOKCancell("Bạn muốn thoát chương trình !");
             if (result == DialogResult.OK)
             {
                 Application.Exit();
@@ -43,40 +50,46 @@ namespace BiaManager.Forms
             this.Region = new Region(path);
         }
 
-        Modify modify = new Modify();
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             if (tbusername.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập !", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageFuctionConstans.WarningOK("Bạn chưa nhập tên đăng nhập !");
                 tbusername.Focus();
                 return;
             }
             else if (tbpassword.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mật khẩu !", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageFuctionConstans.WarningOK("Bạn chưa nhập mật khẩu !");
                 tbpassword.Focus();
                 return;
             }
             else
             {
                 string query = "Select * from user_account where UserName = '" + tbusername.Text + "'and UserPassword ='" + tbpassword.Text + "'";
-                if (modify.Accounts(query).Count != 0)
+                List<Account> accounts = databaseService.GetData(query, (reader) =>
+                {
+                    Account account = new Account();
+                    account.Username = reader.GetString(0);
+                    account.Password = reader.GetString(1);
+                    return account;
+                });
+
+                if (accounts.Count > 0)
                 {
                     OnLoginSuccessfully();
                 }
                 else
                 {
-                    MessageBox.Show("The account you entered does not exist.", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    MessageFuctionConstans.WarningOK("The account you entered does not exist.");
                 }
             }
         }
 
         private void OnLoginSuccessfully()
         {
-            MessageBox.Show("Login Successfully!", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageFuctionConstans.WarningOK("Login Successfully!");
             HomePage homePage = new HomePage();
             homePage.Show();
             this.Hide();
@@ -139,6 +152,11 @@ namespace BiaManager.Forms
         }
 
         private void PanelLoginContent_Click(object sender, EventArgs e)
+        {
+            tbusername.Focus();
+        }
+
+        private void AvatarGif_Click(object sender, EventArgs e)
         {
             tbusername.Focus();
         }

@@ -491,20 +491,21 @@
             // 
             // panelContent
             // 
+            this.panelContent.AutoScroll = true;
             this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(224, 515);
+            this.panelContent.Size = new System.Drawing.Size(347, 515);
             this.panelContent.TabIndex = 1;
             // 
             // paneDetail
             // 
             this.paneDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
             this.paneDetail.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneDetail.Location = new System.Drawing.Point(224, 0);
+            this.paneDetail.Location = new System.Drawing.Point(347, 0);
             this.paneDetail.Name = "paneDetail";
-            this.paneDetail.Size = new System.Drawing.Size(323, 515);
+            this.paneDetail.Size = new System.Drawing.Size(200, 515);
             this.paneDetail.TabIndex = 0;
             // 
             // fileSystemWatcher1
@@ -527,11 +528,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.PanelContentParent);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTittleBar);
             this.Controls.Add(this.panelSidebarMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "HomePage";
             this.ShowIcon = false;
@@ -570,7 +571,6 @@
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel PanelContentParent;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.Panel paneDetail;
         private FontAwesome.Sharp.IconButton ExitBtn;
         private FontAwesome.Sharp.IconButton MaximizeBtn;
         private FontAwesome.Sharp.IconButton MinimizeIconButton;
@@ -583,6 +583,7 @@
         private System.Windows.Forms.Panel panelMenuParent;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
+        private System.Windows.Forms.Panel paneDetail;
     }
 }
 
