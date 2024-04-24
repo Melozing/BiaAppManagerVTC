@@ -65,12 +65,16 @@
     <Compile Include="Components\FoodWidget.Designer.cs">
       <DependentUpon>FoodWidget.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Contants\MessageNameContants.cs" />
+=======
     <Compile Include="Forms\AdminForm\Staff\AddStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AdminForm\Staff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+>>>>>>> 5e592f7780df9659bb8f8c8ccf612e9759d62926
     <Compile Include="Forms\FormBill.cs">
       <SubType>Form</SubType>
     </Compile>

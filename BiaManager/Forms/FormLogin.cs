@@ -1,4 +1,5 @@
-﻿using BiaManager.Script;
+﻿using BiaManager.Contants;
+using BiaManager.Script;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,20 +13,22 @@ namespace BiaManager.Forms
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btclose_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn muốn thoát chương trình !", "Xác nhận",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+               MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
                 Application.Exit();
             }
-            else if (result == DialogResult.Cancel)
-
-            {
-
-            }
-
+        }
+        private void MaximizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = WindowSizeCtrl.MinimizeAndScale(this.WindowState);
+        }
+        private void MinimizeIconButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,7 +41,6 @@ namespace BiaManager.Forms
             path.AddArc(0, this.Height - radius * 2, radius * 2, radius * 2, 90, 90);
             path.CloseAllFigures();
             this.Region = new Region(path);
-
         }
 
         Modify modify = new Modify();
@@ -47,13 +49,13 @@ namespace BiaManager.Forms
         {
             if (tbusername.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập !");
+                MessageBox.Show("Bạn chưa nhập tên đăng nhập !", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbusername.Focus();
                 return;
             }
             else if (tbpassword.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mật khẩu !");
+                MessageBox.Show("Bạn chưa nhập mật khẩu !", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbpassword.Focus();
                 return;
             }
@@ -62,14 +64,22 @@ namespace BiaManager.Forms
                 string query = "Select * from user_account where UserName = '" + tbusername.Text + "'and UserPassword ='" + tbpassword.Text + "'";
                 if (modify.Accounts(query).Count != 0)
                 {
-                    MessageBox.Show("Login Successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    OnLoginSuccessfully();
                 }
                 else
                 {
-                    MessageBox.Show("The account you entered does not exist.");
+                    MessageBox.Show("The account you entered does not exist.", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
+        }
+
+        private void OnLoginSuccessfully()
+        {
+            MessageBox.Show("Login Successfully!", MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HomePage homePage = new HomePage();
+            homePage.Show();
+            this.Hide();
         }
 
         private void HidePassword_MouseDown(object sender, MouseEventArgs e)
@@ -100,6 +110,37 @@ namespace BiaManager.Forms
                 // Giữ hình ảnh tỷ lệ và điều chỉnh kích thước PictureBox
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+        }
+
+        private void PanelTaskbarLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowSizeCtrl.MoveWindow(this.Handle);
+        }
+
+        private void tbusername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogin.PerformClick();
+            }
+        }
+
+        private void tbpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogin.PerformClick();
+            }
+        }
+
+        private void panelLogin_Click(object sender, EventArgs e)
+        {
+            tbusername.Focus();
+        }
+
+        private void PanelLoginContent_Click(object sender, EventArgs e)
+        {
+            tbusername.Focus();
         }
     }
 }

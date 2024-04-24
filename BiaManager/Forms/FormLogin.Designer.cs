@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btclose = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.AvatarGif = new System.Windows.Forms.PictureBox();
             this.PanelLoginContent = new System.Windows.Forms.Panel();
+            this.linkLabelForgerPassword = new System.Windows.Forms.LinkLabel();
             this.labelTittleLogin = new System.Windows.Forms.Label();
             this.buttonHidePassword = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
@@ -45,53 +43,21 @@
             this.tbusername = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.btchangeimg = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.linkLabelForgerPassword = new System.Windows.Forms.LinkLabel();
-            this.panel1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelTaskbarLogin = new System.Windows.Forms.Label();
+            this.PanelTaskbarLogin = new System.Windows.Forms.Panel();
+            this.MaximizeBtn = new FontAwesome.Sharp.IconButton();
+            this.MinimizeIconButton = new FontAwesome.Sharp.IconButton();
+            this.btclose = new FontAwesome.Sharp.IconButton();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
             this.PanelLoginContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelTaskbarLogin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btclose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 30);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Phần mềm quản lí quán bida";
-            // 
-            // btclose
-            // 
-            this.btclose.BackColor = System.Drawing.Color.White;
-            this.btclose.BackgroundImage = global::BiaManager.Properties.Resources.Close;
-            this.btclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btclose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btclose.Location = new System.Drawing.Point(890, 0);
-            this.btclose.Name = "btclose";
-            this.btclose.Size = new System.Drawing.Size(30, 30);
-            this.btclose.TabIndex = 1;
-            this.btclose.UseVisualStyleBackColor = false;
-            this.btclose.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelLogin
             // 
@@ -102,6 +68,7 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(286, 408);
             this.panelLogin.TabIndex = 1;
+            this.panelLogin.Click += new System.EventHandler(this.panelLogin_Click);
             // 
             // AvatarGif
             // 
@@ -133,6 +100,22 @@
             this.PanelLoginContent.Name = "PanelLoginContent";
             this.PanelLoginContent.Size = new System.Drawing.Size(286, 225);
             this.PanelLoginContent.TabIndex = 13;
+            this.PanelLoginContent.Click += new System.EventHandler(this.PanelLoginContent_Click);
+            // 
+            // linkLabelForgerPassword
+            // 
+            this.linkLabelForgerPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabelForgerPassword.AutoSize = true;
+            this.linkLabelForgerPassword.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(68)))), ((int)(((byte)(87)))));
+            this.linkLabelForgerPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.linkLabelForgerPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabelForgerPassword.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelForgerPassword.Location = new System.Drawing.Point(81, 145);
+            this.linkLabelForgerPassword.Name = "linkLabelForgerPassword";
+            this.linkLabelForgerPassword.Size = new System.Drawing.Size(87, 15);
+            this.linkLabelForgerPassword.TabIndex = 13;
+            this.linkLabelForgerPassword.TabStop = true;
+            this.linkLabelForgerPassword.Text = "quên mật khẩu";
             // 
             // labelTittleLogin
             // 
@@ -208,6 +191,7 @@
             this.tbpassword.Size = new System.Drawing.Size(161, 20);
             this.tbpassword.TabIndex = 6;
             this.tbpassword.UseSystemPasswordChar = true;
+            this.tbpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbpassword_KeyDown);
             // 
             // UserBox
             // 
@@ -228,6 +212,7 @@
             this.tbusername.Name = "tbusername";
             this.tbusername.Size = new System.Drawing.Size(161, 20);
             this.tbusername.TabIndex = 2;
+            this.tbusername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbusername_KeyDown);
             // 
             // labelPassword
             // 
@@ -253,6 +238,10 @@
             this.btchangeimg.UseVisualStyleBackColor = false;
             this.btchangeimg.Click += new System.EventHandler(this.button4_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -264,42 +253,101 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // openFileDialog1
+            // labelTaskbarLogin
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.labelTaskbarLogin.AutoSize = true;
+            this.labelTaskbarLogin.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold);
+            this.labelTaskbarLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.labelTaskbarLogin.Location = new System.Drawing.Point(3, 3);
+            this.labelTaskbarLogin.Name = "labelTaskbarLogin";
+            this.labelTaskbarLogin.Size = new System.Drawing.Size(265, 25);
+            this.labelTaskbarLogin.TabIndex = 1;
+            this.labelTaskbarLogin.Text = "Phần mềm quản lí quán bida";
             // 
-            // linkLabelForgerPassword
+            // PanelTaskbarLogin
             // 
-            this.linkLabelForgerPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkLabelForgerPassword.AutoSize = true;
-            this.linkLabelForgerPassword.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(68)))), ((int)(((byte)(87)))));
-            this.linkLabelForgerPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.linkLabelForgerPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkLabelForgerPassword.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelForgerPassword.Location = new System.Drawing.Point(81, 145);
-            this.linkLabelForgerPassword.Name = "linkLabelForgerPassword";
-            this.linkLabelForgerPassword.Size = new System.Drawing.Size(87, 15);
-            this.linkLabelForgerPassword.TabIndex = 13;
-            this.linkLabelForgerPassword.TabStop = true;
-            this.linkLabelForgerPassword.Text = "quên mật khẩu";
+            this.PanelTaskbarLogin.BackColor = System.Drawing.Color.Green;
+            this.PanelTaskbarLogin.Controls.Add(this.MaximizeBtn);
+            this.PanelTaskbarLogin.Controls.Add(this.labelTaskbarLogin);
+            this.PanelTaskbarLogin.Controls.Add(this.MinimizeIconButton);
+            this.PanelTaskbarLogin.Controls.Add(this.btclose);
+            this.PanelTaskbarLogin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTaskbarLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PanelTaskbarLogin.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.PanelTaskbarLogin.Location = new System.Drawing.Point(0, 0);
+            this.PanelTaskbarLogin.Name = "PanelTaskbarLogin";
+            this.PanelTaskbarLogin.Size = new System.Drawing.Size(920, 30);
+            this.PanelTaskbarLogin.TabIndex = 0;
+            this.PanelTaskbarLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTaskbarLogin_MouseDown);
+            // 
+            // MaximizeBtn
+            // 
+            this.MaximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaximizeBtn.FlatAppearance.BorderSize = 0;
+            this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeBtn.IconChar = FontAwesome.Sharp.IconChar.Maximize;
+            this.MaximizeBtn.IconColor = System.Drawing.Color.White;
+            this.MaximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MaximizeBtn.IconSize = 23;
+            this.MaximizeBtn.Location = new System.Drawing.Point(856, 3);
+            this.MaximizeBtn.Name = "MaximizeBtn";
+            this.MaximizeBtn.Size = new System.Drawing.Size(23, 23);
+            this.MaximizeBtn.TabIndex = 13;
+            this.MaximizeBtn.UseVisualStyleBackColor = true;
+            this.MaximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
+            // 
+            // MinimizeIconButton
+            // 
+            this.MinimizeIconButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizeIconButton.FlatAppearance.BorderSize = 0;
+            this.MinimizeIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeIconButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MinimizeIconButton.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.MinimizeIconButton.IconColor = System.Drawing.Color.White;
+            this.MinimizeIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MinimizeIconButton.IconSize = 23;
+            this.MinimizeIconButton.Location = new System.Drawing.Point(827, 3);
+            this.MinimizeIconButton.Name = "MinimizeIconButton";
+            this.MinimizeIconButton.Size = new System.Drawing.Size(23, 23);
+            this.MinimizeIconButton.TabIndex = 12;
+            this.MinimizeIconButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MinimizeIconButton.UseVisualStyleBackColor = true;
+            this.MinimizeIconButton.Click += new System.EventHandler(this.MinimizeIconButton_Click);
+            // 
+            // btclose
+            // 
+            this.btclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btclose.FlatAppearance.BorderSize = 0;
+            this.btclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btclose.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btclose.IconColor = System.Drawing.Color.White;
+            this.btclose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btclose.IconSize = 23;
+            this.btclose.Location = new System.Drawing.Point(885, 3);
+            this.btclose.Name = "btclose";
+            this.btclose.Size = new System.Drawing.Size(23, 23);
+            this.btclose.TabIndex = 11;
+            this.btclose.UseVisualStyleBackColor = true;
+            this.btclose.Click += new System.EventHandler(this.btclose_Click);
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(920, 560);
             this.Controls.Add(this.btchangeimg);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelTaskbarLogin);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cmd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
             this.PanelLoginContent.ResumeLayout(false);
@@ -307,15 +355,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PasswordBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PanelTaskbarLogin.ResumeLayout(false);
+            this.PanelTaskbarLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btclose;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox tbusername;
@@ -323,7 +369,6 @@
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelTittleLogin;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonHidePassword;
         private System.Windows.Forms.PictureBox UserBox;
         private System.Windows.Forms.PictureBox PasswordBox;
@@ -332,5 +377,11 @@
         private System.Windows.Forms.Panel PanelLoginContent;
         private System.Windows.Forms.PictureBox AvatarGif;
         private System.Windows.Forms.LinkLabel linkLabelForgerPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelTaskbarLogin;
+        private System.Windows.Forms.Panel PanelTaskbarLogin;
+        private FontAwesome.Sharp.IconButton MaximizeBtn;
+        private FontAwesome.Sharp.IconButton MinimizeIconButton;
+        private FontAwesome.Sharp.IconButton btclose;
     }
 }
