@@ -47,7 +47,7 @@ namespace BiaManager
 
             //Form
             //this.Text = string.Empty;
-            this.ControlBox = true;
+            //this.ControlBox = false;
             //this.DoubleBuffered = true;
             //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }

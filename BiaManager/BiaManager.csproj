@@ -65,6 +65,7 @@
     <Compile Include="Components\FoodWidget.Designer.cs">
       <DependentUpon>FoodWidget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contants\MessageNameContants.cs" />
     <Compile Include="Forms\FormBill.cs">
       <SubType>Form</SubType>
     </Compile>

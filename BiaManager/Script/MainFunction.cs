@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiaManager.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace BiaManager
@@ -13,7 +14,7 @@ namespace BiaManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePage());
+            Application.Run(new FormLogin());
         }
     }
 }
