@@ -1,4 +1,5 @@
 ﻿using BiaManager.Forms;
+using BiaManager.Forms.AdminForm.Staff;
 using BiaManager.Script;
 using FontAwesome.Sharp;
 using System.Drawing;
@@ -46,10 +47,11 @@ namespace BiaManager
             panelSidebarMenu.Controls.Add(leftBorderBtn);
 
             //Form
-            //this.Text = string.Empty;
-            //this.ControlBox = false;
-            //this.DoubleBuffered = true;
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.Text = string.Empty;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         //Struct Color
@@ -89,6 +91,7 @@ namespace BiaManager
                 //Icon Current Child Form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
                 iconCurrentChildForm.IconColor = color;
+                tittleOfChildForm.Text = currentBtn.Text;
             }
         }
 
@@ -119,12 +122,12 @@ namespace BiaManager
             panelContent.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            tittleOfChildForm.Text = childForm.Text;
         }
 
         private void Home_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color1);
+            paneDetail.Hide();
         }
 
         private void Tables_Click(object sender, System.EventArgs e)
@@ -135,12 +138,14 @@ namespace BiaManager
         private void Menu_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color3);
+            paneDetail.Hide();
             OpenChildForm(new FormMenu());
         }
 
         private void Bills_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color4);
+            paneDetail.Show();
         }
 
         private void User_Click(object sender, System.EventArgs e)
@@ -156,6 +161,8 @@ namespace BiaManager
         private void UserManagement_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color7);
+            paneDetail.Hide();
+            OpenChildForm(new AddStaff());
         }
 
         private void MenuManagement_Click(object sender, System.EventArgs e)

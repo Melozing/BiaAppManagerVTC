@@ -63,7 +63,7 @@ CREATE TABLE [dbo].[invoice_detail] (
 GO
 
 CREATE TABLE [dbo].[user_account] (
-    [IdUser] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [IdUser] varchar(15) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserName] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserPassword] varchar(70) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserRole] int NULL,
@@ -72,11 +72,12 @@ CREATE TABLE [dbo].[user_account] (
 GO
 
 CREATE TABLE [dbo].[user_info] (
-    [idUser] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [idUser] varchar(15) COLLATE Vietnamese_CI_AS NOT NULL,
     [User_FullName] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [User_Phone] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [User_BankAccountNumber] varchar(12) COLLATE Vietnamese_CI_AS NULL,
-    [User_Image] varchar(50) COLLATE Vietnamese_CI_AS NULL,
+    [User_BankName] varchar(50) COLLATE Vietnamese_CI_AS NULL,
     CONSTRAINT [FK_user_info_user] FOREIGN KEY ([idUser]) REFERENCES [dbo].[user_account] ([IdUser])
 );
 GO
+INSERT INTO user_account (IdUser,UserName, UserPassword, UserRole) VALUES ('U0', 'admin', 'admin123', 0);

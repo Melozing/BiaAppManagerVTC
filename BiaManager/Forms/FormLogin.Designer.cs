@@ -82,6 +82,7 @@
             this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AvatarGif.TabIndex = 14;
             this.AvatarGif.TabStop = false;
+            this.AvatarGif.Click += new System.EventHandler(this.AvatarGif_Click);
             // 
             // PanelLoginContent
             // 
@@ -337,16 +338,17 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(920, 560);
+            this.ControlBox = false;
             this.Controls.Add(this.btchangeimg);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.PanelTaskbarLogin);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "FormLogin";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "cmd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();

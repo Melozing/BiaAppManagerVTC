@@ -103,9 +103,11 @@
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Script\ConnectDatabase.cs" />
+    <Compile Include="Script\Contants\MessageNameContants.cs" />
     <Compile Include="Script\MainFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Script\Modify.cs" />
+    <Compile Include="Script\Contants\MessageFuctionConstans.cs" />
+    <Compile Include="Script\DatabaseCtrl\DatabaseService.cs" />
     <Compile Include="Script\WindowSizeCtrl.cs" />
     <EmbeddedResource Include="Components\FoodTabWidget.resx">
       <DependentUpon>FoodTabWidget.cs</DependentUpon>
