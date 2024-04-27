@@ -23,7 +23,6 @@ E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Staff.AddSta
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormLogin.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormMenu.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormTables.resources
-E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.item.Table_Items.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.HomePage.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Properties.Resources.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.GenerateResource.cache
@@ -63,3 +62,4 @@ E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.CoreCompileInputs.cac
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.item.table_item.resources

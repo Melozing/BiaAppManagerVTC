@@ -144,11 +144,11 @@
     <Compile Include="Forms\FormTables.Designer.cs">
       <DependentUpon>FormTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\item\Table_Items.cs">
+    <Compile Include="Forms\item\table_item.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\item\Table_Items.Designer.cs">
-      <DependentUpon>Table_Items.cs</DependentUpon>
+    <Compile Include="Forms\item\table_item.Designer.cs">
+      <DependentUpon>table_item.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -182,8 +182,8 @@
     <EmbeddedResource Include="Forms\FormTables.resx">
       <DependentUpon>FormTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\item\Table_Items.resx">
-      <DependentUpon>Table_Items.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\item\table_item.resx">
+      <DependentUpon>table_item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -273,5 +273,15 @@
   <ItemGroup>
     <None Include="Resources\bida3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_table\Status_Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_table\Status_Playing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_table\Status_Repair.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

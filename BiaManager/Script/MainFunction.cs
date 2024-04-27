@@ -1,6 +1,7 @@
 ﻿using BiaManager.Forms;
 using System;
 using System.Windows.Forms;
+using BiaManager.Forms.item;
 
 namespace BiaManager
 {
