@@ -12,7 +12,7 @@ namespace BiaManager.Script
 
         public DatabaseService()
         {
-            this.connectionString = @"Data Source=DESKTOP-G0D14LK;Initial Catalog=db_biamanager;Integrated Security=True";
+            this.connectionString = ConnectDatabase.stringConnection;
         }
         public static DatabaseService Instance
         {

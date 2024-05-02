@@ -1,7 +1,10 @@
 ﻿using BiaManager.Forms;
+using BiaManager.Forms.AdminForm.Items;
 using BiaManager.Forms.AdminForm.Staff;
+using BiaManager.Forms.AdminForm.Tables;
 using BiaManager.Script;
 using FontAwesome.Sharp;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,8 +16,12 @@ namespace BiaManager
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        private bool menuExpand = false;
+        private bool menuItemExpand = false;
+        private bool menuTableExpand = false;
         private bool sidebarExpand = true;
+
+        private Timer transitionTimer;
+        private const int animationSpeed = 10;
 
         private string tempHideIconMenuText;
         private string tempHomeText;
@@ -30,6 +37,16 @@ namespace BiaManager
         public HomePage()
         {
             InitializeComponent();
+
+            flowLayoutPanelMenu.AutoScroll = false;
+            btnHome.SizeMode = PictureBoxSizeMode.Zoom;
+
+            flowLayoutPanelTable.Tag = false;
+            flowLayoutPanelMenuItem.Tag = false;
+
+            transitionTimer = new Timer();
+            transitionTimer.Interval = 10;
+            transitionTimer.Tick += TransitionTimer_Tick;
 
             tempHideIconMenuText = HideMenuIcon.Text;
             tempHomeText = Home.Text;
@@ -132,7 +149,16 @@ namespace BiaManager
 
         private void Tables_Click(object sender, System.EventArgs e)
         {
-            ActivateButton(sender, RGBColor.color2);
+            try
+            {
+                ActivateButton(sender, RGBColor.color2);
+                paneDetail.Hide();
+                OpenChildForm(new FormTables());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening child form: " + ex.Message);
+            }
         }
 
         private void Menu_Click(object sender, System.EventArgs e)
@@ -162,17 +188,19 @@ namespace BiaManager
         {
             ActivateButton(sender, RGBColor.color7);
             paneDetail.Hide();
-            OpenChildForm(new AddStaff());
+            OpenChildForm(new StaffManager());
         }
 
         private void MenuManagement_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color8);
+            PerformFlowLayoutTransition(flowLayoutPanelMenuItem);
         }
 
         private void TablesManagement_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color9);
+            PerformFlowLayoutTransition(flowLayoutPanelTable);
         }
 
         private void btnHome_Click(object sender, System.EventArgs e)
@@ -212,26 +240,44 @@ namespace BiaManager
             sidebarTransition.Start();
         }
 
-        private void menuTransition_Tick(object sender, System.EventArgs e)
+        private void TransitionTimer_Tick(object sender, EventArgs e)
         {
-            if (!menuExpand)
+            var panel = (FlowLayoutPanel)transitionTimer.Tag;
+            if (panel != null && panel.Tag != null) // Kiểm tra xem panel và Tag của nó có null không
             {
-                panelMenuParent.Dock = DockStyle.None;
-                panelMenuParent.Height += 10;
-                if (panelMenuParent.Height >= 165)
+                var expanding = (bool)panel.Tag;
+                if (!expanding)
                 {
-                    menuTransition.Stop();
-                    menuExpand = false;
+                    panel.Height += 10;
+                    int maxHeight = 60 * panel.Controls.Count;
+                    if (panel.Height >= maxHeight)
+                    {
+                        transitionTimer.Stop();
+                        panel.Tag = true; // Đánh dấu rằng panel đã mở rộng
+                    }
+                }
+                else
+                {
+                    panel.Height -= 10;
+                    if (panel.Height <= 0)
+                    {
+                        transitionTimer.Stop();
+                        panel.Tag = false; // Đánh dấu rằng panel đã thu nhỏ
+                    }
                 }
             }
             else
             {
-                panelMenuParent.Height -= 10;
-                if (panelMenuParent.Height <= 50)
-                {
-                    menuTransition.Stop();
-                    menuExpand = false;
-                }
+                // Xử lý trường hợp panel hoặc Tag của nó là null
+            }
+        }
+
+        private void PerformFlowLayoutTransition(FlowLayoutPanel panel)
+        {
+            if (!transitionTimer.Enabled)
+            {
+                transitionTimer.Tag = panel;
+                transitionTimer.Start();
             }
         }
 
@@ -239,9 +285,6 @@ namespace BiaManager
         {
             if (sidebarExpand)
             {
-                flowLayoutPanelMenu.AutoScroll = false;
-                btnHome.SizeMode = PictureBoxSizeMode.Zoom;
-
                 HideMenuIcon.Text = null;
                 Home.Text = null;
                 Tables.Text = null;
@@ -312,6 +355,28 @@ namespace BiaManager
                     Setting.Text = tempSettingText;
                 }
             }
+        }
+
+        private void ItemCategory_Click(object sender, EventArgs e)
+        {
+            paneDetail.Hide();
+            OpenChildForm(new ItemCategory());
+        }
+
+        private void TablesDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TablesType_Click(object sender, EventArgs e)
+        {
+            paneDetail.Hide();
+            OpenChildForm(new TableTypeManager());
+        }
+
+        private void ItemMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
