@@ -15,7 +15,6 @@ namespace BiaManager.Forms
         public FormLogin()
         {
             InitializeComponent();
-
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;

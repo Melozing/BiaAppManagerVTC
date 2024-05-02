@@ -19,5 +19,9 @@ namespace BiaManager.Script
         {
             MessageBox.Show(content, MessageNameContants.Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static void ErrorOK(string content)
+        {
+            MessageBox.Show(content, MessageNameContants.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

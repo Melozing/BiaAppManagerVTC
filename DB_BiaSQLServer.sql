@@ -27,13 +27,13 @@ CREATE TABLE [dbo].[items_menu] (
     [item_Name] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [IdItemCategory] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [item_Price] int NOT NULL,
-    [item_image] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
+    [item_image] varbinary(max) NOT NULL,
     PRIMARY KEY CLUSTERED ([IdItem]),
     CONSTRAINT [FK_items_menu_items_category] FOREIGN KEY ([IdItemCategory]) REFERENCES [dbo].[items_category] ([IdItemCategory])
 );
 GO
 
-CREATE TABLE [dbo].[restaurant_table] (
+CREATE TABLE [dbo].[table_detail] (
     [IdTable] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableNumber] int NOT NULL,
     [Status] int NOT NULL DEFAULT '0',
@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[invoice] (
     [Invoice_TotalAmount] int NOT NULL,
     [Invoice_Status] int NULL,
     PRIMARY KEY CLUSTERED ([IdInvoice]),
-    CONSTRAINT [FK_orders_table] FOREIGN KEY ([TableID]) REFERENCES [dbo].[restaurant_table] ([IdTable])
+    CONSTRAINT [FK_orders_table] FOREIGN KEY ([TableID]) REFERENCES [dbo].[table_detail] ([IdTable])
 );
 GO
 

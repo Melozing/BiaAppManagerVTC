@@ -1,7 +1,6 @@
 ﻿using BiaManager.Forms;
 using System;
 using System.Windows.Forms;
-using BiaManager.Forms.item;
 
 namespace BiaManager
 {
@@ -15,7 +14,7 @@ namespace BiaManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTables());
+            Application.Run(new FormLogin());
         }
     }
 }
