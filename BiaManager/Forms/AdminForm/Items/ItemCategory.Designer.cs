@@ -186,6 +186,8 @@
             // 
             // dataGridViewItemsCategory
             // 
+            this.dataGridViewItemsCategory.AllowUserToAddRows = false;
+            this.dataGridViewItemsCategory.AllowUserToResizeRows = false;
             this.dataGridViewItemsCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewItemsCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewItemsCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -197,6 +199,8 @@
             this.dataGridViewItemsCategory.Size = new System.Drawing.Size(800, 31);
             this.dataGridViewItemsCategory.TabIndex = 10;
             this.dataGridViewItemsCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItemsCategory_CellContentClick);
+            this.dataGridViewItemsCategory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItemsCategory_CellContentClick);
+            this.dataGridViewItemsCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItemsCategory_CellContentClick);
             // 
             // ItemCategory
             // 

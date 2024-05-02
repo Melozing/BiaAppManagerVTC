@@ -139,8 +139,9 @@ namespace BiaManager.Forms.AdminForm.Items
         private void iconButtonSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = @"
-        SELECT ItemCategory_Name FROM items_category 
-        WHERE ItemCategory_Name LIKE '%" + textBoxSearch.Text + "';";
+        SELECT * FROM items_category 
+        WHERE IdItemCategory LIKE '%" + textBoxSearch.Text + @"%' OR
+              ItemCategory_Name LIKE '%" + textBoxSearch.Text + @"%';";
 
             // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);

@@ -1,6 +1,7 @@
 ﻿using BiaManager.Script;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BiaManager.Forms.AdminForm.Tables
@@ -22,14 +23,19 @@ namespace BiaManager.Forms.AdminForm.Tables
             ButtonDeleteTableTypeManager.Hide();
             ButtonCreateTableTypeManager.Show();
         }
+        private void ResetFormInput()
+        {
+            textBoxTableName.ResetText();
+            textBoxTablePrice.ResetText();
+        }
         private void LoadDataTable()
         {
-            string queryStaffInfo = "SELECT table_detail.IdTable, table_detail.TableNumber, " +
-                "table_type.TableType_Name, " +
-                "table_type.TableType_Price " +
-                "FROM table_detail JOIN table_type " +
-                "ON table_detail.IdTableType = table_type.IdTableType;";
-
+            //string queryStaffInfo = "SELECT table_detail.IdTable, table_detail.TableNumber, " +
+            //    "table_type.TableType_Name, " +
+            //    "table_type.TableType_Price " +
+            //    "FROM table_detail JOIN table_type " +
+            //    "ON table_detail.IdTableType = table_type.IdTableType;";
+            string queryStaffInfo = "SELECT * FROM table_type";
             dataGridViewTableTypeInfo.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
             ResetSubmitButton();
         }
@@ -41,7 +47,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             }
             else if (ButtonCreateTableTypeManager.Visible && !ButtonUpdateTableTypeManager.Visible)
             {
-                ButtonUpdateTableTypeManager.PerformClick();
+                ButtonCreateTableTypeManager.PerformClick();
             }
         }
         private bool CheckInputTableType()
@@ -52,24 +58,24 @@ namespace BiaManager.Forms.AdminForm.Tables
                 return false;
             }
 
-            if (!int.TryParse(textBoxTableName.Text, out int price) || price < 0)
+            if (!int.TryParse(textBoxTablePrice.Text, out int price) || price < 0)
             {
-                MessageFuctionConstans.WarningOK("Please enter a reasonable price level.!");
+                MessageFuctionConstans.WarningOK("Please enter a reasonable price level!");
                 return false;
             }
 
 
-            string queryCheckPhone = "SELECT * FROM items_category WHERE ItemCategory_Name = '" + textBoxTableName.Text + "'";
+            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "'";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
             if (checkQuery.Rows.Count > 0)
             {
-                MessageFuctionConstans.WarningOK("This Category name already exists. Please enter another name.");
+                MessageFuctionConstans.WarningOK("This TableType name already exists. Please enter another name.");
                 return false;
             }
             return true;
         }
-        private string GrenateNewIDCategory()
+        private string GrenateNewIDTableType()
         {
             string IdTableType;
             string queryGetQuantity = "SELECT * FROM table_type";
@@ -98,41 +104,85 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void ButtonUpdateTableTypeManager_Click(object sender, System.EventArgs e)
         {
+            if (!CheckInputTableType()) return;
+            string updateQuery = @"
+                       UPDATE table_type 
+                       SET TableType_Name = '" + textBoxTableName.Text + "'," +
+                       "TableType_Price = '" + textBoxTablePrice.Text + "' " +
+                       "WHERE IdTableType = '" + tempID + "';";
+            databaseService.ExecuteNonQuery(updateQuery);
 
+            MessageFuctionConstans.SuccessOK("Category updated successfully.");
+            ResetMouseEventArgs();
+            LoadDataTable();
         }
 
         private void ButtonDeleteTableTypeManager_Click(object sender, System.EventArgs e)
         {
+            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
+            if (result == DialogResult.OK)
+            {
+                string deleteQuery = @"
+                     DELETE FROM table_type WHERE IdTableType = '" + tempID + "';";
 
+                databaseService.ExecuteNonQuery(deleteQuery);
+
+                MessageFuctionConstans.SuccessOK("Type of Table deleted successfully.");
+
+                ResetFormInput();
+                LoadDataTable();
+            }
         }
 
         private void ButtonCreateTableTypeManager_Click(object sender, System.EventArgs e)
         {
             if (!CheckInputTableType()) return;
 
-            string idCategory = GrenateNewIDCategory();
+            string idTableType = GrenateNewIDTableType();
             string insertQuery = @"
-                      INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('" + idCategory + "','" + textBoxItemCategoryName.Text + "'); ";
+                      INSERT INTO table_type (IdTableType, TableType_Name,TableType_Price) VALUES ('" + idTableType + "','" + textBoxTableName.Text + "','" + textBoxTablePrice.Text + "'); ";
             databaseService.ExecuteNonQuery(insertQuery);
 
-            MessageFuctionConstans.SuccessOK("Category created successfully.");
-            ResetSubmitButton();
+            MessageFuctionConstans.SuccessOK("Table Type created successfully.");
+            ResetFormInput();
             LoadDataTable();
         }
 
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                iconButtonSearch.PerformClick();
+            }
         }
 
         private void iconButtonSearch_Click(object sender, System.EventArgs e)
         {
+            string searchQuery = @"
+        SELECT * FROM table_type 
+        WHERE  IdTableType LIKE '%" + textBoxSearch.Text + @"%' OR
+                TableType_Name LIKE '%" + textBoxSearch.Text + @"%' OR 
+              TableType_Price LIKE '%" + textBoxSearch.Text + @"%';";
 
+            // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
+            DataTable searchResult = databaseService.LoadDataTable(searchQuery);
+
+            // Hiển thị kết quả tìm kiếm trên giao diện người dùng, ví dụ: trong DataGridView
+            dataGridViewTableTypeInfo.DataSource = searchResult;
         }
 
         private void dataGridViewTableTypeInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            tempID = dataGridViewTableTypeInfo.CurrentRow.Cells[0].Value.ToString();
+            tempName = dataGridViewTableTypeInfo.CurrentRow.Cells[1].Value.ToString();
+            textBoxTableName.Text = tempName;
+            textBoxTablePrice.Text = dataGridViewTableTypeInfo.CurrentRow.Cells[2].Value.ToString();
+            ButtonUpdateTableTypeManager.Show();
+            ButtonDeleteTableTypeManager.Show();
+            ButtonUpdateTableTypeManager.Location = ButtonCreateTableTypeManager.Location;
+            ButtonDeleteTableTypeManager.Location = ButtonUpdateTableTypeManager.Location;
+            ButtonDeleteTableTypeManager.Location = new Point(ButtonDeleteTableTypeManager.Location.X, ButtonDeleteTableTypeManager.Location.Y + 70);
+            ButtonCreateTableTypeManager.Hide();
         }
 
         private void textBoxTablePrice_KeyPress(object sender, KeyPressEventArgs e)
