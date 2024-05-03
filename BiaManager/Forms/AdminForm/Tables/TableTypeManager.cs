@@ -126,6 +126,11 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void ButtonDeleteTableTypeManager_Click(object sender, System.EventArgs e)
         {
+            if (tempID == "TBT01" || tempID == "TBT02")
+            {
+                MessageFuctionConstans.WarningOK("You can't delete default table types.");
+                return;
+            }
             DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
             if (result == DialogResult.OK)
             {

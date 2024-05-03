@@ -218,6 +218,7 @@
             this.dataGridViewTablesAdd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTablesAdd_CellContentClick);
             this.dataGridViewTablesAdd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTablesAdd_CellContentClick);
             this.dataGridViewTablesAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTablesAdd_CellContentClick);
+            this.dataGridViewTablesAdd.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewTablesAdd_CellFormatting);
             // 
             // AddTables
             // 

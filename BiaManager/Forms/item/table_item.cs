@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MetroFramework.Controls;
+using System;
 using System.Windows.Forms;
-using MetroFramework.Controls;
 
 namespace BiaManager.Forms.item
 {
@@ -27,7 +20,8 @@ namespace BiaManager.Forms.item
 
         private string tableStatus;
 
-        public string TableStatus{
+        public string TableStatus
+        {
             get { return tableStatus; }
             set
             {
@@ -35,18 +29,14 @@ namespace BiaManager.Forms.item
                 UpdateStatusTable();
             }
         }
-        
-        
 
         private void PicBoxStatus_MouseHover(object sender, EventArgs e)
         {
             string statusText = GetStatusText();
-            myTip.SetToolTip(pic_status, $"Status: {statusText}");
         }
 
         private string GetStatusText()
         {
-            
             switch (TableStatus)
             {
                 case "empty":
@@ -63,31 +53,20 @@ namespace BiaManager.Forms.item
         private void UpdateStatusTable()
         {
             PictureBox picture_table = this.pic_table;
-            Button actionButton = this.Btn_Click_Table;
-            PictureBox picture_status = this.pic_status;
 
             switch (TableStatus)
             {
                 case "empty":
-                    picture_table.Image = Properties.Resources.bida1;
+                    //picture_table.Image = Properties;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
-                    actionButton.Text = "Order";
-                    picture_status.Image = Properties.Resources.Status_Empty;
-                    picture_status.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case "playing":
-                    picture_table.Image = Properties.Resources.bida2;
+                    //picture_table.Image = Properties.Resources.bida2;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
-                    actionButton.Text = "Pay";
-                    picture_status.Image = Properties.Resources.Status_Playing;
-                    picture_status.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case "repair":
-                    picture_table.Image = Properties.Resources.bida3;
+                    //picture_table.Image = Properties.Resources.bida3;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
-                    actionButton.Text = "Repairing";
-                    picture_status.Image = Properties.Resources.Status_Repair;
-                    picture_status.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 default:
                     break;
@@ -107,7 +86,7 @@ namespace BiaManager.Forms.item
                     //phat trien them
                     break;
                 case "repair":
-                    
+
                     MessageBox.Show("Bable is under repair, cannot play!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 default:
@@ -115,5 +94,14 @@ namespace BiaManager.Forms.item
             }
         }
 
+        private void StartTable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
