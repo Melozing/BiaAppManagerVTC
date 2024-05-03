@@ -207,6 +207,11 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void ButtonDelete_Click(object sender, System.EventArgs e)
         {
+            if (tempID == "IHour")
+            {
+                MessageFuctionConstans.WarningOK("You can't delete default table types.");
+                return;
+            }
             DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this item?");
             if (result == DialogResult.OK)
             {
@@ -272,14 +277,17 @@ namespace BiaManager.Forms.AdminForm.Items
             textBoxItemName.Text = tempName;
             textBoxItemPrice.Text = dataGridViewAddItem.CurrentRow.Cells[2].Value.ToString();
 
-            byte[] imageData = (byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value;
-
-            using (MemoryStream ms = new MemoryStream(imageData))
+            if ((byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value != null)
             {
-                pictureBoxItem.Image = Image.FromStream(ms);
-                tempImg = pictureBoxItem.Image;
-                pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
+                byte[] imageData = (byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value;
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    pictureBoxItem.Image = Image.FromStream(ms);
+                    tempImg = pictureBoxItem.Image;
+                    pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
             }
+
             string selectedTableType = dataGridViewAddItem.CurrentRow.Cells[4].Value.ToString();
             comboBoxItemCategory.SelectedItem = selectedTableType;
 
@@ -325,7 +333,7 @@ namespace BiaManager.Forms.AdminForm.Items
         private void dataGridViewAddItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Chỉ áp dụng cho cột chứa hình ảnh
-            if (dataGridViewAddItem.Columns[e.ColumnIndex].Name == "item_image")
+            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name != "item_image")
             {
                 // Kiểm tra nếu giá trị của ô không rỗng và là mảng byte
                 if (e.Value != null && e.Value.GetType() == typeof(byte[]))

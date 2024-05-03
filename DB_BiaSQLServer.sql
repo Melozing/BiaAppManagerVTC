@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[items_menu] (
     [item_Name] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [IdItemCategory] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [item_Price] int NOT NULL,
-    [item_image] varbinary(max) NOT NULL,
+    [item_image] varbinary(max) NULL,
     PRIMARY KEY CLUSTERED ([IdItem]),
     CONSTRAINT [FK_items_menu_items_category] FOREIGN KEY ([IdItemCategory]) REFERENCES [dbo].[items_category] ([IdItemCategory])
 );
@@ -80,4 +80,11 @@ CREATE TABLE [dbo].[user_info] (
     CONSTRAINT [FK_user_info_user] FOREIGN KEY ([idUser]) REFERENCES [dbo].[user_account] ([IdUser])
 );
 GO
+
 INSERT INTO user_account (IdUser,UserName, UserPassword, UserRole) VALUES ('U0', 'admin', 'admin123', 0);
+INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TBT01', 'Carom billiards', 25000);
+INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TBT02', 'Pocket Billiards', 30000);
+INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('ICD', 'Other');
+INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price) VALUES ('IHour', 'Playtime', 'ICD', 30000);
+
+

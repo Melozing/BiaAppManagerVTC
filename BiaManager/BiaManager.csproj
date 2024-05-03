@@ -114,6 +114,12 @@
     <Compile Include="Components\FoodWidget.Designer.cs">
       <DependentUpon>FoodWidget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\TableWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\TableWidget.Designer.cs">
+      <DependentUpon>TableWidget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm\Items\AddItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,11 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Script\ConnectDatabase.cs" />
     <Compile Include="Script\Contants\MessageNameContants.cs" />
     <Compile Include="Script\MainFunction.cs" />
@@ -193,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\FoodWidget.resx">
       <DependentUpon>FoodWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\TableWidget.resx">
+      <DependentUpon>TableWidget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm\Items\AddItems.resx">
       <DependentUpon>AddItems.cs</DependentUpon>
@@ -227,14 +241,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -280,7 +289,7 @@
     <None Include="Resources\8713724.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bida1.png" />
+    <None Include="Resources\pocketBilliards.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\com-tam.jpg" />
@@ -304,10 +313,7 @@
     <None Include="Resources\Billiard Ball.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bida2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bida3.png" />
+    <None Include="Resources\caromBilliards.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\status_table\Status_Empty.png" />
@@ -318,6 +324,8 @@
   <ItemGroup>
     <None Include="Resources\status_table\Status_Repair.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\defaultTable.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

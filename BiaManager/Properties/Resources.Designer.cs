@@ -113,49 +113,19 @@ namespace BiaManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bida1 {
-            get {
-                object obj = ResourceManager.GetObject("bida1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bida11 {
-            get {
-                object obj = ResourceManager.GetObject("bida11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bida2 {
-            get {
-                object obj = ResourceManager.GetObject("bida2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bida3 {
-            get {
-                object obj = ResourceManager.GetObject("bida3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Billiard_Ball {
             get {
                 object obj = ResourceManager.GetObject("Billiard Ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caromBilliards {
+            get {
+                object obj = ResourceManager.GetObject("caromBilliards", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +156,16 @@ namespace BiaManager.Properties {
         internal static System.Drawing.Bitmap com_tam {
             get {
                 object obj = ResourceManager.GetObject("com-tam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap defaultTable {
+            get {
+                object obj = ResourceManager.GetObject("defaultTable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +246,16 @@ namespace BiaManager.Properties {
         internal static System.Drawing.Bitmap Photo_Gallery {
             get {
                 object obj = ResourceManager.GetObject("Photo Gallery", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pocketBilliards {
+            get {
+                object obj = ResourceManager.GetObject("pocketBilliards", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

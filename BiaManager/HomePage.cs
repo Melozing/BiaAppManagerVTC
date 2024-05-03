@@ -90,6 +90,11 @@ namespace BiaManager
             currentUserRole = role;
         }
 
+        public void ShowDetailPanel(string query, Form form)
+        {
+
+        }
+
 
         //Struct Color
 

@@ -1,4 +1,5 @@
 ﻿using BiaManager.Script;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -70,6 +71,7 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void LoadDataTable()
         {
             string queryStaffInfo = "SELECT table_detail.IdTable, table_detail.TableNumber, " +
+                "table_detail.Status," +
                 "table_type.TableType_Name, " +
                 "table_type.TableType_Price " +
                 "FROM table_detail JOIN table_type " +
@@ -80,6 +82,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Số bàn";
             dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Loại bàn";
             dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Giá";
+            dataGridViewTablesAdd.Columns["Status"].HeaderText = "Tình trạng";
             ResetSubmitButton();
         }
         private string GrenateNewID()
@@ -234,6 +237,30 @@ namespace BiaManager.Forms.AdminForm.Tables
             if (e.KeyCode == Keys.Enter)
             {
                 CheckSubmitButton();
+            }
+        }
+
+        private void dataGridViewTablesAdd_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewTablesAdd.Columns["Status"].Index && e.Value != null)
+            {
+                int status = Convert.ToInt32(e.Value);
+                switch (status)
+                {
+                    case 0:
+                        e.Value = "empty";
+                        break;
+                    case 1:
+                        e.Value = "playing";
+                        break;
+                    case 2:
+                        e.Value = "repairing";
+                        break;
+                    default:
+                        e.Value = "unknown";
+                        break;
+                }
+                e.FormattingApplied = true;
             }
         }
     }
