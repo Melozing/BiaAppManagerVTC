@@ -51,10 +51,9 @@
             this.panelSearchContainer.Controls.Add(this.iconButtonSearch);
             this.panelSearchContainer.Controls.Add(this.textBoxSearch);
             this.panelSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearchContainer.Location = new System.Drawing.Point(0, 299);
-            this.panelSearchContainer.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSearchContainer.Location = new System.Drawing.Point(0, 243);
             this.panelSearchContainer.Name = "panelSearchContainer";
-            this.panelSearchContainer.Size = new System.Drawing.Size(810, 37);
+            this.panelSearchContainer.Size = new System.Drawing.Size(608, 30);
             this.panelSearchContainer.TabIndex = 10;
             // 
             // iconButtonSearch
@@ -67,10 +66,9 @@
             this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearch.IconSize = 30;
-            this.iconButtonSearch.Location = new System.Drawing.Point(594, 0);
-            this.iconButtonSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonSearch.Location = new System.Drawing.Point(446, 0);
             this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Size = new System.Drawing.Size(44, 37);
+            this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
             this.iconButtonSearch.TabIndex = 13;
             this.iconButtonSearch.UseVisualStyleBackColor = true;
             this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
@@ -78,10 +76,9 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearch.Location = new System.Drawing.Point(236, 7);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Location = new System.Drawing.Point(177, 6);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(348, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(262, 20);
             this.textBoxSearch.TabIndex = 12;
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
@@ -97,9 +94,8 @@
             this.panelLoginContentContainerChild.Controls.Add(this.TablePriceLabel);
             this.panelLoginContentContainerChild.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoginContentContainerChild.Location = new System.Drawing.Point(0, 0);
-            this.panelLoginContentContainerChild.Margin = new System.Windows.Forms.Padding(4);
             this.panelLoginContentContainerChild.Name = "panelLoginContentContainerChild";
-            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(810, 299);
+            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(608, 243);
             this.panelLoginContentContainerChild.TabIndex = 9;
             // 
             // ButtonDeleteTableTypeManager
@@ -114,10 +110,9 @@
             this.ButtonDeleteTableTypeManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonDeleteTableTypeManager.IconColor = System.Drawing.Color.Black;
             this.ButtonDeleteTableTypeManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDeleteTableTypeManager.Location = new System.Drawing.Point(387, 223);
-            this.ButtonDeleteTableTypeManager.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonDeleteTableTypeManager.Location = new System.Drawing.Point(290, 181);
             this.ButtonDeleteTableTypeManager.Name = "ButtonDeleteTableTypeManager";
-            this.ButtonDeleteTableTypeManager.Size = new System.Drawing.Size(349, 54);
+            this.ButtonDeleteTableTypeManager.Size = new System.Drawing.Size(262, 54);
             this.ButtonDeleteTableTypeManager.TabIndex = 54;
             this.ButtonDeleteTableTypeManager.Text = "Delete Table Type";
             this.ButtonDeleteTableTypeManager.UseVisualStyleBackColor = false;
@@ -135,10 +130,9 @@
             this.ButtonUpdateTableTypeManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonUpdateTableTypeManager.IconColor = System.Drawing.Color.Black;
             this.ButtonUpdateTableTypeManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdateTableTypeManager.Location = new System.Drawing.Point(387, 153);
-            this.ButtonUpdateTableTypeManager.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonUpdateTableTypeManager.Location = new System.Drawing.Point(290, 124);
             this.ButtonUpdateTableTypeManager.Name = "ButtonUpdateTableTypeManager";
-            this.ButtonUpdateTableTypeManager.Size = new System.Drawing.Size(349, 54);
+            this.ButtonUpdateTableTypeManager.Size = new System.Drawing.Size(262, 54);
             this.ButtonUpdateTableTypeManager.TabIndex = 53;
             this.ButtonUpdateTableTypeManager.Text = "Update Table Type";
             this.ButtonUpdateTableTypeManager.UseVisualStyleBackColor = false;
@@ -156,10 +150,9 @@
             this.ButtonCreateTableTypeManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonCreateTableTypeManager.IconColor = System.Drawing.Color.Black;
             this.ButtonCreateTableTypeManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonCreateTableTypeManager.Location = new System.Drawing.Point(387, 153);
-            this.ButtonCreateTableTypeManager.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonCreateTableTypeManager.Location = new System.Drawing.Point(290, 124);
             this.ButtonCreateTableTypeManager.Name = "ButtonCreateTableTypeManager";
-            this.ButtonCreateTableTypeManager.Size = new System.Drawing.Size(349, 54);
+            this.ButtonCreateTableTypeManager.Size = new System.Drawing.Size(262, 54);
             this.ButtonCreateTableTypeManager.TabIndex = 52;
             this.ButtonCreateTableTypeManager.Text = "Create Table Type";
             this.ButtonCreateTableTypeManager.UseVisualStyleBackColor = false;
@@ -168,10 +161,9 @@
             // textBoxTablePrice
             // 
             this.textBoxTablePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTablePrice.Location = new System.Drawing.Point(388, 112);
-            this.textBoxTablePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTablePrice.Location = new System.Drawing.Point(291, 91);
             this.textBoxTablePrice.Name = "textBoxTablePrice";
-            this.textBoxTablePrice.Size = new System.Drawing.Size(348, 22);
+            this.textBoxTablePrice.Size = new System.Drawing.Size(262, 20);
             this.textBoxTablePrice.TabIndex = 46;
             this.textBoxTablePrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxTablePrice_KeyDown);
             this.textBoxTablePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTablePrice_KeyPress);
@@ -179,10 +171,9 @@
             // textBoxTableName
             // 
             this.textBoxTableName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTableName.Location = new System.Drawing.Point(388, 72);
-            this.textBoxTableName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTableName.Location = new System.Drawing.Point(291, 58);
             this.textBoxTableName.Name = "textBoxTableName";
-            this.textBoxTableName.Size = new System.Drawing.Size(348, 22);
+            this.textBoxTableName.Size = new System.Drawing.Size(262, 20);
             this.textBoxTableName.TabIndex = 45;
             this.textBoxTableName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxTableName_KeyDown);
             // 
@@ -192,10 +183,9 @@
             this.TableNameLabel.AutoSize = true;
             this.TableNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TableNameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TableNameLabel.Location = new System.Drawing.Point(75, 67);
-            this.TableNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TableNameLabel.Location = new System.Drawing.Point(56, 54);
             this.TableNameLabel.Name = "TableNameLabel";
-            this.TableNameLabel.Size = new System.Drawing.Size(223, 29);
+            this.TableNameLabel.Size = new System.Drawing.Size(177, 24);
             this.TableNameLabel.TabIndex = 39;
             this.TableNameLabel.Text = "Table Type Name";
             // 
@@ -205,10 +195,9 @@
             this.TablePriceLabel.AutoSize = true;
             this.TablePriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TablePriceLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TablePriceLabel.Location = new System.Drawing.Point(75, 107);
-            this.TablePriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TablePriceLabel.Location = new System.Drawing.Point(56, 87);
             this.TablePriceLabel.Name = "TablePriceLabel";
-            this.TablePriceLabel.Size = new System.Drawing.Size(215, 29);
+            this.TablePriceLabel.Size = new System.Drawing.Size(170, 24);
             this.TablePriceLabel.TabIndex = 40;
             this.TablePriceLabel.Text = "Table Type Price";
             // 
@@ -220,11 +209,12 @@
             this.dataGridViewTableTypeInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewTableTypeInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTableTypeInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTableTypeInfo.Location = new System.Drawing.Point(0, 336);
+            this.dataGridViewTableTypeInfo.Location = new System.Drawing.Point(0, 273);
+            this.dataGridViewTableTypeInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewTableTypeInfo.Name = "dataGridViewTableTypeInfo";
             this.dataGridViewTableTypeInfo.RowHeadersWidth = 51;
             this.dataGridViewTableTypeInfo.RowTemplate.Height = 24;
-            this.dataGridViewTableTypeInfo.Size = new System.Drawing.Size(810, 17);
+            this.dataGridViewTableTypeInfo.Size = new System.Drawing.Size(608, 14);
             this.dataGridViewTableTypeInfo.TabIndex = 11;
             this.dataGridViewTableTypeInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTableTypeInfo_CellContentClick);
             this.dataGridViewTableTypeInfo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTableTypeInfo_CellContentClick);
@@ -232,13 +222,14 @@
             // 
             // TableTypeManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(810, 353);
+            this.ClientSize = new System.Drawing.Size(608, 287);
             this.Controls.Add(this.dataGridViewTableTypeInfo);
             this.Controls.Add(this.panelSearchContainer);
             this.Controls.Add(this.panelLoginContentContainerChild);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TableTypeManager";
             this.Text = "TablesManager";
             this.panelSearchContainer.ResumeLayout(false);

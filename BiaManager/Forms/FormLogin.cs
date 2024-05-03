@@ -72,12 +72,13 @@ namespace BiaManager.Forms
                     Account account = new Account();
                     account.Username = reader.GetString(0);
                     account.Password = reader.GetString(1);
+                    account.UserRole = reader.GetInt32(3);
                     return account;
                 });
 
                 if (accounts.Count > 0)
                 {
-                    OnLoginSuccessfully();
+                    OnLoginSuccessfully(accounts[0]);
                 }
                 else
                 {
@@ -86,10 +87,11 @@ namespace BiaManager.Forms
             }
         }
 
-        private void OnLoginSuccessfully()
+        private void OnLoginSuccessfully(Account account)
         {
             MessageFuctionConstans.WarningOK("Login Successfully!");
-            HomePage homePage = new HomePage();
+            HomePage homePage = HomePage.Instance;
+            homePage.GetUserRole(account.UserRole);
             homePage.Show();
             this.Hide();
         }

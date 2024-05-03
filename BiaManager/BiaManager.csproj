@@ -114,6 +114,12 @@
     <Compile Include="Components\FoodWidget.Designer.cs">
       <DependentUpon>FoodWidget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForm\Items\AddItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm\Items\AddItems.Designer.cs">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm\Items\ItemCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Forms\AdminForm\Staff\StaffManager.Designer.cs">
       <DependentUpon>StaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForm\Tables\AddTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm\Tables\AddTables.Designer.cs">
+      <DependentUpon>AddTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForm\Tables\TableTypeManager.cs">
       <SubType>Form</SubType>
@@ -182,11 +194,17 @@
     <EmbeddedResource Include="Components\FoodWidget.resx">
       <DependentUpon>FoodWidget.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForm\Items\AddItems.resx">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm\Items\ItemCategory.resx">
       <DependentUpon>ItemCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm\Staff\StaffManager.resx">
       <DependentUpon>StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForm\Tables\AddTables.resx">
+      <DependentUpon>AddTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm\Tables\TableTypeManager.resx">
       <DependentUpon>TableTypeManager.cs</DependentUpon>
