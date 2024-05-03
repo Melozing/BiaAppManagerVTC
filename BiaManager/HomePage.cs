@@ -379,24 +379,28 @@ namespace BiaManager
 
         private void ItemCategory_Click(object sender, EventArgs e)
         {
+            ActivateButton(MenuManagement, RGBColor.color3);
             paneDetail.Hide();
             OpenChildForm(new ItemCategory());
         }
 
         private void TablesDetail_Click(object sender, EventArgs e)
         {
+            ActivateButton(TablesManagement, RGBColor.color9);
             paneDetail.Hide();
             OpenChildForm(new AddTables());
         }
 
         private void TablesType_Click(object sender, EventArgs e)
         {
+            ActivateButton(TablesManagement, RGBColor.color9);
             paneDetail.Hide();
             OpenChildForm(new TableTypeManager());
         }
 
         private void ItemMenu_Click(object sender, EventArgs e)
         {
+            ActivateButton(MenuManagement, RGBColor.color3);
             paneDetail.Hide();
             OpenChildForm(new AddItems());
         }

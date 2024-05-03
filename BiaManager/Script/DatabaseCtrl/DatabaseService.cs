@@ -105,5 +105,17 @@ namespace BiaManager.Script
             }
         }
 
+        public void InsertImageData(string query, byte[] imageData)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ImageData", imageData);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

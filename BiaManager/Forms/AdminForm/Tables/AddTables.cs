@@ -26,7 +26,6 @@ namespace BiaManager.Forms.AdminForm.Tables
             tempNameTypeTable = comboBoxTableType.SelectedItem.ToString();
 
             tempIDTypeTable = tableTypeDictionary.FirstOrDefault(x => x.Value == tempNameTypeTable).Key;
-
         }
 
         private void AddTables_Load(object sender, System.EventArgs e)
@@ -76,6 +75,11 @@ namespace BiaManager.Forms.AdminForm.Tables
                 "FROM table_detail JOIN table_type " +
                 "ON table_detail.IdTableType = table_type.IdTableType;";
             dataGridViewTablesAdd.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
+
+            dataGridViewTablesAdd.Columns["IdTable"].HeaderText = "Mã bàn";
+            dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Số bàn";
+            dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Loại bàn";
+            dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Giá";
             ResetSubmitButton();
         }
         private string GrenateNewID()
@@ -162,7 +166,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             databaseService.ExecuteNonQuery(updateQuery);
 
             MessageFuctionConstans.SuccessOK("Category updated successfully.");
-            ResetMouseEventArgs();
+            ResetFormInput();
             LoadDataTable();
         }
 
