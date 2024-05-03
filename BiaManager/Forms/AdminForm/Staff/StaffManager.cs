@@ -131,6 +131,14 @@ namespace BiaManager.Forms.AdminForm.Staff
                 "ON user_account.idUser = user_info.idUser;";
 
             dataGridViewStaffInfo.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
+
+            dataGridViewStaffInfo.Columns["idUser"].HeaderText = "User ID";
+            dataGridViewStaffInfo.Columns["Username"].HeaderText = "Username";
+            dataGridViewStaffInfo.Columns["UserPassword"].HeaderText = "Password";
+            dataGridViewStaffInfo.Columns["User_FullName"].HeaderText = "Full Name";
+            dataGridViewStaffInfo.Columns["User_Phone"].HeaderText = "Phone";
+            dataGridViewStaffInfo.Columns["User_BankAccountNumber"].HeaderText = "Bank Account Number";
+            dataGridViewStaffInfo.Columns["User_BankName"].HeaderText = "Bank Name";
             ResetSubmitButton();
         }
 
