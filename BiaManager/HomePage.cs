@@ -12,12 +12,14 @@ namespace BiaManager
 {
     public partial class HomePage : Form
     {
+        private static HomePage instance;
+
+        private int currentUserRole;
+
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        private bool menuItemExpand = false;
-        private bool menuTableExpand = false;
         private bool sidebarExpand = true;
 
         private Timer transitionTimer;
@@ -70,6 +72,24 @@ namespace BiaManager
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        public static HomePage Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new HomePage();
+                }
+                return instance;
+            }
+        }
+
+        public void GetUserRole(int role)
+        {
+            currentUserRole = role;
+        }
+
 
         //Struct Color
 
@@ -365,7 +385,8 @@ namespace BiaManager
 
         private void TablesDetail_Click(object sender, EventArgs e)
         {
-
+            paneDetail.Hide();
+            OpenChildForm(new AddTables());
         }
 
         private void TablesType_Click(object sender, EventArgs e)
@@ -376,7 +397,36 @@ namespace BiaManager
 
         private void ItemMenu_Click(object sender, EventArgs e)
         {
+            paneDetail.Hide();
+            OpenChildForm(new AddItems());
+        }
 
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            if (currentUserRole == 0)
+            {
+                Home.Show();
+                Tables.Show();
+                Menu.Show();
+                Bills.Show();
+                UserManagement.Show();
+                MenuManagement.Show();
+                TablesManagement.Show();
+                Setting.Show();
+                User.Hide();
+            }
+            else
+            {
+                Home.Show();
+                Tables.Show();
+                Menu.Show();
+                Bills.Show();
+                UserManagement.Hide();
+                MenuManagement.Hide();
+                TablesManagement.Hide();
+                Setting.Show();
+                User.Show();
+            }
         }
     }
 }

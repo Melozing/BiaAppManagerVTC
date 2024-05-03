@@ -299,10 +299,10 @@ namespace BiaManager.Forms.AdminForm.Staff
         private void iconButtonSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = @"
-        SELECT ua.UserName, ui.User_FullName, ui.User_Phone, ui.User_BankAccountNumber, ui.User_BankName
-        FROM user_account ua
-        JOIN user_info ui ON ua.IdUser = ui.IdUser
-        WHERE ua.UserName LIKE '%" + textBoxSearch.Text + @"%' OR
+            SELECT ua.UserName, ui.User_FullName, ui.User_Phone, ui.User_BankAccountNumber, ui.User_BankName
+            FROM user_account ua
+            JOIN user_info ui ON ua.IdUser = ui.IdUser
+            WHERE ua.UserName LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_FullName LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_Phone LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_BankAccountNumber LIKE '%" + textBoxSearch.Text + @"%' OR
@@ -320,7 +320,7 @@ namespace BiaManager.Forms.AdminForm.Staff
         {
             if (!CheckUserInputCreate()) return;
 
-            string idUser = GrenateNewIDStaff();
+            string idUser = GrenateNewID();
             // Thực hiện truy vấn INSERT cho bảng user_account và user_info
             string insertQuery = @"DECLARE @idUser INT;
                       INSERT INTO user_account (IdUser, UserName, UserPassword, UserRole) VALUES ('" + idUser + "', '" + textBoxUsername.Text + "', '" + textBoxPassword.Text + "', 1); " +
@@ -333,15 +333,29 @@ namespace BiaManager.Forms.AdminForm.Staff
             ResetFormAddStaff();
             LoadStaff();
         }
-        private string GrenateNewIDStaff()
+
+        private string GrenateNewID()
         {
-            string idUser;
-            string queryGetQuantity = "SELECT * FROM user_info";
-            DataTable GetQuantity = DatabaseService.Instance.LoadDataTable(queryGetQuantity);
-            int num = GetQuantity.Rows.Count + 1;
-            string timestamp = DateTime.Now.ToString("yyMMdd");
-            idUser = "U" + num + timestamp;
-            return idUser;
+            // Tạo một UUID bằng cách sử dụng hàm NEWID() trong SQL Server
+            string queryGetUUID = "SELECT NEWID() AS UUID";
+            string uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+
+            // Chỉ lấy 8 ký tự đầu của UUID để làm ID
+            string newId = "U" + uuid.Substring(0, 7);
+
+            // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
+            string queryCheckExist = "SELECT COUNT(*) FROM user_info WHERE idUser = '" + newId + "'";
+            int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+
+            // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
+            while (count > 0)
+            {
+                uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+                newId = "U" + uuid.Substring(0, 7);
+                count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+            }
+
+            return newId;
         }
 
         private bool CheckUserInputUpdate()

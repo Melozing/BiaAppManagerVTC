@@ -4,7 +4,7 @@
     {
         private string username;
         private string password;
-        private string userRole;
+        private int userRole;
         private string idUser;
         private string user_FullName;
         private string user_Phone;
@@ -22,7 +22,7 @@
 
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public string UserRole { get => userRole; set => userRole = value; }
+        public int UserRole { get => userRole; set => userRole = value; }
         public string IdUser { get => idUser; set => idUser = value; }
         public string User_FullName { get => user_FullName; set => user_FullName = value; }
         public string User_Phone { get => user_Phone; set => user_Phone = value; }

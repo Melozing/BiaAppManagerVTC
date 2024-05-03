@@ -88,9 +88,22 @@ namespace BiaManager.Script
                 {
                     connection.Open();
                     object result = command.ExecuteScalar();
-                    return (T)Convert.ChangeType(result, typeof(T));
+
+                    if (result == DBNull.Value)
+                    {
+                        return default(T);
+                    }
+                    else if (typeof(T) == typeof(string))
+                    {
+                        return (T)(object)result.ToString();
+                    }
+                    else
+                    {
+                        return (T)Convert.ChangeType(result, typeof(T));
+                    }
                 }
             }
         }
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BiaManager.Script;
-using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -30,11 +29,6 @@ namespace BiaManager.Forms.AdminForm.Tables
         }
         private void LoadDataTable()
         {
-            //string queryStaffInfo = "SELECT table_detail.IdTable, table_detail.TableNumber, " +
-            //    "table_type.TableType_Name, " +
-            //    "table_type.TableType_Price " +
-            //    "FROM table_detail JOIN table_type " +
-            //    "ON table_detail.IdTableType = table_type.IdTableType;";
             string queryStaffInfo = "SELECT * FROM table_type";
             dataGridViewTableTypeInfo.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
             ResetSubmitButton();
@@ -75,15 +69,28 @@ namespace BiaManager.Forms.AdminForm.Tables
             }
             return true;
         }
-        private string GrenateNewIDTableType()
+        private string GrenateNewID()
         {
-            string IdTableType;
-            string queryGetQuantity = "SELECT * FROM table_type";
-            DataTable GetQuantity = DatabaseService.Instance.LoadDataTable(queryGetQuantity);
-            int num = GetQuantity.Rows.Count + 1;
-            string timestamp = DateTime.Now.ToString("yyMMdd");
-            IdTableType = "TBT" + num + timestamp;
-            return IdTableType;
+            // Tạo một UUID bằng cách sử dụng hàm NEWID() trong SQL Server
+            string queryGetUUID = "SELECT NEWID() AS UUID";
+            string uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+
+            // Chỉ lấy 8 ký tự đầu của UUID để làm ID
+            string newId = "TBT" + uuid.Substring(0, 7);
+
+            // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
+            string queryCheckExist = "SELECT COUNT(*) FROM table_type WHERE IdTableType = '" + newId + "'";
+            int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+
+            // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
+            while (count > 0)
+            {
+                uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+                newId = "TBT" + uuid.Substring(0, 7);
+                count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+            }
+
+            return newId;
         }
         private void textBoxTableName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -138,7 +145,7 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             if (!CheckInputTableType()) return;
 
-            string idTableType = GrenateNewIDTableType();
+            string idTableType = GrenateNewID();
             string insertQuery = @"
                       INSERT INTO table_type (IdTableType, TableType_Name,TableType_Price) VALUES ('" + idTableType + "','" + textBoxTableName.Text + "','" + textBoxTablePrice.Text + "'); ";
             databaseService.ExecuteNonQuery(insertQuery);
@@ -159,10 +166,10 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void iconButtonSearch_Click(object sender, System.EventArgs e)
         {
             string searchQuery = @"
-        SELECT * FROM table_type 
-        WHERE  IdTableType LIKE '%" + textBoxSearch.Text + @"%' OR
-                TableType_Name LIKE '%" + textBoxSearch.Text + @"%' OR 
-              TableType_Price LIKE '%" + textBoxSearch.Text + @"%';";
+            SELECT * FROM table_type 
+            WHERE  IdTableType LIKE '%" + textBoxSearch.Text + @"%' OR
+            TableType_Name LIKE '%" + textBoxSearch.Text + @"%' OR 
+            TableType_Price LIKE '%" + textBoxSearch.Text + @"%';";
 
             // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);

@@ -59,15 +59,28 @@ namespace BiaManager.Forms.AdminForm.Items
             dataGridViewItemsCategory.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
             ResetSubmitButton();
         }
-        private string GrenateNewIDCategory()
+        private string GrenateNewID()
         {
-            string idUser;
-            string queryGetQuantity = "SELECT * FROM items_category";
-            DataTable GetQuantity = DatabaseService.Instance.LoadDataTable(queryGetQuantity);
-            int num = GetQuantity.Rows.Count + 1;
-            string timestamp = DateTime.Now.ToString("yyMMdd");
-            idUser = "IC" + num + timestamp;
-            return idUser;
+            // Tạo một UUID bằng cách sử dụng hàm NEWID() trong SQL Server
+            string queryGetUUID = "SELECT NEWID() AS UUID";
+            string uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+
+            // Chỉ lấy 8 ký tự đầu của UUID để làm ID
+            string newId = "IC" + uuid.Substring(0, 7);
+
+            // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
+            string queryCheckExist = "SELECT COUNT(*) FROM items_category WHERE IdItemCategory = '" + newId + "'";
+            int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+
+            // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
+            while (count > 0)
+            {
+                uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+                newId = "IC" + uuid.Substring(0, 7);
+                count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+            }
+
+            return newId;
         }
         private void ResetFormAddCategory()
         {
@@ -93,7 +106,7 @@ namespace BiaManager.Forms.AdminForm.Items
         {
             if (!CheckInputCategory()) return;
 
-            string idCategory = GrenateNewIDCategory();
+            string idCategory = GrenateNewID();
             string insertQuery = @"
                       INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('" + idCategory + "','" + textBoxItemCategoryName.Text + "'); ";
             databaseService.ExecuteNonQuery(insertQuery);
