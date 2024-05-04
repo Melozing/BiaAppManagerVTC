@@ -5,6 +5,7 @@ using BiaManager.Forms.AdminForm.Tables;
 using BiaManager.Script;
 using FontAwesome.Sharp;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -23,7 +24,6 @@ namespace BiaManager
         private bool sidebarExpand = true;
 
         private Timer transitionTimer;
-        private const int animationSpeed = 10;
 
         private string tempHideIconMenuText;
         private string tempHomeText;
@@ -90,11 +90,39 @@ namespace BiaManager
             currentUserRole = role;
         }
 
-        public void ShowDetailPanel(string query, Form form)
+        public void ShowDetailPanel(string query, string idTarget)
         {
+            FormBill form = new FormBill();
 
+            DataTable table = DatabaseService.Instance.LoadDataTable(query);
+            form.LoadDataGridView(table);
+
+            form.TopLevel = false;
+            panelDetail.Dock = DockStyle.Right;
+            ShowPanelDetail();
+            panelDetail.Controls.Add(form);
+            panelContent.Tag = form;
+            panelContent.Width = 400;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.BringToFront();
+            form.Show();
+        }
+        private void ShowPanelDetail()
+        {
+            panelDetail.Show();
         }
 
+        public void HidePanelDetail()
+        {
+            panelDetail.Hide();
+        }
+
+        public int ResizePanelDetail(int num)
+        {
+            panelDetail.Width += num;
+            return panelDetail.Width;
+        }
 
         //Struct Color
 
@@ -169,7 +197,7 @@ namespace BiaManager
         private void Home_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color1);
-            paneDetail.Hide();
+            panelDetail.Hide();
         }
 
         private void Tables_Click(object sender, System.EventArgs e)
@@ -177,7 +205,7 @@ namespace BiaManager
             try
             {
                 ActivateButton(sender, RGBColor.color2);
-                paneDetail.Hide();
+                panelDetail.Hide();
                 OpenChildForm(new FormTables());
             }
             catch (Exception ex)
@@ -189,14 +217,14 @@ namespace BiaManager
         private void Menu_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color3);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new FormMenu());
         }
 
         private void Bills_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color4);
-            paneDetail.Show();
+            panelDetail.Show();
         }
 
         private void User_Click(object sender, System.EventArgs e)
@@ -212,7 +240,7 @@ namespace BiaManager
         private void UserManagement_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color7);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new StaffManager());
         }
 
@@ -385,28 +413,28 @@ namespace BiaManager
         private void ItemCategory_Click(object sender, EventArgs e)
         {
             ActivateButton(MenuManagement, RGBColor.color3);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new ItemCategory());
         }
 
         private void TablesDetail_Click(object sender, EventArgs e)
         {
             ActivateButton(TablesManagement, RGBColor.color9);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new AddTables());
         }
 
         private void TablesType_Click(object sender, EventArgs e)
         {
             ActivateButton(TablesManagement, RGBColor.color9);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new TableTypeManager());
         }
 
         private void ItemMenu_Click(object sender, EventArgs e)
         {
             ActivateButton(MenuManagement, RGBColor.color3);
-            paneDetail.Hide();
+            panelDetail.Hide();
             OpenChildForm(new AddItems());
         }
 

@@ -59,7 +59,7 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.PanelContentParent = new System.Windows.Forms.Panel();
-            this.paneDetail = new System.Windows.Forms.Panel();
+            this.panelDetail = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
@@ -532,7 +532,7 @@
             this.MaximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MaximizeBtn.FlatAppearance.BorderSize = 0;
             this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeBtn.IconChar = FontAwesome.Sharp.IconChar.Maximize;
+            this.MaximizeBtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.MaximizeBtn.IconColor = System.Drawing.Color.White;
             this.MaximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MaximizeBtn.IconSize = 23;
@@ -549,7 +549,7 @@
             this.MinimizeIconButton.FlatAppearance.BorderSize = 0;
             this.MinimizeIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeIconButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MinimizeIconButton.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.MinimizeIconButton.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.MinimizeIconButton.IconColor = System.Drawing.Color.White;
             this.MinimizeIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MinimizeIconButton.IconSize = 23;
@@ -613,7 +613,7 @@
             // 
             // PanelContentParent
             // 
-            this.PanelContentParent.Controls.Add(this.paneDetail);
+            this.PanelContentParent.Controls.Add(this.panelDetail);
             this.PanelContentParent.Controls.Add(this.panelContent);
             this.PanelContentParent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContentParent.Location = new System.Drawing.Point(253, 85);
@@ -621,14 +621,14 @@
             this.PanelContentParent.Size = new System.Drawing.Size(547, 611);
             this.PanelContentParent.TabIndex = 3;
             // 
-            // paneDetail
+            // panelDetail
             // 
-            this.paneDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
-            this.paneDetail.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneDetail.Location = new System.Drawing.Point(347, 0);
-            this.paneDetail.Name = "paneDetail";
-            this.paneDetail.Size = new System.Drawing.Size(200, 611);
-            this.paneDetail.TabIndex = 0;
+            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
+            this.panelDetail.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelDetail.Location = new System.Drawing.Point(222, 0);
+            this.panelDetail.Name = "panelDetail";
+            this.panelDetail.Size = new System.Drawing.Size(325, 611);
+            this.panelDetail.TabIndex = 0;
             // 
             // panelContent
             // 
@@ -714,7 +714,7 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panelMenuParent;
         private System.Windows.Forms.Timer sidebarTransition;
-        private System.Windows.Forms.Panel paneDetail;
+        private System.Windows.Forms.Panel panelDetail;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
         private FontAwesome.Sharp.IconButton ItemCategory;

@@ -34,8 +34,8 @@
             this.IconButtonOrder = new FontAwesome.Sharp.IconButton();
             this.PictureBoxTable = new System.Windows.Forms.PictureBox();
             this.PanelTableName = new System.Windows.Forms.Panel();
-            this.LabelTableName = new System.Windows.Forms.Label();
             this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
+            this.LabelTableName = new System.Windows.Forms.Label();
             this.PanelTableMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTable)).BeginInit();
             this.PanelTableName.SuspendLayout();
@@ -124,7 +124,19 @@
             this.PanelTableName.Name = "PanelTableName";
             this.PanelTableName.Size = new System.Drawing.Size(150, 32);
             this.PanelTableName.TabIndex = 2;
-            this.PanelTableName.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTableName_Paint);
+            this.PanelTableName.Click += new System.EventHandler(this.PanelTableName_Click);
+            // 
+            // pictureBoxStatus
+            // 
+            this.pictureBoxStatus.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxStatus.Image = global::BiaManager.Properties.Resources.Status_Empty;
+            this.pictureBoxStatus.Location = new System.Drawing.Point(118, 0);
+            this.pictureBoxStatus.Name = "pictureBoxStatus";
+            this.pictureBoxStatus.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStatus.TabIndex = 1;
+            this.pictureBoxStatus.TabStop = false;
+            this.pictureBoxStatus.Click += new System.EventHandler(this.pictureBoxStatus_Click);
             // 
             // LabelTableName
             // 
@@ -137,17 +149,7 @@
             this.LabelTableName.Size = new System.Drawing.Size(88, 24);
             this.LabelTableName.TabIndex = 0;
             this.LabelTableName.Text = "Table 1";
-            // 
-            // pictureBoxStatus
-            // 
-            this.pictureBoxStatus.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxStatus.Image = global::BiaManager.Properties.Resources.Status_Empty;
-            this.pictureBoxStatus.Location = new System.Drawing.Point(118, 0);
-            this.pictureBoxStatus.Name = "pictureBoxStatus";
-            this.pictureBoxStatus.Size = new System.Drawing.Size(32, 32);
-            this.pictureBoxStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxStatus.TabIndex = 1;
-            this.pictureBoxStatus.TabStop = false;
+            this.LabelTableName.Click += new System.EventHandler(this.LabelTableName_Click);
             // 
             // TableWidget
             // 

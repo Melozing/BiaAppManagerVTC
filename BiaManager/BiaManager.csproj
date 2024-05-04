@@ -223,6 +223,9 @@
     <EmbeddedResource Include="Forms\AdminForm\Tables\TableTypeManager.resx">
       <DependentUpon>TableTypeManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBill.resx">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
