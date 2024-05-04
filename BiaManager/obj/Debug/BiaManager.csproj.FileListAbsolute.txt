@@ -146,3 +146,4 @@ E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources

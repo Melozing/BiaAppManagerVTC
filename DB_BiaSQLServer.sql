@@ -47,7 +47,6 @@ CREATE TABLE [dbo].[invoice] (
     [IdInvoice] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableID] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [Invoice_time] datetime NOT NULL,
-    [Invoice_TotalAmount] int NOT NULL,
     [Invoice_Status] int NULL,
     PRIMARY KEY CLUSTERED ([IdInvoice]),
     CONSTRAINT [FK_orders_table] FOREIGN KEY ([TableID]) REFERENCES [dbo].[table_detail] ([IdTable])
@@ -57,6 +56,7 @@ GO
 CREATE TABLE [dbo].[invoice_detail] (
     [IdInvoice] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [IdItem] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [Invoice_TotalAmount] int NOT NULL,
     CONSTRAINT [FK_invoice_detail_invoice] FOREIGN KEY ([IdInvoice]) REFERENCES [dbo].[invoice] ([IdInvoice]),
     CONSTRAINT [FK_invoice_detail_items_menu] FOREIGN KEY ([IdItem]) REFERENCES [dbo].[items_menu] ([IdItem])
 );
@@ -86,5 +86,3 @@ INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TB
 INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TBT02', 'Pocket Billiards', 30000);
 INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('ICD', 'Other');
 INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price) VALUES ('IHour', 'Playtime', 'ICD', 30000);
-
-

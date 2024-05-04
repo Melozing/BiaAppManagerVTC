@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\components\\tablewidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\forms\\formbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\components\\tablewidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\components\\tablewidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\components\\tablewidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\components\\tablewidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\forms\\item\\table_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\item\\table_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\forms\\adminform\\items\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\adminform\\items\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\forms\\adminform\\tables\\addtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\adminform\\tables\\addtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\forms\\adminform\\tables\\addtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\adminform\\tables\\addtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\forms\\formbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\projectvtc\\biamanager\\biaappmanagervtc\\biamanager\\forms\\adminform\\staff\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\adminform\\staff\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,95 +38,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "table_item.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\item\\table_item.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Forms\\item\\table_item.cs",
-              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\item\\table_item.cs [Design]",
-              "RelativeToolTip": "BiaManager\\Forms\\item\\table_item.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:03:57.563Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AddTables.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs [Design]",
-              "RelativeToolTip": "BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs [Design]",
+              "Title": "StaffManager.cs",
+              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Staff\\StaffManager.cs",
+              "RelativeDocumentMoniker": "BiaManager\\Forms\\AdminForm\\Staff\\StaffManager.cs",
+              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Staff\\StaffManager.cs",
+              "RelativeToolTip": "BiaManager\\Forms\\AdminForm\\Staff\\StaffManager.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAIwNQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T11:51:30.569Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddItems.cs",
-              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Items\\AddItems.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Forms\\AdminForm\\Items\\AddItems.cs",
-              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Items\\AddItems.cs",
-              "RelativeToolTip": "BiaManager\\Forms\\AdminForm\\Items\\AddItems.cs",
-              "ViewState": "AQIAAAwBAAAAAAAAAAAWwBoBAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T11:39:40.812Z",
+              "WhenOpened": "2024-05-04T18:56:33.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TableWidget.cs [Design]",
-              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Components\\TableWidget.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Components\\TableWidget.cs",
-              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Components\\TableWidget.cs [Design]",
-              "RelativeToolTip": "BiaManager\\Components\\TableWidget.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T10:38:34.146Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddTables.cs",
-              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "RelativeToolTip": "BiaManager\\Forms\\AdminForm\\Tables\\AddTables.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAADwv/oAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T08:45:32.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "TableWidget.cs",
               "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Components\\TableWidget.cs",
               "RelativeDocumentMoniker": "BiaManager\\Components\\TableWidget.cs",
               "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Components\\TableWidget.cs",
               "RelativeToolTip": "BiaManager\\Components\\TableWidget.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAwwGUAAAAsAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAiwCwAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T08:52:46.125Z",
+              "WhenOpened": "2024-05-04T12:28:46.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "FormBill.cs [Design]",
+              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\FormBill.cs",
+              "RelativeDocumentMoniker": "BiaManager\\Forms\\FormBill.cs",
+              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\FormBill.cs [Design]",
+              "RelativeToolTip": "BiaManager\\Forms\\FormBill.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T17:59:39.875Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormBill.cs",
+              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\FormBill.cs",
+              "RelativeDocumentMoniker": "BiaManager\\Forms\\FormBill.cs",
+              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\FormBill.cs",
+              "RelativeToolTip": "BiaManager\\Forms\\FormBill.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwF0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T18:11:55.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "HomePage.cs",
               "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\HomePage.cs",
               "RelativeDocumentMoniker": "BiaManager\\HomePage.cs",
               "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\HomePage.cs",
               "RelativeToolTip": "BiaManager\\HomePage.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAowFwAAAAkAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAswBkAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T09:16:38.849Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomePage.cs [Design]",
+              "DocumentMoniker": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\HomePage.cs",
+              "RelativeDocumentMoniker": "BiaManager\\HomePage.cs",
+              "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\HomePage.cs [Design]",
+              "RelativeToolTip": "BiaManager\\HomePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T17:58:24.239Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -140,7 +124,7 @@
               "RelativeDocumentMoniker": "BiaManager\\Forms\\FormTables.cs",
               "ToolTip": "E:\\ProjectVTC\\BiaManager\\BiaAppManagerVTC\\BiaManager\\Forms\\FormTables.cs",
               "RelativeToolTip": "BiaManager\\Forms\\FormTables.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwCoAAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T08:44:52.068Z",
               "EditorCaption": ""
