@@ -51,9 +51,10 @@
             this.panelSearchContainer.Controls.Add(this.iconButtonSearch);
             this.panelSearchContainer.Controls.Add(this.textBoxSearch);
             this.panelSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearchContainer.Location = new System.Drawing.Point(0, 243);
+            this.panelSearchContainer.Location = new System.Drawing.Point(0, 299);
+            this.panelSearchContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSearchContainer.Name = "panelSearchContainer";
-            this.panelSearchContainer.Size = new System.Drawing.Size(800, 30);
+            this.panelSearchContainer.Size = new System.Drawing.Size(1067, 37);
             this.panelSearchContainer.TabIndex = 12;
             // 
             // iconButtonSearch
@@ -66,9 +67,10 @@
             this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearch.IconSize = 30;
-            this.iconButtonSearch.Location = new System.Drawing.Point(542, 0);
+            this.iconButtonSearch.Location = new System.Drawing.Point(723, 0);
+            this.iconButtonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
+            this.iconButtonSearch.Size = new System.Drawing.Size(44, 37);
             this.iconButtonSearch.TabIndex = 13;
             this.iconButtonSearch.UseVisualStyleBackColor = true;
             this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
@@ -76,10 +78,12 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearch.Location = new System.Drawing.Point(273, 6);
+            this.textBoxSearch.Location = new System.Drawing.Point(364, 7);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(262, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(348, 22);
             this.textBoxSearch.TabIndex = 12;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // panelLoginContentContainerChild
@@ -94,17 +98,19 @@
             this.panelLoginContentContainerChild.Controls.Add(this.TableTypeLabel);
             this.panelLoginContentContainerChild.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoginContentContainerChild.Location = new System.Drawing.Point(0, 0);
+            this.panelLoginContentContainerChild.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLoginContentContainerChild.Name = "panelLoginContentContainerChild";
-            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(800, 243);
+            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(1067, 299);
             this.panelLoginContentContainerChild.TabIndex = 11;
             // 
             // comboBoxTableType
             // 
             this.comboBoxTableType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxTableType.FormattingEnabled = true;
-            this.comboBoxTableType.Location = new System.Drawing.Point(386, 88);
+            this.comboBoxTableType.Location = new System.Drawing.Point(515, 108);
+            this.comboBoxTableType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxTableType.Name = "comboBoxTableType";
-            this.comboBoxTableType.Size = new System.Drawing.Size(262, 21);
+            this.comboBoxTableType.Size = new System.Drawing.Size(348, 24);
             this.comboBoxTableType.TabIndex = 55;
             this.comboBoxTableType.SelectedIndexChanged += new System.EventHandler(this.comboBoxTableType_SelectedIndexChanged);
             // 
@@ -120,9 +126,10 @@
             this.ButtonDelete.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonDelete.IconColor = System.Drawing.Color.Black;
             this.ButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDelete.Location = new System.Drawing.Point(386, 181);
+            this.ButtonDelete.Location = new System.Drawing.Point(515, 223);
+            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(262, 54);
+            this.ButtonDelete.Size = new System.Drawing.Size(349, 66);
             this.ButtonDelete.TabIndex = 54;
             this.ButtonDelete.Text = "Delete Table Type";
             this.ButtonDelete.UseVisualStyleBackColor = false;
@@ -140,9 +147,10 @@
             this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
             this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdate.Location = new System.Drawing.Point(386, 124);
+            this.ButtonUpdate.Location = new System.Drawing.Point(515, 153);
+            this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(262, 54);
+            this.ButtonUpdate.Size = new System.Drawing.Size(349, 66);
             this.ButtonUpdate.TabIndex = 53;
             this.ButtonUpdate.Text = "Update Table Type";
             this.ButtonUpdate.UseVisualStyleBackColor = false;
@@ -160,9 +168,10 @@
             this.ButtonCreate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonCreate.IconColor = System.Drawing.Color.Black;
             this.ButtonCreate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonCreate.Location = new System.Drawing.Point(386, 124);
+            this.ButtonCreate.Location = new System.Drawing.Point(515, 153);
+            this.ButtonCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonCreate.Name = "ButtonCreate";
-            this.ButtonCreate.Size = new System.Drawing.Size(262, 54);
+            this.ButtonCreate.Size = new System.Drawing.Size(349, 66);
             this.ButtonCreate.TabIndex = 52;
             this.ButtonCreate.Text = "Create Table Type";
             this.ButtonCreate.UseVisualStyleBackColor = false;
@@ -171,9 +180,10 @@
             // textBoxTableName
             // 
             this.textBoxTableName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTableName.Location = new System.Drawing.Point(387, 58);
+            this.textBoxTableName.Location = new System.Drawing.Point(516, 71);
+            this.textBoxTableName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTableName.Name = "textBoxTableName";
-            this.textBoxTableName.Size = new System.Drawing.Size(262, 20);
+            this.textBoxTableName.Size = new System.Drawing.Size(348, 22);
             this.textBoxTableName.TabIndex = 45;
             this.textBoxTableName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxTableName_KeyDown);
             this.textBoxTableName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTableName_KeyPress);
@@ -184,9 +194,10 @@
             this.TableNameLabel.AutoSize = true;
             this.TableNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TableNameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TableNameLabel.Location = new System.Drawing.Point(152, 54);
+            this.TableNameLabel.Location = new System.Drawing.Point(203, 66);
+            this.TableNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TableNameLabel.Name = "TableNameLabel";
-            this.TableNameLabel.Size = new System.Drawing.Size(134, 24);
+            this.TableNameLabel.Size = new System.Drawing.Size(170, 29);
             this.TableNameLabel.TabIndex = 39;
             this.TableNameLabel.Text = "Tables Name";
             // 
@@ -196,9 +207,10 @@
             this.TableTypeLabel.AutoSize = true;
             this.TableTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TableTypeLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TableTypeLabel.Location = new System.Drawing.Point(152, 87);
+            this.TableTypeLabel.Location = new System.Drawing.Point(203, 107);
+            this.TableTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TableTypeLabel.Name = "TableTypeLabel";
-            this.TableTypeLabel.Size = new System.Drawing.Size(116, 24);
+            this.TableTypeLabel.Size = new System.Drawing.Size(147, 29);
             this.TableTypeLabel.TabIndex = 40;
             this.TableTypeLabel.Text = "Table Type";
             // 
@@ -211,9 +223,11 @@
             this.dataGridViewTablesAdd.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewTablesAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTablesAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTablesAdd.Location = new System.Drawing.Point(0, 273);
+            this.dataGridViewTablesAdd.Location = new System.Drawing.Point(0, 336);
+            this.dataGridViewTablesAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewTablesAdd.Name = "dataGridViewTablesAdd";
-            this.dataGridViewTablesAdd.Size = new System.Drawing.Size(800, 177);
+            this.dataGridViewTablesAdd.RowHeadersWidth = 51;
+            this.dataGridViewTablesAdd.Size = new System.Drawing.Size(1067, 218);
             this.dataGridViewTablesAdd.TabIndex = 13;
             this.dataGridViewTablesAdd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTablesAdd_CellContentClick);
             this.dataGridViewTablesAdd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTablesAdd_CellContentClick);
@@ -222,13 +236,14 @@
             // 
             // AddTables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dataGridViewTablesAdd);
             this.Controls.Add(this.panelSearchContainer);
             this.Controls.Add(this.panelLoginContentContainerChild);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddTables";
             this.Text = "AddTables";
             this.Load += new System.EventHandler(this.AddTables_Load);

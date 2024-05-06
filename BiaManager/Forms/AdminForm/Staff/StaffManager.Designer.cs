@@ -65,9 +65,10 @@
             this.panelSearchContainer.Controls.Add(this.iconButtonSearch);
             this.panelSearchContainer.Controls.Add(this.textBoxSearch);
             this.panelSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearchContainer.Location = new System.Drawing.Point(0, 383);
+            this.panelSearchContainer.Location = new System.Drawing.Point(0, 471);
+            this.panelSearchContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearchContainer.Name = "panelSearchContainer";
-            this.panelSearchContainer.Size = new System.Drawing.Size(528, 30);
+            this.panelSearchContainer.Size = new System.Drawing.Size(704, 37);
             this.panelSearchContainer.TabIndex = 7;
             // 
             // iconButtonSearch
@@ -80,9 +81,10 @@
             this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearch.IconSize = 30;
-            this.iconButtonSearch.Location = new System.Drawing.Point(406, 0);
+            this.iconButtonSearch.Location = new System.Drawing.Point(541, 0);
+            this.iconButtonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
+            this.iconButtonSearch.Size = new System.Drawing.Size(44, 37);
             this.iconButtonSearch.TabIndex = 13;
             this.iconButtonSearch.UseVisualStyleBackColor = true;
             this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
@@ -90,19 +92,22 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearch.Location = new System.Drawing.Point(137, 6);
+            this.textBoxSearch.Location = new System.Drawing.Point(183, 7);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(262, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(348, 22);
             this.textBoxSearch.TabIndex = 12;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // panelDataContainer
             // 
             this.panelDataContainer.Controls.Add(this.dataGridViewStaffInfo);
             this.panelDataContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDataContainer.Location = new System.Drawing.Point(0, 413);
+            this.panelDataContainer.Location = new System.Drawing.Point(0, 508);
+            this.panelDataContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelDataContainer.Name = "panelDataContainer";
-            this.panelDataContainer.Size = new System.Drawing.Size(528, 0);
+            this.panelDataContainer.Size = new System.Drawing.Size(704, 0);
             this.panelDataContainer.TabIndex = 8;
             // 
             // dataGridViewStaffInfo
@@ -115,11 +120,12 @@
             this.dataGridViewStaffInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStaffInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewStaffInfo.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewStaffInfo.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewStaffInfo.MultiSelect = false;
             this.dataGridViewStaffInfo.Name = "dataGridViewStaffInfo";
             this.dataGridViewStaffInfo.RowHeadersWidth = 51;
             this.dataGridViewStaffInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridViewStaffInfo.Size = new System.Drawing.Size(528, 0);
+            this.dataGridViewStaffInfo.Size = new System.Drawing.Size(704, 0);
             this.dataGridViewStaffInfo.TabIndex = 0;
             this.dataGridViewStaffInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffInfo_CellContentClick);
             // 
@@ -130,8 +136,9 @@
             this.panelAddContainer.Controls.Add(this.panelLoginContentContainerChild);
             this.panelAddContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAddContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelAddContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelAddContainer.Name = "panelAddContainer";
-            this.panelAddContainer.Size = new System.Drawing.Size(528, 383);
+            this.panelAddContainer.Size = new System.Drawing.Size(704, 471);
             this.panelAddContainer.TabIndex = 6;
             // 
             // panelLoginContentContainerChild
@@ -157,8 +164,9 @@
             this.panelLoginContentContainerChild.Controls.Add(this.PhoneLabel);
             this.panelLoginContentContainerChild.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoginContentContainerChild.Location = new System.Drawing.Point(0, 0);
+            this.panelLoginContentContainerChild.Margin = new System.Windows.Forms.Padding(4);
             this.panelLoginContentContainerChild.Name = "panelLoginContentContainerChild";
-            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(528, 383);
+            this.panelLoginContentContainerChild.Size = new System.Drawing.Size(704, 471);
             this.panelLoginContentContainerChild.TabIndex = 0;
             // 
             // ButtonDeleteStaffManager
@@ -173,9 +181,10 @@
             this.ButtonDeleteStaffManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonDeleteStaffManager.IconColor = System.Drawing.Color.Black;
             this.ButtonDeleteStaffManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDeleteStaffManager.Location = new System.Drawing.Point(250, 326);
+            this.ButtonDeleteStaffManager.Location = new System.Drawing.Point(333, 401);
+            this.ButtonDeleteStaffManager.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteStaffManager.Name = "ButtonDeleteStaffManager";
-            this.ButtonDeleteStaffManager.Size = new System.Drawing.Size(262, 54);
+            this.ButtonDeleteStaffManager.Size = new System.Drawing.Size(349, 66);
             this.ButtonDeleteStaffManager.TabIndex = 54;
             this.ButtonDeleteStaffManager.Text = "Delete Account";
             this.ButtonDeleteStaffManager.UseVisualStyleBackColor = false;
@@ -193,9 +202,10 @@
             this.ButtonUpdateStaffManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonUpdateStaffManager.IconColor = System.Drawing.Color.Black;
             this.ButtonUpdateStaffManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdateStaffManager.Location = new System.Drawing.Point(250, 270);
+            this.ButtonUpdateStaffManager.Location = new System.Drawing.Point(333, 332);
+            this.ButtonUpdateStaffManager.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonUpdateStaffManager.Name = "ButtonUpdateStaffManager";
-            this.ButtonUpdateStaffManager.Size = new System.Drawing.Size(262, 54);
+            this.ButtonUpdateStaffManager.Size = new System.Drawing.Size(349, 66);
             this.ButtonUpdateStaffManager.TabIndex = 53;
             this.ButtonUpdateStaffManager.Text = "Update Account";
             this.ButtonUpdateStaffManager.UseVisualStyleBackColor = false;
@@ -204,9 +214,10 @@
             // textBoxConfirmPassword
             // 
             this.textBoxConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(251, 107);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(335, 132);
+            this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
-            this.textBoxConfirmPassword.Size = new System.Drawing.Size(262, 20);
+            this.textBoxConfirmPassword.Size = new System.Drawing.Size(348, 22);
             this.textBoxConfirmPassword.TabIndex = 47;
             this.textBoxConfirmPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmPassword_KeyDown);
             // 
@@ -216,9 +227,10 @@
             this.labelConfirmPassword.AutoSize = true;
             this.labelConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmPassword.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelConfirmPassword.Location = new System.Drawing.Point(16, 103);
+            this.labelConfirmPassword.Location = new System.Drawing.Point(21, 127);
+            this.labelConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelConfirmPassword.Name = "labelConfirmPassword";
-            this.labelConfirmPassword.Size = new System.Drawing.Size(177, 24);
+            this.labelConfirmPassword.Size = new System.Drawing.Size(224, 29);
             this.labelConfirmPassword.TabIndex = 52;
             this.labelConfirmPassword.Text = "Confirm password";
             // 
@@ -234,9 +246,10 @@
             this.ButtonCreateStaffManager.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonCreateStaffManager.IconColor = System.Drawing.Color.Black;
             this.ButtonCreateStaffManager.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonCreateStaffManager.Location = new System.Drawing.Point(251, 270);
+            this.ButtonCreateStaffManager.Location = new System.Drawing.Point(335, 332);
+            this.ButtonCreateStaffManager.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonCreateStaffManager.Name = "ButtonCreateStaffManager";
-            this.ButtonCreateStaffManager.Size = new System.Drawing.Size(262, 54);
+            this.ButtonCreateStaffManager.Size = new System.Drawing.Size(349, 66);
             this.ButtonCreateStaffManager.TabIndex = 52;
             this.ButtonCreateStaffManager.Text = "Create Account";
             this.ButtonCreateStaffManager.UseVisualStyleBackColor = false;
@@ -245,55 +258,61 @@
             // textBoxBankName
             // 
             this.textBoxBankName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxBankName.Location = new System.Drawing.Point(251, 237);
+            this.textBoxBankName.Location = new System.Drawing.Point(335, 292);
+            this.textBoxBankName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBankName.Name = "textBoxBankName";
-            this.textBoxBankName.Size = new System.Drawing.Size(262, 20);
+            this.textBoxBankName.Size = new System.Drawing.Size(348, 22);
             this.textBoxBankName.TabIndex = 51;
             this.textBoxBankName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBankName_KeyDown);
             // 
             // textBoxBankNumber
             // 
             this.textBoxBankNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxBankNumber.Location = new System.Drawing.Point(251, 205);
+            this.textBoxBankNumber.Location = new System.Drawing.Point(335, 252);
+            this.textBoxBankNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBankNumber.MaxLength = 12;
             this.textBoxBankNumber.Name = "textBoxBankNumber";
-            this.textBoxBankNumber.Size = new System.Drawing.Size(262, 20);
+            this.textBoxBankNumber.Size = new System.Drawing.Size(348, 22);
             this.textBoxBankNumber.TabIndex = 50;
             this.textBoxBankNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBankNumber_KeyDown);
             // 
             // textBoxPhone
             // 
             this.textBoxPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPhone.Location = new System.Drawing.Point(251, 172);
+            this.textBoxPhone.Location = new System.Drawing.Point(335, 212);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(262, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(348, 22);
             this.textBoxPhone.TabIndex = 49;
             this.textBoxPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPhone_KeyDown);
             // 
             // textBoxFullname
             // 
             this.textBoxFullname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxFullname.Location = new System.Drawing.Point(251, 140);
+            this.textBoxFullname.Location = new System.Drawing.Point(335, 172);
+            this.textBoxFullname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFullname.Name = "textBoxFullname";
-            this.textBoxFullname.Size = new System.Drawing.Size(262, 20);
+            this.textBoxFullname.Size = new System.Drawing.Size(348, 22);
             this.textBoxFullname.TabIndex = 48;
             this.textBoxFullname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFullname_KeyDown);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPassword.Location = new System.Drawing.Point(251, 75);
+            this.textBoxPassword.Location = new System.Drawing.Point(335, 92);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(262, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(348, 22);
             this.textBoxPassword.TabIndex = 46;
             this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxUsername.Location = new System.Drawing.Point(251, 42);
+            this.textBoxUsername.Location = new System.Drawing.Point(335, 52);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(262, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(348, 22);
             this.textBoxUsername.TabIndex = 45;
             this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
@@ -303,9 +322,10 @@
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.UsernameLabel.Location = new System.Drawing.Point(16, 38);
+            this.UsernameLabel.Location = new System.Drawing.Point(21, 47);
+            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(105, 24);
+            this.UsernameLabel.Size = new System.Drawing.Size(132, 29);
             this.UsernameLabel.TabIndex = 39;
             this.UsernameLabel.Text = "Username";
             // 
@@ -315,9 +335,10 @@
             this.BankNameLabel.AutoSize = true;
             this.BankNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BankNameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BankNameLabel.Location = new System.Drawing.Point(16, 233);
+            this.BankNameLabel.Location = new System.Drawing.Point(21, 287);
+            this.BankNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BankNameLabel.Name = "BankNameLabel";
-            this.BankNameLabel.Size = new System.Drawing.Size(114, 24);
+            this.BankNameLabel.Size = new System.Drawing.Size(142, 29);
             this.BankNameLabel.TabIndex = 44;
             this.BankNameLabel.Text = "Bank name";
             // 
@@ -327,9 +348,10 @@
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.PasswordLabel.Location = new System.Drawing.Point(16, 71);
+            this.PasswordLabel.Location = new System.Drawing.Point(21, 87);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(100, 24);
+            this.PasswordLabel.Size = new System.Drawing.Size(128, 29);
             this.PasswordLabel.TabIndex = 40;
             this.PasswordLabel.Text = "Password";
             // 
@@ -339,9 +361,10 @@
             this.BankNumberLabel.AutoSize = true;
             this.BankNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BankNumberLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BankNumberLabel.Location = new System.Drawing.Point(16, 201);
+            this.BankNumberLabel.Location = new System.Drawing.Point(21, 247);
+            this.BankNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BankNumberLabel.Name = "BankNumberLabel";
-            this.BankNumberLabel.Size = new System.Drawing.Size(136, 24);
+            this.BankNumberLabel.Size = new System.Drawing.Size(168, 29);
             this.BankNumberLabel.TabIndex = 43;
             this.BankNumberLabel.Text = "Bank account";
             // 
@@ -351,9 +374,10 @@
             this.FullnameLabel.AutoSize = true;
             this.FullnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullnameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.FullnameLabel.Location = new System.Drawing.Point(16, 136);
+            this.FullnameLabel.Location = new System.Drawing.Point(21, 167);
+            this.FullnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FullnameLabel.Name = "FullnameLabel";
-            this.FullnameLabel.Size = new System.Drawing.Size(103, 24);
+            this.FullnameLabel.Size = new System.Drawing.Size(128, 29);
             this.FullnameLabel.TabIndex = 41;
             this.FullnameLabel.Text = "Full name";
             // 
@@ -363,22 +387,24 @@
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.PhoneLabel.Location = new System.Drawing.Point(16, 168);
+            this.PhoneLabel.Location = new System.Drawing.Point(21, 207);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(71, 24);
+            this.PhoneLabel.Size = new System.Drawing.Size(88, 29);
             this.PhoneLabel.TabIndex = 42;
             this.PhoneLabel.Text = "Phone";
             // 
             // StaffManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(528, 407);
+            this.ClientSize = new System.Drawing.Size(704, 501);
             this.Controls.Add(this.panelDataContainer);
             this.Controls.Add(this.panelSearchContainer);
             this.Controls.Add(this.panelAddContainer);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StaffManager";
             this.Text = "AddStaff";
             this.panelSearchContainer.ResumeLayout(false);

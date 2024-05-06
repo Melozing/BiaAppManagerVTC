@@ -263,5 +263,10 @@ namespace BiaManager.Forms.AdminForm.Tables
                 e.FormattingApplied = true;
             }
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+        }
     }
 }

@@ -148,3 +148,8 @@ E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.TableWidget.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.AddItems.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.AddTables.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormSetting.resources

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BiaManager.Components
@@ -15,6 +9,16 @@ namespace BiaManager.Components
         public FoodWidget()
         {
             InitializeComponent();
+        }
+        public void SetFoodInfo(string name, int price, byte[] imageData)
+        {
+            FoodNameLabel.Text = name;
+            MoneyQuantity.Text = price.ToString();
+
+            using (MemoryStream ms = new MemoryStream(imageData))
+            {
+                pictureBoxFood.Image = Image.FromStream(ms);
+            }
         }
     }
 }
