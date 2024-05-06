@@ -64,5 +64,11 @@ namespace BiaManager.Components
             labelNum.BackColor = Color.Transparent;
             labelNum.Hide();
         }
+        public void AddFood(FoodWidget foodWidget)
+        {
+            flowLayoutPanelFoodContent.Controls.Add(foodWidget);
+            foodWidget.BringToFront();
+            foodWidget.Show();
+        }
     }
 }

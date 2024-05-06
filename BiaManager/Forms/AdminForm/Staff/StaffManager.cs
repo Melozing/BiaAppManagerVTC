@@ -482,5 +482,9 @@ namespace BiaManager.Forms.AdminForm.Staff
             }
         }
 
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+        }
     }
 }

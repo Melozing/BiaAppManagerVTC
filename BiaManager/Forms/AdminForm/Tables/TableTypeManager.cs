@@ -201,5 +201,10 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             e.Handled = !char.IsNumber(e.KeyChar);
         }
+
+        private void textBoxSearch_TextChanged(object sender, System.EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+        }
     }
 }

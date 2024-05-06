@@ -231,16 +231,17 @@ namespace BiaManager.Forms.AdminForm.Items
         {
             string searchText = textBoxSearch.Text;
             string searchQuery = @"
-             SELECT items_menu.IdItem, items_menu.item_Name,
-              items_menu.item_Price,
-              items_menu.item_image, 
-              items_category.ItemCategory_Name, 
+            SELECT items_menu.IdItem, items_menu.item_Name,
+            items_menu.item_Price,
+            items_menu.item_image, 
+            items_category.ItemCategory_Name
             FROM items_menu 
             JOIN items_category ON items_menu.IdItemCategory = items_category.IdItemCategory
             WHERE items_menu.IdItem LIKE '%" + searchText + @"%' OR
-              items_menu.item_Name LIKE '%" + searchText + @"%' OR
-              CONVERT(VARCHAR, items_menu.item_Price) LIKE '%" + searchText + @"%' OR 
-              items_category.ItemCategory_Name LIKE '%" + searchText + @"%';";
+            items_menu.item_Name LIKE '%" + searchText + @"%' OR
+            CONVERT(VARCHAR, items_menu.item_Price) LIKE '%" + searchText + @"%' OR 
+            items_category.ItemCategory_Name LIKE '%" + searchText + @"%';";
+
 
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);
 
@@ -366,6 +367,11 @@ namespace BiaManager.Forms.AdminForm.Items
                 graphics.DrawImage(originalImage, 0, 0, width, height);
             }
             return resizedImage;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
         }
     }
 }

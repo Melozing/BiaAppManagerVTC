@@ -175,5 +175,10 @@ namespace BiaManager.Forms.AdminForm.Items
             ButtonDeleteItemCategoryManager.Location = new Point(ButtonDeleteItemCategoryManager.Location.X, ButtonDeleteItemCategoryManager.Location.Y + 70);
             ButtonCreateItemCategoryManager.Hide();
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+        }
     }
 }

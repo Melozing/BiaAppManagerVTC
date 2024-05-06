@@ -49,10 +49,10 @@
             this.PanelTableMain.Controls.Add(this.IconButtonOrder);
             this.PanelTableMain.Controls.Add(this.PictureBoxTable);
             this.PanelTableMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTableMain.Location = new System.Drawing.Point(0, 32);
-            this.PanelTableMain.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelTableMain.Location = new System.Drawing.Point(0, 39);
+            this.PanelTableMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelTableMain.Name = "PanelTableMain";
-            this.PanelTableMain.Size = new System.Drawing.Size(150, 118);
+            this.PanelTableMain.Size = new System.Drawing.Size(200, 145);
             this.PanelTableMain.TabIndex = 3;
             this.PanelTableMain.Click += new System.EventHandler(this.PanelTableMain_Click);
             // 
@@ -69,9 +69,10 @@
             this.IconButtonStartTable.IconChar = FontAwesome.Sharp.IconChar.None;
             this.IconButtonStartTable.IconColor = System.Drawing.Color.Black;
             this.IconButtonStartTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IconButtonStartTable.Location = new System.Drawing.Point(0, 89);
+            this.IconButtonStartTable.Location = new System.Drawing.Point(0, 110);
+            this.IconButtonStartTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IconButtonStartTable.Name = "IconButtonStartTable";
-            this.IconButtonStartTable.Size = new System.Drawing.Size(150, 29);
+            this.IconButtonStartTable.Size = new System.Drawing.Size(200, 35);
             this.IconButtonStartTable.TabIndex = 2;
             this.IconButtonStartTable.Text = "Start";
             this.IconButtonStartTable.UseVisualStyleBackColor = false;
@@ -90,9 +91,10 @@
             this.IconButtonOrder.IconChar = FontAwesome.Sharp.IconChar.None;
             this.IconButtonOrder.IconColor = System.Drawing.Color.Black;
             this.IconButtonOrder.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IconButtonOrder.Location = new System.Drawing.Point(0, 89);
+            this.IconButtonOrder.Location = new System.Drawing.Point(0, 110);
+            this.IconButtonOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IconButtonOrder.Name = "IconButtonOrder";
-            this.IconButtonOrder.Size = new System.Drawing.Size(150, 29);
+            this.IconButtonOrder.Size = new System.Drawing.Size(200, 35);
             this.IconButtonOrder.TabIndex = 1;
             this.IconButtonOrder.Text = "Oder";
             this.IconButtonOrder.UseVisualStyleBackColor = false;
@@ -104,9 +106,9 @@
             this.PictureBoxTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.PictureBoxTable.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxTable.Image")));
             this.PictureBoxTable.Location = new System.Drawing.Point(0, 0);
-            this.PictureBoxTable.Margin = new System.Windows.Forms.Padding(2);
+            this.PictureBoxTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PictureBoxTable.Name = "PictureBoxTable";
-            this.PictureBoxTable.Size = new System.Drawing.Size(150, 89);
+            this.PictureBoxTable.Size = new System.Drawing.Size(200, 110);
             this.PictureBoxTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxTable.TabIndex = 0;
             this.PictureBoxTable.TabStop = false;
@@ -120,9 +122,9 @@
             this.PanelTableName.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTableName.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.PanelTableName.Location = new System.Drawing.Point(0, 0);
-            this.PanelTableName.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelTableName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelTableName.Name = "PanelTableName";
-            this.PanelTableName.Size = new System.Drawing.Size(150, 32);
+            this.PanelTableName.Size = new System.Drawing.Size(200, 39);
             this.PanelTableName.TabIndex = 2;
             this.PanelTableName.Click += new System.EventHandler(this.PanelTableName_Click);
             // 
@@ -130,9 +132,10 @@
             // 
             this.pictureBoxStatus.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBoxStatus.Image = global::BiaManager.Properties.Resources.Status_Empty;
-            this.pictureBoxStatus.Location = new System.Drawing.Point(118, 0);
+            this.pictureBoxStatus.Location = new System.Drawing.Point(157, 0);
+            this.pictureBoxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxStatus.Name = "pictureBoxStatus";
-            this.pictureBoxStatus.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxStatus.Size = new System.Drawing.Size(43, 39);
             this.pictureBoxStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxStatus.TabIndex = 1;
             this.pictureBoxStatus.TabStop = false;
@@ -144,20 +147,21 @@
             this.LabelTableName.Dock = System.Windows.Forms.DockStyle.Left;
             this.LabelTableName.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.LabelTableName.Location = new System.Drawing.Point(0, 0);
-            this.LabelTableName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTableName.Name = "LabelTableName";
-            this.LabelTableName.Size = new System.Drawing.Size(88, 24);
+            this.LabelTableName.Size = new System.Drawing.Size(107, 29);
             this.LabelTableName.TabIndex = 0;
             this.LabelTableName.Text = "Table 1";
             this.LabelTableName.Click += new System.EventHandler(this.LabelTableName_Click);
             // 
             // TableWidget
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.PanelTableMain);
             this.Controls.Add(this.PanelTableName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TableWidget";
+            this.Size = new System.Drawing.Size(200, 185);
             this.Click += new System.EventHandler(this.TableWidget_Click);
             this.DoubleClick += new System.EventHandler(this.TableWidget_DoubleClick);
             this.PanelTableMain.ResumeLayout(false);
