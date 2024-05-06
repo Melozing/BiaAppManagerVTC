@@ -108,7 +108,7 @@ namespace BiaManager
             form.BringToFront();
             form.Show();
         }
-        private void ShowPanelDetail()
+        public void ShowPanelDetail()
         {
             panelDetail.Show();
         }
@@ -122,6 +122,11 @@ namespace BiaManager
         {
             panelDetail.Width += num;
             return panelDetail.Width;
+        }
+
+        public void SetPanelDetailWidth(int width)
+        {
+            panelDetail.Width = width;
         }
 
         //Struct Color
@@ -178,7 +183,7 @@ namespace BiaManager
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -235,6 +240,8 @@ namespace BiaManager
         private void Setting_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender, RGBColor.color6);
+            panelDetail.Hide();
+            OpenChildForm(new FormSetting());
         }
 
         private void UserManagement_Click(object sender, System.EventArgs e)

@@ -1,4 +1,5 @@
-﻿using BiaManager.Script;
+﻿using BiaManager.Forms;
+using BiaManager.Script;
 using System;
 using System.Data;
 using System.Drawing;
@@ -198,7 +199,9 @@ namespace BiaManager.Components
 
         private void IconButtonOrder_Click(object sender, System.EventArgs e)
         {
-            ShowBillDetail();
+            FormMenu formMenu = new FormMenu();
+            HomePage.Instance.OpenChildForm(formMenu);
+            HomePage.Instance.ShowPanelDetail();
         }
         void SetIconButtonTags(string tagId)
         {
