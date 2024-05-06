@@ -36,6 +36,9 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -329,6 +332,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\defaultTable.png" />
+    <None Include="Resources\loading login\anhlogin %286%29.jpg" />
+    <None Include="Resources\loading login\anhlogin %285%29.jpg" />
+    <None Include="Resources\loading login\anhlogin %284%29.jpg" />
+    <None Include="Resources\loading login\anhlogin %283%29.jpg" />
+    <None Include="Resources\loading login\anhlogin %282%29.jpg" />
+    <None Include="Resources\loading login\anhlogin %281%29.jpg" />
+    <None Include="Resources\loading login\anhlogin.jpg" />
+    <None Include="Resources\wp11126611-dogs-playing-pool-wallpapers.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
