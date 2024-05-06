@@ -90,11 +90,29 @@ namespace BiaManager.Forms
         private void OnLoginSuccessfully(Account account)
         {
             MessageFuctionConstans.WarningOK("Login Successfully!");
-            HomePage homePage = HomePage.Instance;
-            homePage.GetUserRole(account.UserRole);
-            homePage.Show();
             this.Hide();
+            HomePage homePage = HomePage.Instance;
+            if (homePage != null && !homePage.IsDisposed)
+            {
+                homePage.GetUserRole(account.UserRole);
+                homePage.Show();
+            }
+            else
+            {
+                HomePage_FormClosed(this, new FormClosedEventArgs(CloseReason.None));
+            }
         }
+
+        private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (HomePage.Instance == null || HomePage.Instance.IsDisposed)
+            {
+                HomePage newInstance = new HomePage();
+                newInstance.Show();
+                this.Hide();
+            }
+        }
+
 
         private void HidePassword_MouseDown(object sender, MouseEventArgs e)
         {

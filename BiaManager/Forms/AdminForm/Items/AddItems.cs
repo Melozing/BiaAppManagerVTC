@@ -333,7 +333,7 @@ namespace BiaManager.Forms.AdminForm.Items
         private void dataGridViewAddItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Chỉ áp dụng cho cột chứa hình ảnh
-            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name != "item_image")
+            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name == "item_image")
             {
                 // Kiểm tra nếu giá trị của ô không rỗng và là mảng byte
                 if (e.Value != null && e.Value.GetType() == typeof(byte[]))

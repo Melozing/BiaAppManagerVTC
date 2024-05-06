@@ -24,7 +24,8 @@ namespace BiaManager.Forms
             iconButtonPaySize = iconButtonPay.Size;
             iconButtonCancelBillSize = iconButtonCancelBill.Size;
 
-            //this.Resize += FormBill_Resize;
+            sidebarExpand = false;
+            timerMinimize.Start();
             formBillSize = this.Size;
         }
         private void FormBill_Resize(object sender, EventArgs e)
@@ -81,9 +82,11 @@ namespace BiaManager.Forms
                     dataGridViewBill.Visible = false;
                     iconButtonPay.Visible = false;
                     iconButtonCancelBill.Visible = false;
-                    iconButtonClose.Visible = false;
+                    flowLayoutPanelTopControl.Height = 140;
+                    flowLayoutPanelTopControl.FlowDirection = FlowDirection.TopDown;
                     sidebarExpand = false;
                     timerMinimize.Stop();
+                    timerMinimize.Dispose();
                 }
             }
             else
@@ -91,12 +94,15 @@ namespace BiaManager.Forms
                 currentSize = HomePage.Instance.ResizePanelDetail(5);
                 if (currentSize >= 400)
                 {
+                    HomePage.Instance.SetPanelDetailWidth(400);
                     dataGridViewBill.Visible = true;
                     iconButtonPay.Visible = true;
                     iconButtonCancelBill.Visible = true;
-                    iconButtonClose.Visible = true;
+                    flowLayoutPanelTopControl.Height = 35;
+                    flowLayoutPanelTopControl.FlowDirection = FlowDirection.RightToLeft;
                     sidebarExpand = true;
                     timerMinimize.Stop();
+                    timerMinimize.Dispose();
                 }
             }
         }

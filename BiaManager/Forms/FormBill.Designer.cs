@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButtonCancelBill = new FontAwesome.Sharp.IconButton();
             this.iconButtonPay = new FontAwesome.Sharp.IconButton();
-            this.panelTopControl = new System.Windows.Forms.Panel();
+            this.timerMinimize = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanelTopControl = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewBill = new System.Windows.Forms.DataGridView();
             this.iconButtonClose = new FontAwesome.Sharp.IconButton();
             this.iconButtonMinimize = new FontAwesome.Sharp.IconButton();
-            this.timerMinimize = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.panelTopControl.SuspendLayout();
+            this.flowLayoutPanelTopControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBill)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
             this.panel1.Controls.Add(this.dataGridViewBill);
-            this.panel1.Controls.Add(this.panelTopControl);
+            this.panel1.Controls.Add(this.flowLayoutPanelTopControl);
             this.panel1.Controls.Add(this.iconButtonCancelBill);
             this.panel1.Controls.Add(this.iconButtonPay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,15 +97,21 @@
             this.iconButtonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonPay.UseVisualStyleBackColor = false;
             // 
-            // panelTopControl
+            // timerMinimize
             // 
-            this.panelTopControl.Controls.Add(this.iconButtonMinimize);
-            this.panelTopControl.Controls.Add(this.iconButtonClose);
-            this.panelTopControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopControl.Location = new System.Drawing.Point(0, 0);
-            this.panelTopControl.Name = "panelTopControl";
-            this.panelTopControl.Size = new System.Drawing.Size(307, 35);
-            this.panelTopControl.TabIndex = 5;
+            this.timerMinimize.Interval = 10;
+            this.timerMinimize.Tick += new System.EventHandler(this.timerMinimize_Tick);
+            // 
+            // flowLayoutPanelTopControl
+            // 
+            this.flowLayoutPanelTopControl.Controls.Add(this.iconButtonClose);
+            this.flowLayoutPanelTopControl.Controls.Add(this.iconButtonMinimize);
+            this.flowLayoutPanelTopControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanelTopControl.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanelTopControl.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTopControl.Name = "flowLayoutPanelTopControl";
+            this.flowLayoutPanelTopControl.Size = new System.Drawing.Size(307, 35);
+            this.flowLayoutPanelTopControl.TabIndex = 10;
             // 
             // dataGridViewBill
             // 
@@ -120,19 +126,18 @@
             this.dataGridViewBill.Location = new System.Drawing.Point(0, 35);
             this.dataGridViewBill.Name = "dataGridViewBill";
             this.dataGridViewBill.Size = new System.Drawing.Size(307, 460);
-            this.dataGridViewBill.TabIndex = 9;
+            this.dataGridViewBill.TabIndex = 11;
             // 
             // iconButtonClose
             // 
             this.iconButtonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButtonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.iconButtonClose.FlatAppearance.BorderSize = 0;
             this.iconButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonClose.IconChar = FontAwesome.Sharp.IconChar.X;
             this.iconButtonClose.IconColor = System.Drawing.Color.White;
             this.iconButtonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonClose.IconSize = 20;
-            this.iconButtonClose.Location = new System.Drawing.Point(261, 0);
+            this.iconButtonClose.Location = new System.Drawing.Point(258, 3);
             this.iconButtonClose.Name = "iconButtonClose";
             this.iconButtonClose.Size = new System.Drawing.Size(46, 35);
             this.iconButtonClose.TabIndex = 0;
@@ -142,24 +147,18 @@
             // iconButtonMinimize
             // 
             this.iconButtonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButtonMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.iconButtonMinimize.FlatAppearance.BorderSize = 0;
             this.iconButtonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.iconButtonMinimize.IconColor = System.Drawing.Color.White;
             this.iconButtonMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonMinimize.IconSize = 20;
-            this.iconButtonMinimize.Location = new System.Drawing.Point(215, 0);
+            this.iconButtonMinimize.Location = new System.Drawing.Point(206, 3);
             this.iconButtonMinimize.Name = "iconButtonMinimize";
             this.iconButtonMinimize.Size = new System.Drawing.Size(46, 35);
-            this.iconButtonMinimize.TabIndex = 1;
+            this.iconButtonMinimize.TabIndex = 2;
             this.iconButtonMinimize.UseVisualStyleBackColor = true;
             this.iconButtonMinimize.Click += new System.EventHandler(this.iconButtonMinimize_Click);
-            // 
-            // timerMinimize
-            // 
-            this.timerMinimize.Interval = 10;
-            this.timerMinimize.Tick += new System.EventHandler(this.timerMinimize_Tick);
             // 
             // FormBill
             // 
@@ -173,7 +172,7 @@
             this.Text = "FormBill";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelTopControl.ResumeLayout(false);
+            this.flowLayoutPanelTopControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBill)).EndInit();
             this.ResumeLayout(false);
 
@@ -184,10 +183,10 @@
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButtonCancelBill;
         private FontAwesome.Sharp.IconButton iconButtonPay;
-        private System.Windows.Forms.DataGridView dataGridViewBill;
-        private System.Windows.Forms.Panel panelTopControl;
-        private FontAwesome.Sharp.IconButton iconButtonMinimize;
-        private FontAwesome.Sharp.IconButton iconButtonClose;
         private System.Windows.Forms.Timer timerMinimize;
+        private System.Windows.Forms.DataGridView dataGridViewBill;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTopControl;
+        private FontAwesome.Sharp.IconButton iconButtonClose;
+        private FontAwesome.Sharp.IconButton iconButtonMinimize;
     }
 }

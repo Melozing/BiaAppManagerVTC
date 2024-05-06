@@ -33,18 +33,14 @@
             this.panelFoodContentContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanelFoodContent = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTypeFood = new System.Windows.Forms.Panel();
-            this.TypeFoodBtn = new FontAwesome.Sharp.IconButton();
             this.ShowFoodTransition = new System.Windows.Forms.Timer(this.components);
-            this.foodWidget1 = new BiaManager.Components.FoodWidget();
-            this.foodWidget2 = new BiaManager.Components.FoodWidget();
-            this.foodWidget3 = new BiaManager.Components.FoodWidget();
-            this.foodWidget4 = new BiaManager.Components.FoodWidget();
-            this.foodWidget5 = new BiaManager.Components.FoodWidget();
-            this.foodWidget6 = new BiaManager.Components.FoodWidget();
+            this.TypeFoodBtn = new FontAwesome.Sharp.IconButton();
+            this.pictureBoxNum = new System.Windows.Forms.PictureBox();
+            this.labelNum = new System.Windows.Forms.Label();
             this.panelTypeFoodContainer.SuspendLayout();
             this.panelFoodContentContainer.SuspendLayout();
-            this.flowLayoutPanelFoodContent.SuspendLayout();
             this.panelTypeFood.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTypeFoodContainer
@@ -69,12 +65,6 @@
             // flowLayoutPanelFoodContent
             // 
             this.flowLayoutPanelFoodContent.AutoScroll = true;
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget1);
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget2);
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget3);
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget4);
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget5);
-            this.flowLayoutPanelFoodContent.Controls.Add(this.foodWidget6);
             this.flowLayoutPanelFoodContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelFoodContent.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelFoodContent.Name = "flowLayoutPanelFoodContent";
@@ -84,6 +74,8 @@
             // panelTypeFood
             // 
             this.panelTypeFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTypeFood.Controls.Add(this.labelNum);
+            this.panelTypeFood.Controls.Add(this.pictureBoxNum);
             this.panelTypeFood.Controls.Add(this.TypeFoodBtn);
             this.panelTypeFood.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTypeFood.Location = new System.Drawing.Point(0, 0);
@@ -91,9 +83,14 @@
             this.panelTypeFood.Size = new System.Drawing.Size(820, 40);
             this.panelTypeFood.TabIndex = 0;
             // 
+            // ShowFoodTransition
+            // 
+            this.ShowFoodTransition.Interval = 10;
+            this.ShowFoodTransition.Tick += new System.EventHandler(this.ShowFoodTransition_Tick);
+            // 
             // TypeFoodBtn
             // 
-            this.TypeFoodBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TypeFoodBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TypeFoodBtn.FlatAppearance.BorderSize = 0;
             this.TypeFoodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TypeFoodBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,65 +102,36 @@
             this.TypeFoodBtn.Location = new System.Drawing.Point(0, 0);
             this.TypeFoodBtn.Name = "TypeFoodBtn";
             this.TypeFoodBtn.Size = new System.Drawing.Size(820, 40);
-            this.TypeFoodBtn.TabIndex = 0;
+            this.TypeFoodBtn.TabIndex = 4;
             this.TypeFoodBtn.Text = "Đồ ăn";
             this.TypeFoodBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TypeFoodBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.TypeFoodBtn.UseVisualStyleBackColor = true;
-            this.TypeFoodBtn.Click += new System.EventHandler(this.TypeFoodBtn_Click);
             // 
-            // ShowFoodTransition
+            // pictureBoxNum
             // 
-            this.ShowFoodTransition.Interval = 10;
-            this.ShowFoodTransition.Tick += new System.EventHandler(this.ShowFoodTransition_Tick);
+            this.pictureBoxNum.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxNum.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxNum.Image = global::BiaManager.Properties.Resources.Status_Repair;
+            this.pictureBoxNum.Location = new System.Drawing.Point(768, 0);
+            this.pictureBoxNum.Name = "pictureBoxNum";
+            this.pictureBoxNum.Size = new System.Drawing.Size(52, 40);
+            this.pictureBoxNum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxNum.TabIndex = 5;
+            this.pictureBoxNum.TabStop = false;
             // 
-            // foodWidget1
+            // labelNum
             // 
-            this.foodWidget1.BackColor = System.Drawing.Color.White;
-            this.foodWidget1.Location = new System.Drawing.Point(3, 3);
-            this.foodWidget1.Name = "foodWidget1";
-            this.foodWidget1.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget1.TabIndex = 0;
-            // 
-            // foodWidget2
-            // 
-            this.foodWidget2.BackColor = System.Drawing.Color.White;
-            this.foodWidget2.Location = new System.Drawing.Point(305, 3);
-            this.foodWidget2.Name = "foodWidget2";
-            this.foodWidget2.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget2.TabIndex = 1;
-            // 
-            // foodWidget3
-            // 
-            this.foodWidget3.BackColor = System.Drawing.Color.White;
-            this.foodWidget3.Location = new System.Drawing.Point(3, 140);
-            this.foodWidget3.Name = "foodWidget3";
-            this.foodWidget3.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget3.TabIndex = 2;
-            // 
-            // foodWidget4
-            // 
-            this.foodWidget4.BackColor = System.Drawing.Color.White;
-            this.foodWidget4.Location = new System.Drawing.Point(305, 140);
-            this.foodWidget4.Name = "foodWidget4";
-            this.foodWidget4.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget4.TabIndex = 3;
-            // 
-            // foodWidget5
-            // 
-            this.foodWidget5.BackColor = System.Drawing.Color.White;
-            this.foodWidget5.Location = new System.Drawing.Point(3, 277);
-            this.foodWidget5.Name = "foodWidget5";
-            this.foodWidget5.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget5.TabIndex = 4;
-            // 
-            // foodWidget6
-            // 
-            this.foodWidget6.BackColor = System.Drawing.Color.White;
-            this.foodWidget6.Location = new System.Drawing.Point(305, 277);
-            this.foodWidget6.Name = "foodWidget6";
-            this.foodWidget6.Size = new System.Drawing.Size(296, 131);
-            this.foodWidget6.TabIndex = 5;
+            this.labelNum.BackColor = System.Drawing.Color.DarkRed;
+            this.labelNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNum.ForeColor = System.Drawing.Color.Gold;
+            this.labelNum.Location = new System.Drawing.Point(768, 0);
+            this.labelNum.Name = "labelNum";
+            this.labelNum.Size = new System.Drawing.Size(52, 40);
+            this.labelNum.TabIndex = 6;
+            this.labelNum.Text = "1";
+            this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FoodTabWidget
             // 
@@ -173,10 +141,11 @@
             this.Controls.Add(this.panelTypeFoodContainer);
             this.Name = "FoodTabWidget";
             this.Size = new System.Drawing.Size(820, 40);
+            this.Load += new System.EventHandler(this.FoodTabWidget_Load);
             this.panelTypeFoodContainer.ResumeLayout(false);
             this.panelFoodContentContainer.ResumeLayout(false);
-            this.flowLayoutPanelFoodContent.ResumeLayout(false);
             this.panelTypeFood.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,14 +155,10 @@
         private System.Windows.Forms.Panel panelTypeFoodContainer;
         private System.Windows.Forms.Panel panelFoodContentContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFoodContent;
-        private FoodWidget foodWidget1;
-        private FoodWidget foodWidget2;
-        private FoodWidget foodWidget3;
-        private FoodWidget foodWidget4;
-        private FoodWidget foodWidget5;
-        private FoodWidget foodWidget6;
         private System.Windows.Forms.Panel panelTypeFood;
-        private FontAwesome.Sharp.IconButton TypeFoodBtn;
         private System.Windows.Forms.Timer ShowFoodTransition;
+        private FontAwesome.Sharp.IconButton TypeFoodBtn;
+        private System.Windows.Forms.Label labelNum;
+        private System.Windows.Forms.PictureBox pictureBoxNum;
     }
 }
