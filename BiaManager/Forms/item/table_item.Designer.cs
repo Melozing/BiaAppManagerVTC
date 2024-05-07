@@ -28,20 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnel_Number_Table = new System.Windows.Forms.Panel();
             this.table_name = new System.Windows.Forms.Label();
             this.pnel_Table_Main = new System.Windows.Forms.Panel();
             this.StartTable = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pic_table = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnel_Number_Table.SuspendLayout();
             this.pnel_Table_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnel_Number_Table
             // 
-            this.pnel_Number_Table.BackColor = System.Drawing.Color.Cornsilk;
+            this.pnel_Number_Table.BackColor = System.Drawing.Color.White;
+            this.pnel_Number_Table.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnel_Number_Table.Controls.Add(this.pictureBox1);
             this.pnel_Number_Table.Controls.Add(this.table_name);
             this.pnel_Number_Table.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnel_Number_Table.Location = new System.Drawing.Point(0, 0);
@@ -54,25 +61,25 @@
             // 
             this.table_name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.table_name.AutoSize = true;
-            this.table_name.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.table_name.Location = new System.Drawing.Point(30, 4);
+            this.table_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.table_name.Location = new System.Drawing.Point(36, 2);
             this.table_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.table_name.Name = "table_name";
-            this.table_name.Size = new System.Drawing.Size(88, 24);
+            this.table_name.Size = new System.Drawing.Size(80, 24);
             this.table_name.TabIndex = 0;
             this.table_name.Text = "Table 1";
             // 
             // pnel_Table_Main
             // 
-            this.pnel_Table_Main.BackColor = System.Drawing.Color.DimGray;
+            this.pnel_Table_Main.BackColor = System.Drawing.Color.White;
             this.pnel_Table_Main.Controls.Add(this.StartTable);
             this.pnel_Table_Main.Controls.Add(this.iconButton1);
             this.pnel_Table_Main.Controls.Add(this.pic_table);
             this.pnel_Table_Main.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnel_Table_Main.Location = new System.Drawing.Point(0, 30);
+            this.pnel_Table_Main.Location = new System.Drawing.Point(0, 31);
             this.pnel_Table_Main.Margin = new System.Windows.Forms.Padding(2);
             this.pnel_Table_Main.Name = "pnel_Table_Main";
-            this.pnel_Table_Main.Size = new System.Drawing.Size(150, 132);
+            this.pnel_Table_Main.Size = new System.Drawing.Size(150, 131);
             this.pnel_Table_Main.TabIndex = 1;
             // 
             // StartTable
@@ -87,7 +94,7 @@
             this.StartTable.IconChar = FontAwesome.Sharp.IconChar.None;
             this.StartTable.IconColor = System.Drawing.Color.Black;
             this.StartTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.StartTable.Location = new System.Drawing.Point(34, 94);
+            this.StartTable.Location = new System.Drawing.Point(34, 93);
             this.StartTable.Name = "StartTable";
             this.StartTable.Size = new System.Drawing.Size(84, 35);
             this.StartTable.TabIndex = 2;
@@ -127,6 +134,30 @@
             this.pic_table.TabIndex = 0;
             this.pic_table.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BiaManager.Properties.Resources.Status_Empty;
+            this.pictureBox1.Location = new System.Drawing.Point(123, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // iconDropDownButton1
+            // 
+            this.iconDropDownButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconDropDownButton1.IconColor = System.Drawing.Color.Black;
+            this.iconDropDownButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconDropDownButton1.Name = "iconDropDownButton1";
+            this.iconDropDownButton1.Size = new System.Drawing.Size(23, 23);
+            this.iconDropDownButton1.Text = "iconDropDownButton1";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 9;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // table_item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +172,7 @@
             this.pnel_Number_Table.PerformLayout();
             this.pnel_Table_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,5 +185,8 @@
         private System.Windows.Forms.PictureBox pic_table;
         private FontAwesome.Sharp.IconButton StartTable;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconDropDownButton iconDropDownButton1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

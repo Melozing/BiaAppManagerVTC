@@ -38,7 +38,7 @@ namespace BiaManager.Forms
                 pictureBox1.Image = Properties.Resources.anhlogin;
             }
 
-            timer.Interval = 100;
+            timer.Interval = 120;
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -201,5 +201,28 @@ namespace BiaManager.Forms
             label1.Location = new System.Drawing.Point(currentPosition, label1.Location.Y);
         }
 
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageFuctionConstans.WarningOKCancell("Bạn muốn thoát chương trình !");
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnsignup_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tính năng đăng ký đang tạm khóa!", "Bảo trì tính năng", MessageBoxButtons.OK);
+            return;
+
+        }
+
+        private void showpass_Click(object sender, EventArgs e)
+        {
+                textbox_pass.PasswordChar = '\0';
+                showpass.Text = "show";
+            
+            
+        }
     }
 }

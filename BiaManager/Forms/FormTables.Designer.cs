@@ -32,14 +32,16 @@
             this.metroContextMenuTables = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanelTableContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelTables = new System.Windows.Forms.FlowLayoutPanel();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableEmptyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanelTables = new System.Windows.Forms.FlowLayoutPanel();
+            this.table_item1 = new BiaManager.Forms.item.table_item();
             this.metroContextMenuTables.SuspendLayout();
+            this.flowLayoutPanelTables.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroContextMenuTables
@@ -75,6 +77,16 @@
             this.flowLayoutPanelTableContainer.Size = new System.Drawing.Size(963, 570);
             this.flowLayoutPanelTableContainer.TabIndex = 2;
             // 
+            // flowLayoutPanelTables
+            // 
+            this.flowLayoutPanelTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.flowLayoutPanelTables.Controls.Add(this.table_item1);
+            this.flowLayoutPanelTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTables.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTables.Name = "flowLayoutPanelTables";
+            this.flowLayoutPanelTables.Size = new System.Drawing.Size(973, 611);
+            this.flowLayoutPanelTables.TabIndex = 1;
+            // 
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Image = global::BiaManager.Properties.Resources.Add;
@@ -99,21 +111,21 @@
             // 
             this.tableEmptyToolStripMenuItem.Image = global::BiaManager.Properties.Resources.Billiard_Ball;
             this.tableEmptyToolStripMenuItem.Name = "tableEmptyToolStripMenuItem";
-            this.tableEmptyToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.tableEmptyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.tableEmptyToolStripMenuItem.Text = "Empty";
             // 
             // playingToolStripMenuItem
             // 
             this.playingToolStripMenuItem.Image = global::BiaManager.Properties.Resources.Online;
             this.playingToolStripMenuItem.Name = "playingToolStripMenuItem";
-            this.playingToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.playingToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.playingToolStripMenuItem.Text = "Playing";
             // 
             // repairToolStripMenuItem
             // 
             this.repairToolStripMenuItem.Image = global::BiaManager.Properties.Resources.Maintenance;
             this.repairToolStripMenuItem.Name = "repairToolStripMenuItem";
-            this.repairToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.repairToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.repairToolStripMenuItem.Text = "Repair";
             // 
             // exitToolStripMenuItem
@@ -123,14 +135,16 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // flowLayoutPanelTables
+            // table_item1
             // 
-            this.flowLayoutPanelTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.flowLayoutPanelTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelTables.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelTables.Name = "flowLayoutPanelTables";
-            this.flowLayoutPanelTables.Size = new System.Drawing.Size(973, 611);
-            this.flowLayoutPanelTables.TabIndex = 1;
+            this.table_item1.BackColor = System.Drawing.Color.Transparent;
+            this.table_item1.Location = new System.Drawing.Point(2, 2);
+            this.table_item1.Margin = new System.Windows.Forms.Padding(2);
+            this.table_item1.Name = "table_item1";
+            this.table_item1.Size = new System.Drawing.Size(150, 162);
+            this.table_item1.TabIndex = 0;
+            this.table_item1.TableStatus = null;
+            this.table_item1.UseSelectable = true;
             // 
             // FormTables
             // 
@@ -140,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(973, 611);
             this.ControlBox = false;
             this.Controls.Add(this.flowLayoutPanelTables);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTables";
@@ -147,6 +162,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.FormTables_Load);
             this.metroContextMenuTables.ResumeLayout(false);
+            this.flowLayoutPanelTables.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -163,5 +179,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTableContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTables;
+        private item.table_item table_item1;
     }
 }

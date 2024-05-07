@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.panelSearchContainer = new System.Windows.Forms.Panel();
-            this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panelLoginContentContainerChild = new System.Windows.Forms.Panel();
             this.comboBoxItemCategory = new System.Windows.Forms.ComboBox();
-            this.ButtonDelete = new FontAwesome.Sharp.IconButton();
-            this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.textBoxItemPrice = new System.Windows.Forms.TextBox();
             this.labelItemPrice = new System.Windows.Forms.Label();
-            this.ButtonCreate = new FontAwesome.Sharp.IconButton();
             this.textBoxItemName = new System.Windows.Forms.TextBox();
             this.ItemNameLabel = new System.Windows.Forms.Label();
             this.ItemCategoryLabel = new System.Windows.Forms.Label();
             this.ItemImgLabel = new System.Windows.Forms.Label();
-            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
-            this.iconButtonUploadItem = new FontAwesome.Sharp.IconButton();
             this.dataGridViewAddItem = new System.Windows.Forms.DataGridView();
+            this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
+            this.iconButtonUploadItem = new FontAwesome.Sharp.IconButton();
+            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.ButtonDelete = new FontAwesome.Sharp.IconButton();
+            this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
+            this.ButtonCreate = new FontAwesome.Sharp.IconButton();
             this.panelSearchContainer.SuspendLayout();
             this.panelLoginContentContainerChild.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSearchContainer
@@ -62,23 +62,6 @@
             this.panelSearchContainer.Size = new System.Drawing.Size(800, 40);
             this.panelSearchContainer.TabIndex = 9;
             // 
-            // iconButtonSearch
-            // 
-            this.iconButtonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButtonSearch.FlatAppearance.BorderSize = 0;
-            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSearch.IconSize = 30;
-            this.iconButtonSearch.Location = new System.Drawing.Point(542, 5);
-            this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
-            this.iconButtonSearch.TabIndex = 13;
-            this.iconButtonSearch.UseVisualStyleBackColor = true;
-            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
-            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -91,6 +74,7 @@
             // panelLoginContentContainerChild
             // 
             this.panelLoginContentContainerChild.AutoScroll = true;
+            this.panelLoginContentContainerChild.BackColor = System.Drawing.Color.White;
             this.panelLoginContentContainerChild.Controls.Add(this.iconButtonUploadItem);
             this.panelLoginContentContainerChild.Controls.Add(this.pictureBoxItem);
             this.panelLoginContentContainerChild.Controls.Add(this.comboBoxItemCategory);
@@ -113,11 +97,144 @@
             // 
             this.comboBoxItemCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxItemCategory.FormattingEnabled = true;
-            this.comboBoxItemCategory.Location = new System.Drawing.Point(387, 81);
+            this.comboBoxItemCategory.Location = new System.Drawing.Point(387, 137);
             this.comboBoxItemCategory.Name = "comboBoxItemCategory";
             this.comboBoxItemCategory.Size = new System.Drawing.Size(262, 21);
             this.comboBoxItemCategory.TabIndex = 55;
             this.comboBoxItemCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxItemCategory_SelectedIndexChanged);
+            // 
+            // textBoxItemPrice
+            // 
+            this.textBoxItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxItemPrice.Location = new System.Drawing.Point(387, 189);
+            this.textBoxItemPrice.Name = "textBoxItemPrice";
+            this.textBoxItemPrice.Size = new System.Drawing.Size(262, 20);
+            this.textBoxItemPrice.TabIndex = 47;
+            this.textBoxItemPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemPrice_KeyDown);
+            this.textBoxItemPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxItemPrice_KeyPress);
+            // 
+            // labelItemPrice
+            // 
+            this.labelItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelItemPrice.AutoSize = true;
+            this.labelItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItemPrice.ForeColor = System.Drawing.Color.Black;
+            this.labelItemPrice.Location = new System.Drawing.Point(384, 162);
+            this.labelItemPrice.Name = "labelItemPrice";
+            this.labelItemPrice.Size = new System.Drawing.Size(103, 24);
+            this.labelItemPrice.TabIndex = 52;
+            this.labelItemPrice.Text = "Item Price";
+            // 
+            // textBoxItemName
+            // 
+            this.textBoxItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxItemName.Location = new System.Drawing.Point(387, 73);
+            this.textBoxItemName.Multiline = true;
+            this.textBoxItemName.Name = "textBoxItemName";
+            this.textBoxItemName.Size = new System.Drawing.Size(200, 40);
+            this.textBoxItemName.TabIndex = 45;
+            this.textBoxItemName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemName_KeyDown);
+            // 
+            // ItemNameLabel
+            // 
+            this.ItemNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ItemNameLabel.AutoSize = true;
+            this.ItemNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.ItemNameLabel.Location = new System.Drawing.Point(383, 51);
+            this.ItemNameLabel.Name = "ItemNameLabel";
+            this.ItemNameLabel.Size = new System.Drawing.Size(110, 24);
+            this.ItemNameLabel.TabIndex = 39;
+            this.ItemNameLabel.Text = "Item Name";
+            // 
+            // ItemCategoryLabel
+            // 
+            this.ItemCategoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ItemCategoryLabel.AutoSize = true;
+            this.ItemCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemCategoryLabel.ForeColor = System.Drawing.Color.Black;
+            this.ItemCategoryLabel.Location = new System.Drawing.Point(383, 116);
+            this.ItemCategoryLabel.Name = "ItemCategoryLabel";
+            this.ItemCategoryLabel.Size = new System.Drawing.Size(138, 24);
+            this.ItemCategoryLabel.TabIndex = 40;
+            this.ItemCategoryLabel.Text = "Item Category";
+            // 
+            // ItemImgLabel
+            // 
+            this.ItemImgLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ItemImgLabel.AutoSize = true;
+            this.ItemImgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemImgLabel.ForeColor = System.Drawing.Color.Black;
+            this.ItemImgLabel.Location = new System.Drawing.Point(199, 21);
+            this.ItemImgLabel.Name = "ItemImgLabel";
+            this.ItemImgLabel.Size = new System.Drawing.Size(112, 24);
+            this.ItemImgLabel.TabIndex = 41;
+            this.ItemImgLabel.Text = "Item Image";
+            // 
+            // dataGridViewAddItem
+            // 
+            this.dataGridViewAddItem.AllowUserToAddRows = false;
+            this.dataGridViewAddItem.AllowUserToDeleteRows = false;
+            this.dataGridViewAddItem.AllowUserToResizeRows = false;
+            this.dataGridViewAddItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAddItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAddItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewAddItem.Location = new System.Drawing.Point(0, 481);
+            this.dataGridViewAddItem.Name = "dataGridViewAddItem";
+            this.dataGridViewAddItem.Size = new System.Drawing.Size(800, 42);
+            this.dataGridViewAddItem.TabIndex = 10;
+            this.dataGridViewAddItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
+            this.dataGridViewAddItem.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
+            this.dataGridViewAddItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
+            this.dataGridViewAddItem.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAddItem_CellFormatting);
+            // 
+            // iconButtonSearch
+            // 
+            this.iconButtonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButtonSearch.FlatAppearance.BorderSize = 0;
+            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearch.IconSize = 30;
+            this.iconButtonSearch.Location = new System.Drawing.Point(542, 5);
+            this.iconButtonSearch.Name = "iconButtonSearch";
+            this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
+            this.iconButtonSearch.TabIndex = 13;
+            this.iconButtonSearch.UseVisualStyleBackColor = true;
+            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
+            // 
+            // iconButtonUploadItem
+            // 
+            this.iconButtonUploadItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButtonUploadItem.AutoSize = true;
+            this.iconButtonUploadItem.BackgroundImage = global::BiaManager.Properties.Resources.Add_Imageitem;
+            this.iconButtonUploadItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButtonUploadItem.FlatAppearance.BorderSize = 0;
+            this.iconButtonUploadItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButtonUploadItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonUploadItem.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonUploadItem.IconColor = System.Drawing.Color.Black;
+            this.iconButtonUploadItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonUploadItem.Location = new System.Drawing.Point(54, 51);
+            this.iconButtonUploadItem.Name = "iconButtonUploadItem";
+            this.iconButtonUploadItem.Size = new System.Drawing.Size(107, 100);
+            this.iconButtonUploadItem.TabIndex = 48;
+            this.iconButtonUploadItem.UseVisualStyleBackColor = true;
+            this.iconButtonUploadItem.Click += new System.EventHandler(this.iconButtonUploadItem_Click);
+            // 
+            // pictureBoxItem
+            // 
+            this.pictureBoxItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxItem.Location = new System.Drawing.Point(189, 51);
+            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxItem.Name = "pictureBoxItem";
+            this.pictureBoxItem.Size = new System.Drawing.Size(136, 107);
+            this.pictureBoxItem.TabIndex = 56;
+            this.pictureBoxItem.TabStop = false;
             // 
             // ButtonDelete
             // 
@@ -151,35 +268,13 @@
             this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
             this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdate.Location = new System.Drawing.Point(387, 313);
+            this.ButtonUpdate.Location = new System.Drawing.Point(388, 313);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(262, 54);
             this.ButtonUpdate.TabIndex = 53;
             this.ButtonUpdate.Text = "Update Item";
             this.ButtonUpdate.UseVisualStyleBackColor = false;
             this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // textBoxItemPrice
-            // 
-            this.textBoxItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxItemPrice.Location = new System.Drawing.Point(387, 113);
-            this.textBoxItemPrice.Name = "textBoxItemPrice";
-            this.textBoxItemPrice.Size = new System.Drawing.Size(262, 20);
-            this.textBoxItemPrice.TabIndex = 47;
-            this.textBoxItemPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemPrice_KeyDown);
-            this.textBoxItemPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxItemPrice_KeyPress);
-            // 
-            // labelItemPrice
-            // 
-            this.labelItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelItemPrice.AutoSize = true;
-            this.labelItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemPrice.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelItemPrice.Location = new System.Drawing.Point(152, 109);
-            this.labelItemPrice.Name = "labelItemPrice";
-            this.labelItemPrice.Size = new System.Drawing.Size(103, 24);
-            this.labelItemPrice.TabIndex = 52;
-            this.labelItemPrice.Text = "Item Price";
             // 
             // ButtonCreate
             // 
@@ -201,96 +296,6 @@
             this.ButtonCreate.UseVisualStyleBackColor = false;
             this.ButtonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
-            // textBoxItemName
-            // 
-            this.textBoxItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxItemName.Location = new System.Drawing.Point(387, 48);
-            this.textBoxItemName.Name = "textBoxItemName";
-            this.textBoxItemName.Size = new System.Drawing.Size(262, 20);
-            this.textBoxItemName.TabIndex = 45;
-            this.textBoxItemName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemName_KeyDown);
-            // 
-            // ItemNameLabel
-            // 
-            this.ItemNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemNameLabel.AutoSize = true;
-            this.ItemNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemNameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ItemNameLabel.Location = new System.Drawing.Point(152, 44);
-            this.ItemNameLabel.Name = "ItemNameLabel";
-            this.ItemNameLabel.Size = new System.Drawing.Size(110, 24);
-            this.ItemNameLabel.TabIndex = 39;
-            this.ItemNameLabel.Text = "Item Name";
-            // 
-            // ItemCategoryLabel
-            // 
-            this.ItemCategoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemCategoryLabel.AutoSize = true;
-            this.ItemCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemCategoryLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ItemCategoryLabel.Location = new System.Drawing.Point(152, 77);
-            this.ItemCategoryLabel.Name = "ItemCategoryLabel";
-            this.ItemCategoryLabel.Size = new System.Drawing.Size(138, 24);
-            this.ItemCategoryLabel.TabIndex = 40;
-            this.ItemCategoryLabel.Text = "Item Category";
-            // 
-            // ItemImgLabel
-            // 
-            this.ItemImgLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemImgLabel.AutoSize = true;
-            this.ItemImgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemImgLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ItemImgLabel.Location = new System.Drawing.Point(152, 142);
-            this.ItemImgLabel.Name = "ItemImgLabel";
-            this.ItemImgLabel.Size = new System.Drawing.Size(112, 24);
-            this.ItemImgLabel.TabIndex = 41;
-            this.ItemImgLabel.Text = "Item Image";
-            // 
-            // pictureBoxItem
-            // 
-            this.pictureBoxItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(450, 200);
-            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(136, 107);
-            this.pictureBoxItem.TabIndex = 56;
-            this.pictureBoxItem.TabStop = false;
-            // 
-            // iconButtonUploadItem
-            // 
-            this.iconButtonUploadItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButtonUploadItem.AutoSize = true;
-            this.iconButtonUploadItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonUploadItem.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonUploadItem.IconColor = System.Drawing.Color.Black;
-            this.iconButtonUploadItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonUploadItem.Location = new System.Drawing.Point(387, 140);
-            this.iconButtonUploadItem.Name = "iconButtonUploadItem";
-            this.iconButtonUploadItem.Size = new System.Drawing.Size(262, 54);
-            this.iconButtonUploadItem.TabIndex = 48;
-            this.iconButtonUploadItem.Text = "Upload Image";
-            this.iconButtonUploadItem.UseVisualStyleBackColor = true;
-            this.iconButtonUploadItem.Click += new System.EventHandler(this.iconButtonUploadItem_Click);
-            // 
-            // dataGridViewAddItem
-            // 
-            this.dataGridViewAddItem.AllowUserToAddRows = false;
-            this.dataGridViewAddItem.AllowUserToDeleteRows = false;
-            this.dataGridViewAddItem.AllowUserToResizeRows = false;
-            this.dataGridViewAddItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAddItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAddItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewAddItem.Location = new System.Drawing.Point(0, 481);
-            this.dataGridViewAddItem.Name = "dataGridViewAddItem";
-            this.dataGridViewAddItem.Size = new System.Drawing.Size(800, 42);
-            this.dataGridViewAddItem.TabIndex = 10;
-            this.dataGridViewAddItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAddItem_CellFormatting);
-            // 
             // AddItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,8 +313,8 @@
             this.panelSearchContainer.PerformLayout();
             this.panelLoginContentContainerChild.ResumeLayout(false);
             this.panelLoginContentContainerChild.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             this.ResumeLayout(false);
 
         }
