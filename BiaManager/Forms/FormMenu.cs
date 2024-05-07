@@ -49,20 +49,23 @@ namespace BiaManager.Forms
                 foodTabWidgetNew.Dock = DockStyle.Top;
                 foodTabWidgetNew.AutoSize = false;
 
-                List<InvoiceDetailItem> invoiceDetailItems = GetInvoiceDetailItems(category.CategoryName);
-                // Đếm số lượng mặt hàng thuộc danh mục hiện tại
-                int itemCount = CountItemsByCategory(invoiceDetailItems, category.CategoryName);
-                foodTabWidgetNew.SetFoodTabInfo(category.CategoryName, itemCount);
+
+                foodTabWidgetNew.SetFoodTabInfo(category.CategoryName);
                 foreach (var item in items)
                 {
                     if (item.ItemImage != null && category.CategoryName == item.CategoryName)
                     {
                         if (!string.IsNullOrWhiteSpace(item.ItemName))
                         {
+                            List<InvoiceDetailItem> invoiceDetailItems = GetInvoiceDetailItems(item.ItemName);
+                            // Đếm số lượng mặt hàng thuộc danh mục hiện tại
+                            int itemCount = CountItemsByCategory(invoiceDetailItems, item.ItemName);
+
                             FoodWidget foodWidget = new FoodWidget();
                             foodWidget.SetIDItem(item.IdItem, idTable);
                             foodWidget.SetFoodInfo(item.ItemName, item.ItemPrice, item.ItemImage);
                             foodTabWidgetNew.AddFood(foodWidget);
+                            foodWidget.SetFoodInfoNum(itemCount);
                         }
                     }
                 }
@@ -113,7 +116,7 @@ namespace BiaManager.Forms
         }
 
         // Hàm lấy danh sách các chi tiết hóa đơn từ cơ sở dữ liệu
-        private List<InvoiceDetailItem> GetInvoiceDetailItems(string categoryName)
+        private List<InvoiceDetailItem> GetInvoiceDetailItems(string itemName)
         {
             string idTable = foodTabWidget.Tag.ToString();
 
@@ -141,7 +144,7 @@ namespace BiaManager.Forms
             JOIN
                 items_category AS itm_cat ON itm.IdItemCategory = itm_cat.IdItemCategory
             WHERE inv.Invoice_Status = 0 AND inv.TableID ='" + idTable + "' " +
-            "AND itm_cat.ItemCategory_Name = '" + categoryName + "'" +
+            "AND itm.item_Name = '" + itemName + "'" +
             "AND itm.IdItem != 'IHour';";
 
             return databaseService.GetData(queryDetail, (reader) =>
@@ -163,17 +166,18 @@ namespace BiaManager.Forms
         }
 
         // Hàm đếm số lượng mặt hàng thuộc một danh mục
-        private int CountItemsByCategory(List<InvoiceDetailItem> invoiceDetailItems, string categoryName)
+        private int CountItemsByCategory(List<InvoiceDetailItem> invoiceDetailItems, string itemName)
         {
             int count = 0;
             foreach (var itemDetail in invoiceDetailItems)
             {
-                if (itemDetail.ItemCategoryName == categoryName)
+                if (itemDetail.ItemName == itemName)
                 {
-                    count++;
+                    count += itemDetail.InvoiceTotalAmount; // Sử dụng số lượng đã đặt của mỗi mặt hàng
                 }
             }
             return count;
         }
+
     }
 }

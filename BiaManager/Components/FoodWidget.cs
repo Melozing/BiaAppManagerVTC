@@ -33,8 +33,32 @@ namespace BiaManager.Components
             TableWidget tableWidget = new TableWidget();
             tableWidget.SetIconButtonTags(idTable);
             tableWidget.ShowBill();
-        }
 
+            UpdateOrderedQuantity(idItem, idTable);
+        }
+        private void UpdateOrderedQuantity(string itemId, string tableId)
+        {
+            // Kiểm tra xem đã có đơn hàng cho mặt hàng này và bàn này chưa
+            string checkOrderQuery = @"
+            SELECT IdInvoice, Invoice_TotalAmount
+            FROM invoice_detail
+            WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
+
+            DataTable result = databaseService.LoadDataTable(checkOrderQuery);
+
+            if (result.Rows.Count > 0)
+            {
+                pictureBoxNum.Show();
+                int totalAmount = (int)result.Rows[0]["Invoice_TotalAmount"];
+                labelNum.Text = totalAmount.ToString();
+                labelNum.Show();
+            }
+            else
+            {
+                pictureBoxNum.Hide();
+                labelNum.Hide();
+            }
+        }
         public void SetIDItem(string idItem, string idTable)
         {
             pictureBoxAdd.Tag = idItem;
@@ -42,9 +66,32 @@ namespace BiaManager.Components
             CheckItemOrdered(idItem, idTable);
         }
 
+        public void SetFoodInfoNum(int num)
+        {
+            if (num > 0)
+            {
+                pictureBoxNum.Show();
+                labelNum.Show();
+                labelNum.Text = num.ToString();
+            }
+            else
+            {
+                pictureBoxNum.Hide();
+                labelNum.Hide();
+            }
+        }
         private void FoodWidget_Load(object sender, System.EventArgs e)
         {
             pictureBoxAdd.BackColor = Color.Transparent;
+            pictureBoxNum.BackColor = Color.Transparent;
+            pictureBoxNum.BringToFront();
+            labelNum.Parent = pictureBoxNum;
+            labelNum.Dock = DockStyle.Fill;
+            labelNum.BringToFront();
+            labelNum.TextAlign = ContentAlignment.MiddleCenter;
+            labelNum.BackColor = Color.Transparent;
+            labelNum.Hide();
+
         }
         private void OrderItem(string itemId, string tableId)
         {
@@ -60,9 +107,9 @@ namespace BiaManager.Components
             {
                 // Nếu đã có đơn hàng, tăng Invoice_TotalAmount lên 1 đơn vị
                 string updateQuery = @"
-            UPDATE invoice_detail
-            SET Invoice_TotalAmount = Invoice_TotalAmount + 1
-            WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
+                UPDATE invoice_detail
+                SET Invoice_TotalAmount = Invoice_TotalAmount + 1
+                WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
 
                 databaseService.ExecuteNonQuery(updateQuery);
             }
@@ -70,8 +117,8 @@ namespace BiaManager.Components
             {
                 // Nếu chưa có đơn hàng, tạo mới một hàng trong invoice_detail
                 string insertQuery = @"
-            INSERT INTO invoice_detail (IdInvoice, IdItem, Invoice_TotalAmount)
-            VALUES ((SELECT TOP 1 IdInvoice FROM invoice WHERE TableID = '" + tableId + "' ORDER BY Invoice_time DESC), '" + itemId + "', 1);";
+                INSERT INTO invoice_detail (IdInvoice, IdItem, Invoice_TotalAmount)
+                VALUES ((SELECT TOP 1 IdInvoice FROM invoice WHERE TableID = '" + tableId + "' ORDER BY Invoice_time DESC), '" + itemId + "', 1);";
 
                 databaseService.ExecuteNonQuery(insertQuery);
             }
@@ -85,9 +132,9 @@ namespace BiaManager.Components
 
             // Kiểm tra xem đã có đơn hàng cho mặt hàng này và bàn này chưa
             string checkOrderQuery = @"
-        SELECT IdInvoice, Invoice_TotalAmount
-        FROM invoice_detail
-        WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
+            SELECT IdInvoice, Invoice_TotalAmount
+            FROM invoice_detail
+            WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
 
             DataTable result = databaseService.LoadDataTable(checkOrderQuery);
 
@@ -99,9 +146,9 @@ namespace BiaManager.Components
                 if (totalAmount > 1)
                 {
                     string updateQuery = @"
-                UPDATE invoice_detail
-                SET Invoice_TotalAmount = Invoice_TotalAmount - 1
-                WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
+                    UPDATE invoice_detail
+                    SET Invoice_TotalAmount = Invoice_TotalAmount - 1
+                    WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
 
                     databaseService.ExecuteNonQuery(updateQuery);
                 }
@@ -109,15 +156,19 @@ namespace BiaManager.Components
                 else
                 {
                     string deleteQuery = @"
-                DELETE FROM invoice_detail
-                WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
+                    DELETE FROM invoice_detail
+                    WHERE IdItem = '" + itemId + "' AND IdInvoice IN (SELECT IdInvoice FROM invoice WHERE TableID = '" + tableId + "' AND Invoice_Status = 0);";
 
                     databaseService.ExecuteNonQuery(deleteQuery);
                     pictureBoxMinus.Hide(); // Ẩn nút pictureBoxMinus khi không còn hàng nào trong đơn hàng
                 }
+
                 TableWidget tableWidget = new TableWidget();
                 tableWidget.SetIconButtonTags(tableId);
                 tableWidget.ShowBill();
+
+                // Cập nhật số lượng của item đã order
+                UpdateOrderedQuantity(itemId, tableId);
             }
         }
         private void CheckItemOrdered(string itemId, string tableId)
