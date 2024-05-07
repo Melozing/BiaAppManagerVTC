@@ -242,25 +242,29 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void dataGridViewTablesAdd_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewTablesAdd.Columns["Status"].Index && e.Value != null)
+            if (e.ColumnIndex == dataGridViewTablesAdd.Columns[2].Index)
             {
-                int status = Convert.ToInt32(e.Value);
-                switch (status)
+                if (e.Value != null && e.Value.GetType() == typeof(int))
                 {
-                    case 0:
-                        e.Value = "empty";
-                        break;
-                    case 1:
-                        e.Value = "playing";
-                        break;
-                    case 2:
-                        e.Value = "repairing";
-                        break;
-                    default:
-                        e.Value = "unknown";
-                        break;
+                    int status = Convert.ToInt32(e.Value);
+                    switch (status)
+                    {
+                        case 0:
+
+                            e.Value = "empty";
+                            break;
+                        case 1:
+                            e.Value = "playing";
+                            break;
+                        case 2:
+                            e.Value = "repairing";
+                            break;
+                        default:
+                            e.Value = "unknown";
+                            break;
+                    }
+                    e.FormattingApplied = true;
                 }
-                e.FormattingApplied = true;
             }
         }
 
