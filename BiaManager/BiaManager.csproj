@@ -193,7 +193,9 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\InvoiceDetailItem.cs" />
     <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemCategory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

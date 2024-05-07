@@ -9,7 +9,7 @@ namespace BiaManager.Forms.AdminForm.Staff
 {
     internal partial class StaffManager : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
 
         private Size addStaffFormSize;
         private Rectangle usernameLabelRectangle;

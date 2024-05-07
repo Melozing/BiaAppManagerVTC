@@ -20,6 +20,7 @@ namespace BiaManager.Components
             if (!typeFoodContainerExpand)
             {
                 panelTypeFoodContainer.Height += 10;
+                this.Height += 10;
                 if (panelTypeFoodContainer.Height >= 250)
                 {
                     ShowFoodTransition.Stop();
@@ -29,6 +30,7 @@ namespace BiaManager.Components
             else
             {
                 panelTypeFoodContainer.Height -= 10;
+                this.Height -= 10;
                 if (panelTypeFoodContainer.Height <= 40)
                 {
                     ShowFoodTransition.Stop();
@@ -51,12 +53,17 @@ namespace BiaManager.Components
                 labelNum.Show();
                 labelNum.Text = num.ToString();
             }
+            else
+            {
+                pictureBoxNum.Hide();
+                labelNum.Hide();
+            }
         }
 
         private void FoodTabWidget_Load(object sender, System.EventArgs e)
         {
             pictureBoxNum.BackColor = Color.Transparent;
-            pictureBoxNum.Hide();
+            pictureBoxNum.BringToFront();
             labelNum.Parent = pictureBoxNum;
             labelNum.Dock = DockStyle.Fill;
             labelNum.BringToFront();

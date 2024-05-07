@@ -7,7 +7,7 @@ namespace BiaManager.Forms.AdminForm.Tables
 {
     public partial class TableTypeManager : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
         private string tempID;
         private string tempName;
         public TableTypeManager()

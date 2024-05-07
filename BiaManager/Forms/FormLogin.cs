@@ -10,7 +10,7 @@ namespace BiaManager.Forms
 {
     public partial class FormLogin : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
 
         public FormLogin()
         {
