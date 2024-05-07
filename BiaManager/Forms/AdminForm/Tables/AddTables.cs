@@ -10,7 +10,7 @@ namespace BiaManager.Forms.AdminForm.Tables
 {
     public partial class AddTables : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
         Dictionary<string, string> tableTypeDictionary = new Dictionary<string, string>();
         private string tempName;
         private string tempID;

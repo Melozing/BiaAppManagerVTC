@@ -9,7 +9,7 @@ namespace BiaManager.Components
 {
     public partial class TableWidget : UserControl
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
 
         public TableWidget()
         {
@@ -37,6 +37,10 @@ namespace BiaManager.Components
                    "COMMIT TRANSACTION;";
             databaseService.ExecuteNonQuery(query);
             SetActiveOrder();
+            ShowBillDetail();
+        }
+        public void ShowBill()
+        {
             ShowBillDetail();
         }
         private void ShowBillDetail()
@@ -199,11 +203,17 @@ namespace BiaManager.Components
 
         private void IconButtonOrder_Click(object sender, System.EventArgs e)
         {
+            ReloadOrderPage();
+        }
+        public void ReloadOrderPage()
+        {
+            ShowBillDetail();
             FormMenu formMenu = new FormMenu();
             HomePage.Instance.OpenChildForm(formMenu);
             HomePage.Instance.ShowPanelDetail();
+            formMenu.GetIDTable(IconButtonOrder.Tag.ToString());
         }
-        void SetIconButtonTags(string tagId)
+        public void SetIconButtonTags(string tagId)
         {
             IconButtonStartTable.Tag = tagId;
             IconButtonOrder.Tag = tagId;
