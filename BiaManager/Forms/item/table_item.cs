@@ -59,14 +59,20 @@ namespace BiaManager.Forms.item
                 case "empty":
                     //picture_table.Image = Properties;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
+                    statusPic.Image = Properties.Resources.Status_Empty;
+                    statusPic.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case "playing":
                     //picture_table.Image = Properties.Resources.bida2;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
+                    statusPic.Image = Properties.Resources.Status_Playing;
+                    statusPic.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case "repair":
                     //picture_table.Image = Properties.Resources.bida3;
                     picture_table.SizeMode = PictureBoxSizeMode.Zoom;
+                    statusPic.Image = Properties.Resources.Status_Repair;
+                    statusPic.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 default:
                     break;
@@ -102,6 +108,23 @@ namespace BiaManager.Forms.item
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pic_table_MouseHover(object sender, EventArgs e)
+        {
+            //phat trien them loai ban va tinh trang bang tooltip
+
+
+            // em lam truoc hien trang thai
+            string statusttooltip = " Status :" + TableStatus + "\nType Table :"; // them loai ban
+            myTip.SetToolTip(pic_table,statusttooltip);
+            
+
+        }
+
+        private void pic_table_MouseLeave(object sender, EventArgs e)
+        {
+            myTip.Hide(pic_table);
         }
     }
 }

@@ -36,6 +36,8 @@ namespace BiaManager
         private string tempTablesManagementText;
         private string tempSettingText;
 
+        private int originalLogoWidth;
+        private int originalLogoHeight;
         public HomePage()
         {
             InitializeComponent();
@@ -350,6 +352,9 @@ namespace BiaManager
                 Setting.Text = null;
 
                 panelSidebarMenu.Width -= 5;
+                int newLogoWidth = panelTittleBar.Width / 2;
+                btnHome.Size = new Size(newLogoWidth, panelTittleBar.Height);
+                panelLogo.Size = new Size(newLogoWidth, panelTittleBar.Height);
                 if (panelSidebarMenu.Width <= 50)
                 {
                     btnHome.Size = new Size(24, 24);
@@ -377,7 +382,8 @@ namespace BiaManager
                 btnHome.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 panelSidebarMenu.Width += 5;
-
+                btnHome.Size = new Size(originalLogoWidth, originalLogoHeight);
+                panelLogo.Size = new Size(originalLogoWidth, originalLogoHeight);
                 Home.Width = panelSidebarMenu.Width;
                 Tables.Width = panelSidebarMenu.Width;
                 Menu.Width = panelSidebarMenu.Width;
@@ -440,6 +446,8 @@ namespace BiaManager
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            originalLogoWidth = btnHome.Width;
+            originalLogoHeight = btnHome.Height;
             if (currentUserRole == 0)
             {
                 Home.Show();

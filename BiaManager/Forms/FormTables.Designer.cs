@@ -33,13 +33,14 @@
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanelTableContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelTables = new System.Windows.Forms.FlowLayoutPanel();
+            this.table_item1 = new BiaManager.Forms.item.table_item();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableEmptyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.table_item1 = new BiaManager.Forms.item.table_item();
+            this.table_item2 = new BiaManager.Forms.item.table_item();
             this.metroContextMenuTables.SuspendLayout();
             this.flowLayoutPanelTables.SuspendLayout();
             this.SuspendLayout();
@@ -79,13 +80,26 @@
             // 
             // flowLayoutPanelTables
             // 
-            this.flowLayoutPanelTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.flowLayoutPanelTables.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanelTables.Controls.Add(this.table_item1);
+            this.flowLayoutPanelTables.Controls.Add(this.table_item2);
             this.flowLayoutPanelTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTables.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTables.Margin = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanelTables.Name = "flowLayoutPanelTables";
             this.flowLayoutPanelTables.Size = new System.Drawing.Size(973, 611);
             this.flowLayoutPanelTables.TabIndex = 1;
+            // 
+            // table_item1
+            // 
+            this.table_item1.BackColor = System.Drawing.Color.Transparent;
+            this.table_item1.Location = new System.Drawing.Point(2, 2);
+            this.table_item1.Margin = new System.Windows.Forms.Padding(2);
+            this.table_item1.Name = "table_item1";
+            this.table_item1.Size = new System.Drawing.Size(150, 162);
+            this.table_item1.TabIndex = 0;
+            this.table_item1.TableStatus = null;
+            this.table_item1.UseSelectable = true;
             // 
             // checkToolStripMenuItem
             // 
@@ -135,16 +149,16 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // table_item1
+            // table_item2
             // 
-            this.table_item1.BackColor = System.Drawing.Color.Transparent;
-            this.table_item1.Location = new System.Drawing.Point(2, 2);
-            this.table_item1.Margin = new System.Windows.Forms.Padding(2);
-            this.table_item1.Name = "table_item1";
-            this.table_item1.Size = new System.Drawing.Size(150, 162);
-            this.table_item1.TabIndex = 0;
-            this.table_item1.TableStatus = null;
-            this.table_item1.UseSelectable = true;
+            this.table_item2.BackColor = System.Drawing.Color.Transparent;
+            this.table_item2.Location = new System.Drawing.Point(156, 2);
+            this.table_item2.Margin = new System.Windows.Forms.Padding(2);
+            this.table_item2.Name = "table_item2";
+            this.table_item2.Size = new System.Drawing.Size(150, 162);
+            this.table_item2.TabIndex = 1;
+            this.table_item2.TableStatus = null;
+            this.table_item2.UseSelectable = true;
             // 
             // FormTables
             // 
@@ -180,5 +194,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTableContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTables;
         private item.table_item table_item1;
+        private item.table_item table_item2;
     }
 }

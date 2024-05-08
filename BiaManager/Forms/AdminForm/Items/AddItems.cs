@@ -42,47 +42,47 @@ namespace BiaManager.Forms.AdminForm.Items
         }
         private void ResetSubmitButton()
         {
-            ButtonUpdate.Hide();
-            ButtonDelete.Hide();
-            ButtonCreate.Show();
+            btnupdate.Hide();
+            btnDelete.Hide();
+            btncreate.Show();
         }
         private void CheckSubmitButton()
         {
-            if (!ButtonCreate.Visible && ButtonUpdate.Visible)
+            if (!btncreate.Visible && btnupdate.Visible)
             {
-                ButtonUpdate.PerformClick();
+                btnupdate.PerformClick();
             }
-            else if (ButtonCreate.Visible && !ButtonUpdate.Visible)
+            else if (btncreate.Visible && !btnupdate.Visible)
             {
-                ButtonCreate.PerformClick();
+                btncreate.PerformClick();
             }
         }
         private bool CheckInput()
         {
-            if (string.IsNullOrWhiteSpace(textBoxItemName.Text) && comboBoxItemCategory.Text != tempNameItemCategory)
+            if (string.IsNullOrWhiteSpace(textName.Text) && comboCatelory.Text != tempNameItemCategory)
             {
                 MessageFuctionConstans.WarningOK("Please enter a valid name!");
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(comboBoxItemCategory.Text))
+            if (string.IsNullOrWhiteSpace(comboCatelory.Text))
             {
                 MessageFuctionConstans.WarningOK("Please enter a valid type of Item!");
                 return false;
             }
-            if (!int.TryParse(textBoxItemPrice.Text, out int price) || price < 0)
+            if (!int.TryParse(textPrice.Text, out int price) || price < 0)
             {
                 MessageFuctionConstans.WarningOK("Please enter a reasonable price level!");
                 return false;
             }
-            if (pictureBoxItem.Image == null && tempImg == null)
+            if (picboxitem.Image == null && tempImg == null)
             {
                 MessageFuctionConstans.WarningOK("Please enter an image!");
                 return false;
             }
 
-            string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textBoxItemName.Text + "'";
+            string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textName.Text + "'";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheck);
-            if (checkQuery.Rows.Count > 0 && tempName != textBoxItemName.Text)
+            if (checkQuery.Rows.Count > 0 && tempName != textName.Text)
             {
                 MessageFuctionConstans.WarningOK("This Item already exists. Please enter another name.");
                 return false;
@@ -114,10 +114,10 @@ namespace BiaManager.Forms.AdminForm.Items
         }
         private void ResetFormInput()
         {
-            textBoxItemName.ResetText();
-            textBoxItemPrice.ResetText();
-            pictureBoxItem.Image = null;
-            comboBoxItemCategory.ResetText();
+            textName.ResetText();
+            textPrice.ResetText();
+            picboxitem.Image = null;
+            comboCatelory.ResetText();
         }
         private void textBoxItemName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -129,7 +129,7 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void comboBoxItemCategory_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            tempNameItemCategory = comboBoxItemCategory.SelectedItem.ToString();
+            tempNameItemCategory = comboCatelory.SelectedItem.ToString();
 
             tempIDItemCategory = itemCategoryDictionary.FirstOrDefault(x => x.Value == tempNameItemCategory).Key;
         }
@@ -147,16 +147,16 @@ namespace BiaManager.Forms.AdminForm.Items
             if (!CheckInput()) return;
 
             string updateQuery;
-            if (pictureBoxItem.Image != tempImg)
+            if (picboxitem.Image != tempImg)
             {
-                byte[] imageData = ImageToByteArray(pictureBoxItem.Image);
+                byte[] imageData = ImageToByteArray(picboxitem.Image);
                 string imageHex = BitConverter.ToString(imageData).Replace("-", "");
 
                 updateQuery = @"
             UPDATE items_menu 
-            SET item_Name = '" + textBoxItemName.Text + "'," +
+            SET item_Name = '" + textName.Text + "'," +
                         "IdItemCategory = '" + tempIDItemCategory + "', " +
-                        "item_Price = '" + textBoxItemPrice.Text + "', " +
+                        "item_Price = '" + textPrice.Text + "', " +
                         "item_image = CONVERT(varbinary(MAX), 0x" + imageHex + ") " + // Sử dụng CONVERT function để chèn dữ liệu varbinary
                     "WHERE IdItem = '" + tempID + "';";
             }
@@ -164,9 +164,9 @@ namespace BiaManager.Forms.AdminForm.Items
             {
                 updateQuery = @"
                 UPDATE items_menu 
-                SET item_Name = '" + textBoxItemName.Text + "'," +
+                SET item_Name = '" + textName.Text + "'," +
                        "IdItemCategory = '" + tempIDItemCategory + "', " +
-                       "item_Price = '" + textBoxItemPrice.Text + "' " +
+                       "item_Price = '" + textPrice.Text + "' " +
                     "WHERE IdItem = '" + tempID + "';";
             }
 
@@ -182,12 +182,12 @@ namespace BiaManager.Forms.AdminForm.Items
             if (!CheckInput()) return;
 
             // Đọc dữ liệu hình ảnh từ PictureBox
-            byte[] imageData = ImageToByteArray(pictureBoxItem.Image);
+            byte[] imageData = ImageToByteArray(picboxitem.Image);
 
             string idTableType = GrenateNewID();
             string insertQuery = @"
               INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price, item_image) 
-              VALUES ('" + idTableType + "','" + textBoxItemName.Text + "','" + tempIDItemCategory + "','" + textBoxItemPrice.Text + "', @ImageData);";
+              VALUES ('" + idTableType + "','" + textName.Text + "','" + tempIDItemCategory + "','" + textPrice.Text + "', @ImageData);";
 
             // Thực hiện thêm dữ liệu vào cơ sở dữ liệu với mảng byte[] làm tham số
             databaseService.InsertImageData(insertQuery, imageData);
@@ -229,7 +229,7 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void iconButtonSearch_Click(object sender, System.EventArgs e)
         {
-            string searchText = textBoxSearch.Text;
+            string searchText = texboxSearchitems.Text;
             string searchQuery = @"
              SELECT items_menu.IdItem, items_menu.item_Name,
               items_menu.item_Price,
@@ -264,9 +264,9 @@ namespace BiaManager.Forms.AdminForm.Items
 
                 Image image = Image.FromFile(imagePath);
 
-                pictureBoxItem.Image = image;
+                picboxitem.Image = image;
 
-                pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
+                picboxitem.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
@@ -274,22 +274,22 @@ namespace BiaManager.Forms.AdminForm.Items
         {
             tempID = dataGridViewAddItem.CurrentRow.Cells[0].Value.ToString();
             tempName = dataGridViewAddItem.CurrentRow.Cells[1].Value.ToString();
-            textBoxItemName.Text = tempName;
-            textBoxItemPrice.Text = dataGridViewAddItem.CurrentRow.Cells[2].Value.ToString();
+            textName.Text = tempName;
+            textPrice.Text = dataGridViewAddItem.CurrentRow.Cells[2].Value.ToString();
 
             if ((byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value != null)
             {
                 byte[] imageData = (byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value;
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
-                    pictureBoxItem.Image = Image.FromStream(ms);
-                    tempImg = pictureBoxItem.Image;
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
+                    picboxitem.Image = Image.FromStream(ms);
+                    tempImg = picboxitem.Image;
+                    picboxitem.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
 
             string selectedTableType = dataGridViewAddItem.CurrentRow.Cells[4].Value.ToString();
-            comboBoxItemCategory.SelectedItem = selectedTableType;
+            comboCatelory.SelectedItem = selectedTableType;
 
             string query = "SELECT IdItemCategory FROM items_category WHERE ItemCategory_Name ='" + selectedTableType + "';";
             DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
@@ -299,34 +299,34 @@ namespace BiaManager.Forms.AdminForm.Items
                 tempIDItemCategory = tableTypeData.Rows[0]["IdItemCategory"].ToString();
             }
 
-            ButtonUpdate.Show();
-            ButtonDelete.Show();
-            ButtonUpdate.Location = ButtonCreate.Location;
-            ButtonDelete.Location = ButtonUpdate.Location;
-            ButtonDelete.Location = new Point(ButtonDelete.Location.X, ButtonDelete.Location.Y + 70);
-            ButtonCreate.Hide();
+            btnupdate.Show();
+            btnDelete.Show();
+            btnupdate.Location = btncreate.Location;
+            btnDelete.Location = btnupdate.Location;
+            btnDelete.Location = new Point(btnDelete.Location.X, btnDelete.Location.Y + 70);
+            btncreate.Hide();
         }
 
         private void AddItems_Load(object sender, System.EventArgs e)
         {
-            comboBoxItemCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboCatelory.DropDownStyle = ComboBoxStyle.DropDownList;
             string query = "SELECT IdItemCategory,ItemCategory_Name FROM items_category";
             DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
 
-            comboBoxItemCategory.Items.Clear();
+            comboCatelory.Items.Clear();
 
             foreach (DataRow row in tableTypeData.Rows)
             {
                 string Name = row["ItemCategory_Name"].ToString();
                 string ID = row["IdItemCategory"].ToString();
-                comboBoxItemCategory.Items.Add(Name);
+                comboCatelory.Items.Add(Name);
 
                 itemCategoryDictionary.Add(ID, Name);
             }
 
-            if (comboBoxItemCategory.Items.Count > 0)
+            if (comboCatelory.Items.Count > 0)
             {
-                comboBoxItemCategory.SelectedIndex = 0;
+                comboCatelory.SelectedIndex = 0;
             }
         }
 
@@ -366,6 +366,12 @@ namespace BiaManager.Forms.AdminForm.Items
                 graphics.DrawImage(originalImage, 0, 0, width, height);
             }
             return resizedImage;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            textName.Text = String.Empty;
+
         }
     }
 }

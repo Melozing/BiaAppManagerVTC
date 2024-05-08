@@ -21,16 +21,16 @@ namespace BiaManager.Forms
         {
             InitializeComponent();
 
-            iconButtonPaySize = iconButtonPay.Size;
-            iconButtonCancelBillSize = iconButtonCancelBill.Size;
+            iconButtonPaySize = btnPay.Size;
+            iconButtonCancelBillSize = btnCancel.Size;
 
             //this.Resize += FormBill_Resize;
             formBillSize = this.Size;
         }
         private void FormBill_Resize(object sender, EventArgs e)
         {
-            resize_Control(iconButtonPay, iconButtonPayRectangle);
-            resize_Control(iconButtonCancelBill, iconButtonCancelBillRectangle);
+            resize_Control(btnPay, iconButtonPayRectangle);
+            resize_Control(btnCancel, iconButtonCancelBillRectangle);
         }
         private void resize_Control(Control c, Rectangle r)
         {
@@ -46,8 +46,8 @@ namespace BiaManager.Forms
             {
                 c.Location = r.Location;
                 c.Size = r.Size;
-                iconButtonPay.Size = iconButtonPaySize;
-                iconButtonCancelBill.Size = iconButtonCancelBillSize;
+                btnPay.Size = iconButtonPaySize;
+                btnCancel.Size = iconButtonCancelBillSize;
             }
             else
             {
@@ -79,9 +79,9 @@ namespace BiaManager.Forms
                 if (currentSize <= 50)
                 {
                     dataGridViewBill.Visible = false;
-                    iconButtonPay.Visible = false;
-                    iconButtonCancelBill.Visible = false;
-                    iconButtonClose.Visible = false;
+                    btnPay.Visible = false;
+                    btnCancel.Visible = false;
+                    btnclose.Visible = false;
                     sidebarExpand = false;
                     timerMinimize.Stop();
                 }
@@ -92,9 +92,9 @@ namespace BiaManager.Forms
                 if (currentSize >= 400)
                 {
                     dataGridViewBill.Visible = true;
-                    iconButtonPay.Visible = true;
-                    iconButtonCancelBill.Visible = true;
-                    iconButtonClose.Visible = true;
+                    btnPay.Visible = true;
+                    btnCancel.Visible = true;
+                    btnclose.Visible = true;
                     sidebarExpand = true;
                     timerMinimize.Stop();
                 }

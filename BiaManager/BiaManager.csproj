@@ -331,6 +331,11 @@
     <None Include="Resources\status_table\Status_Repair.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Reset.png" />
+    <None Include="Resources\paynow.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\images-removebg-preview.png" />
+    <None Include="Resources\snooker_10489347.png" />
     <None Include="Resources\logovtc.png" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\iconbia.png" />
@@ -339,10 +344,10 @@
     <None Include="Resources\Automatic.png" />
     <None Include="Resources\Add Image.png" />
     <None Include="Resources\Add Imageitem.png" />
+    <None Include="Resources\caromBilliardsplay.png" />
+    <None Include="Resources\Bill.png" />
+    <None Include="Resources\Cancel.png" />
     <Content Include="Resources\defaultTable.png" />
-    <None Include="Resources\file Zip banner\billiards-club-template-design\8848583.jpg" />
-    <None Include="Resources\file Zip banner\horizontal-sale-banner-template-billiards-club-pool-game\8713724.jpg" />
-    <None Include="Resources\file Zip banner\social-media-cover-template-billiards-club-pool-game\8737678.jpg" />
     <None Include="Resources\loading login\anhlogin %286%29.jpg" />
     <None Include="Resources\loading login\anhlogin %285%29.jpg" />
     <None Include="Resources\loading login\anhlogin %284%29.jpg" />

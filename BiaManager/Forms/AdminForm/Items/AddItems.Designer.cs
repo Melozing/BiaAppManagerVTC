@@ -28,166 +28,220 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearchContainer = new System.Windows.Forms.Panel();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panelLoginContentContainerChild = new System.Windows.Forms.Panel();
-            this.comboBoxItemCategory = new System.Windows.Forms.ComboBox();
-            this.textBoxItemPrice = new System.Windows.Forms.TextBox();
-            this.labelItemPrice = new System.Windows.Forms.Label();
-            this.textBoxItemName = new System.Windows.Forms.TextBox();
-            this.ItemNameLabel = new System.Windows.Forms.Label();
-            this.ItemCategoryLabel = new System.Windows.Forms.Label();
-            this.ItemImgLabel = new System.Windows.Forms.Label();
-            this.dataGridViewAddItem = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboCatelory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnupdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btncreate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.iconButtonUploadItem = new FontAwesome.Sharp.IconButton();
-            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
-            this.ButtonDelete = new FontAwesome.Sharp.IconButton();
-            this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
-            this.ButtonCreate = new FontAwesome.Sharp.IconButton();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.picboxitem = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.texboxSearchitems = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridViewAddItem = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelSearchContainer.SuspendLayout();
             this.panelLoginContentContainerChild.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxitem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSearchContainer
             // 
-            this.panelSearchContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(74)))));
+            this.panelSearchContainer.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelSearchContainer.Controls.Add(this.texboxSearchitems);
             this.panelSearchContainer.Controls.Add(this.iconButtonSearch);
-            this.panelSearchContainer.Controls.Add(this.textBoxSearch);
             this.panelSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSearchContainer.Location = new System.Drawing.Point(0, 441);
             this.panelSearchContainer.Name = "panelSearchContainer";
-            this.panelSearchContainer.Size = new System.Drawing.Size(800, 40);
+            this.panelSearchContainer.Size = new System.Drawing.Size(800, 50);
             this.panelSearchContainer.TabIndex = 9;
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearch.Location = new System.Drawing.Point(273, 11);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(262, 20);
-            this.textBoxSearch.TabIndex = 12;
-            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // panelLoginContentContainerChild
             // 
             this.panelLoginContentContainerChild.AutoScroll = true;
             this.panelLoginContentContainerChild.BackColor = System.Drawing.Color.White;
-            this.panelLoginContentContainerChild.Controls.Add(this.iconButtonUploadItem);
-            this.panelLoginContentContainerChild.Controls.Add(this.pictureBoxItem);
-            this.panelLoginContentContainerChild.Controls.Add(this.comboBoxItemCategory);
-            this.panelLoginContentContainerChild.Controls.Add(this.ButtonDelete);
-            this.panelLoginContentContainerChild.Controls.Add(this.ButtonUpdate);
-            this.panelLoginContentContainerChild.Controls.Add(this.textBoxItemPrice);
-            this.panelLoginContentContainerChild.Controls.Add(this.labelItemPrice);
-            this.panelLoginContentContainerChild.Controls.Add(this.ButtonCreate);
-            this.panelLoginContentContainerChild.Controls.Add(this.textBoxItemName);
-            this.panelLoginContentContainerChild.Controls.Add(this.ItemNameLabel);
-            this.panelLoginContentContainerChild.Controls.Add(this.ItemCategoryLabel);
-            this.panelLoginContentContainerChild.Controls.Add(this.ItemImgLabel);
+            this.panelLoginContentContainerChild.Controls.Add(this.guna2Panel1);
             this.panelLoginContentContainerChild.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoginContentContainerChild.Location = new System.Drawing.Point(0, 0);
             this.panelLoginContentContainerChild.Name = "panelLoginContentContainerChild";
             this.panelLoginContentContainerChild.Size = new System.Drawing.Size(800, 441);
             this.panelLoginContentContainerChild.TabIndex = 8;
             // 
-            // comboBoxItemCategory
+            // panel1
             // 
-            this.comboBoxItemCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBoxItemCategory.FormattingEnabled = true;
-            this.comboBoxItemCategory.Location = new System.Drawing.Point(387, 137);
-            this.comboBoxItemCategory.Name = "comboBoxItemCategory";
-            this.comboBoxItemCategory.Size = new System.Drawing.Size(262, 21);
-            this.comboBoxItemCategory.TabIndex = 55;
-            this.comboBoxItemCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxItemCategory_SelectedIndexChanged);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnReset);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnupdate);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboCatelory);
+            this.panel1.Controls.Add(this.textPrice);
+            this.panel1.Controls.Add(this.textName);
+            this.panel1.Controls.Add(this.btncreate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(277, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(448, 415);
+            this.panel1.TabIndex = 57;
             // 
-            // textBoxItemPrice
+            // textName
             // 
-            this.textBoxItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxItemPrice.Location = new System.Drawing.Point(387, 189);
-            this.textBoxItemPrice.Name = "textBoxItemPrice";
-            this.textBoxItemPrice.Size = new System.Drawing.Size(262, 20);
-            this.textBoxItemPrice.TabIndex = 47;
-            this.textBoxItemPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemPrice_KeyDown);
-            this.textBoxItemPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxItemPrice_KeyPress);
+            this.textName.BorderColor = System.Drawing.Color.Black;
+            this.textName.BorderRadius = 8;
+            this.textName.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.textName.BorderThickness = 2;
+            this.textName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textName.DefaultText = "";
+            this.textName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textName.Location = new System.Drawing.Point(70, 84);
+            this.textName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textName.Name = "textName";
+            this.textName.PasswordChar = '\0';
+            this.textName.PlaceholderText = "Name Items";
+            this.textName.SelectedText = "";
+            this.textName.Size = new System.Drawing.Size(261, 49);
+            this.textName.TabIndex = 53;
+            this.textName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemName_KeyDown);
             // 
-            // labelItemPrice
+            // guna2Panel1
             // 
-            this.labelItemPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelItemPrice.AutoSize = true;
-            this.labelItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemPrice.ForeColor = System.Drawing.Color.Black;
-            this.labelItemPrice.Location = new System.Drawing.Point(384, 162);
-            this.labelItemPrice.Name = "labelItemPrice";
-            this.labelItemPrice.Size = new System.Drawing.Size(103, 24);
-            this.labelItemPrice.TabIndex = 52;
-            this.labelItemPrice.Text = "Item Price";
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.picboxitem);
+            this.guna2Panel1.Controls.Add(this.iconButtonUploadItem);
+            this.guna2Panel1.Controls.Add(this.panel1);
+            this.guna2Panel1.Location = new System.Drawing.Point(44, 20);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(725, 415);
+            this.guna2Panel1.TabIndex = 58;
             // 
-            // textBoxItemName
+            // textPrice
             // 
-            this.textBoxItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxItemName.Location = new System.Drawing.Point(387, 73);
-            this.textBoxItemName.Multiline = true;
-            this.textBoxItemName.Name = "textBoxItemName";
-            this.textBoxItemName.Size = new System.Drawing.Size(200, 40);
-            this.textBoxItemName.TabIndex = 45;
-            this.textBoxItemName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemName_KeyDown);
+            this.textPrice.BorderColor = System.Drawing.Color.Black;
+            this.textPrice.BorderRadius = 8;
+            this.textPrice.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.textPrice.BorderThickness = 2;
+            this.textPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textPrice.DefaultText = "";
+            this.textPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textPrice.Location = new System.Drawing.Point(74, 254);
+            this.textPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textPrice.Name = "textPrice";
+            this.textPrice.PasswordChar = '\0';
+            this.textPrice.PlaceholderText = "Price (  $ VND )";
+            this.textPrice.SelectedText = "";
+            this.textPrice.Size = new System.Drawing.Size(261, 51);
+            this.textPrice.TabIndex = 56;
+            this.textPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxItemPrice_KeyDown);
+            this.textPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxItemPrice_KeyPress);
             // 
-            // ItemNameLabel
+            // comboCatelory
             // 
-            this.ItemNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemNameLabel.AutoSize = true;
-            this.ItemNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemNameLabel.ForeColor = System.Drawing.Color.Black;
-            this.ItemNameLabel.Location = new System.Drawing.Point(383, 51);
-            this.ItemNameLabel.Name = "ItemNameLabel";
-            this.ItemNameLabel.Size = new System.Drawing.Size(110, 24);
-            this.ItemNameLabel.TabIndex = 39;
-            this.ItemNameLabel.Text = "Item Name";
+            this.comboCatelory.BackColor = System.Drawing.Color.Transparent;
+            this.comboCatelory.BorderColor = System.Drawing.Color.Black;
+            this.comboCatelory.BorderRadius = 8;
+            this.comboCatelory.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.comboCatelory.BorderThickness = 2;
+            this.comboCatelory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboCatelory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCatelory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboCatelory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboCatelory.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboCatelory.ForeColor = System.Drawing.Color.Black;
+            this.comboCatelory.ItemHeight = 30;
+            this.comboCatelory.Location = new System.Drawing.Point(74, 171);
+            this.comboCatelory.Name = "comboCatelory";
+            this.comboCatelory.Size = new System.Drawing.Size(140, 36);
+            this.comboCatelory.TabIndex = 57;
+            this.comboCatelory.SelectedIndexChanged += new System.EventHandler(this.comboBoxItemCategory_SelectedIndexChanged);
             // 
-            // ItemCategoryLabel
+            // label1
             // 
-            this.ItemCategoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemCategoryLabel.AutoSize = true;
-            this.ItemCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemCategoryLabel.ForeColor = System.Drawing.Color.Black;
-            this.ItemCategoryLabel.Location = new System.Drawing.Point(383, 116);
-            this.ItemCategoryLabel.Name = "ItemCategoryLabel";
-            this.ItemCategoryLabel.Size = new System.Drawing.Size(138, 24);
-            this.ItemCategoryLabel.TabIndex = 40;
-            this.ItemCategoryLabel.Text = "Item Category";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(178, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Info Item";
             // 
-            // ItemImgLabel
+            // btnupdate
             // 
-            this.ItemImgLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemImgLabel.AutoSize = true;
-            this.ItemImgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemImgLabel.ForeColor = System.Drawing.Color.Black;
-            this.ItemImgLabel.Location = new System.Drawing.Point(199, 21);
-            this.ItemImgLabel.Name = "ItemImgLabel";
-            this.ItemImgLabel.Size = new System.Drawing.Size(112, 24);
-            this.ItemImgLabel.TabIndex = 41;
-            this.ItemImgLabel.Text = "Item Image";
+            this.btnupdate.BorderRadius = 7;
+            this.btnupdate.BorderThickness = 1;
+            this.btnupdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnupdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnupdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnupdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnupdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.ForeColor = System.Drawing.Color.White;
+            this.btnupdate.Location = new System.Drawing.Point(262, 351);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(170, 47);
+            this.btnupdate.TabIndex = 59;
+            this.btnupdate.Text = "Update";
+            this.btnupdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
             // 
-            // dataGridViewAddItem
+            // btncreate
             // 
-            this.dataGridViewAddItem.AllowUserToAddRows = false;
-            this.dataGridViewAddItem.AllowUserToDeleteRows = false;
-            this.dataGridViewAddItem.AllowUserToResizeRows = false;
-            this.dataGridViewAddItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAddItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAddItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewAddItem.Location = new System.Drawing.Point(0, 481);
-            this.dataGridViewAddItem.Name = "dataGridViewAddItem";
-            this.dataGridViewAddItem.Size = new System.Drawing.Size(800, 42);
-            this.dataGridViewAddItem.TabIndex = 10;
-            this.dataGridViewAddItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddItem_CellContentClick);
-            this.dataGridViewAddItem.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAddItem_CellFormatting);
+            this.btncreate.BorderRadius = 7;
+            this.btncreate.BorderThickness = 1;
+            this.btncreate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btncreate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btncreate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btncreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btncreate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncreate.ForeColor = System.Drawing.Color.White;
+            this.btncreate.Location = new System.Drawing.Point(262, 351);
+            this.btncreate.Name = "btncreate";
+            this.btncreate.Size = new System.Drawing.Size(170, 47);
+            this.btncreate.TabIndex = 60;
+            this.btncreate.Text = "Create new";
+            this.btncreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BorderRadius = 7;
+            this.btnDelete.BorderThickness = 1;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.Firebrick;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(74, 351);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(170, 47);
+            this.btnDelete.TabIndex = 61;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // iconButtonSearch
             // 
@@ -196,10 +250,10 @@
             this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconButtonSearch.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonSearch.IconColor = System.Drawing.Color.White;
             this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearch.IconSize = 30;
-            this.iconButtonSearch.Location = new System.Drawing.Point(542, 5);
+            this.iconButtonSearch.Location = new System.Drawing.Point(237, 11);
             this.iconButtonSearch.Name = "iconButtonSearch";
             this.iconButtonSearch.Size = new System.Drawing.Size(33, 30);
             this.iconButtonSearch.TabIndex = 13;
@@ -213,108 +267,142 @@
             this.iconButtonUploadItem.BackgroundImage = global::BiaManager.Properties.Resources.Add_Imageitem;
             this.iconButtonUploadItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iconButtonUploadItem.FlatAppearance.BorderSize = 0;
-            this.iconButtonUploadItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButtonUploadItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonUploadItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonUploadItem.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButtonUploadItem.IconColor = System.Drawing.Color.Black;
             this.iconButtonUploadItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonUploadItem.Location = new System.Drawing.Point(54, 51);
+            this.iconButtonUploadItem.Location = new System.Drawing.Point(105, 171);
             this.iconButtonUploadItem.Name = "iconButtonUploadItem";
-            this.iconButtonUploadItem.Size = new System.Drawing.Size(107, 100);
+            this.iconButtonUploadItem.Size = new System.Drawing.Size(54, 54);
             this.iconButtonUploadItem.TabIndex = 48;
             this.iconButtonUploadItem.UseVisualStyleBackColor = true;
             this.iconButtonUploadItem.Click += new System.EventHandler(this.iconButtonUploadItem_Click);
             // 
-            // pictureBoxItem
+            // btnReset
             // 
-            this.pictureBoxItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(189, 51);
-            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(136, 107);
-            this.pictureBoxItem.TabIndex = 56;
-            this.pictureBoxItem.TabStop = false;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::BiaManager.Properties.Resources.Reset;
+            this.btnReset.Location = new System.Drawing.Point(389, 84);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(30, 30);
+            this.btnReset.TabIndex = 62;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // ButtonDelete
+            // picboxitem
             // 
-            this.ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonDelete.AutoSize = true;
-            this.ButtonDelete.BackColor = System.Drawing.Color.DarkRed;
-            this.ButtonDelete.FlatAppearance.BorderSize = 0;
-            this.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDelete.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonDelete.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonDelete.IconColor = System.Drawing.Color.Black;
-            this.ButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDelete.Location = new System.Drawing.Point(387, 369);
-            this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(262, 54);
-            this.ButtonDelete.TabIndex = 54;
-            this.ButtonDelete.Text = "Delete Item";
-            this.ButtonDelete.UseVisualStyleBackColor = false;
-            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            this.picboxitem.BorderRadius = 7;
+            this.picboxitem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxitem.Image = global::BiaManager.Properties.Resources.snooker_10489347;
+            this.picboxitem.ImageRotate = 0F;
+            this.picboxitem.Location = new System.Drawing.Point(22, 11);
+            this.picboxitem.Name = "picboxitem";
+            this.picboxitem.Size = new System.Drawing.Size(234, 156);
+            this.picboxitem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxitem.TabIndex = 58;
+            this.picboxitem.TabStop = false;
             // 
-            // ButtonUpdate
+            // texboxSearchitems
             // 
-            this.ButtonUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonUpdate.AutoSize = true;
-            this.ButtonUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ButtonUpdate.FlatAppearance.BorderSize = 0;
-            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonUpdate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
-            this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdate.Location = new System.Drawing.Point(388, 313);
-            this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(262, 54);
-            this.ButtonUpdate.TabIndex = 53;
-            this.ButtonUpdate.Text = "Update Item";
-            this.ButtonUpdate.UseVisualStyleBackColor = false;
-            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            this.texboxSearchitems.BorderColor = System.Drawing.Color.Black;
+            this.texboxSearchitems.BorderRadius = 8;
+            this.texboxSearchitems.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.texboxSearchitems.BorderThickness = 2;
+            this.texboxSearchitems.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.texboxSearchitems.DefaultText = "";
+            this.texboxSearchitems.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.texboxSearchitems.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.texboxSearchitems.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.texboxSearchitems.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.texboxSearchitems.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.texboxSearchitems.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+            this.texboxSearchitems.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.texboxSearchitems.Location = new System.Drawing.Point(28, 10);
+            this.texboxSearchitems.Name = "texboxSearchitems";
+            this.texboxSearchitems.PasswordChar = '\0';
+            this.texboxSearchitems.PlaceholderText = "Search Item";
+            this.texboxSearchitems.SelectedText = "";
+            this.texboxSearchitems.Size = new System.Drawing.Size(203, 31);
+            this.texboxSearchitems.TabIndex = 54;
             // 
-            // ButtonCreate
+            // dataGridViewAddItem
             // 
-            this.ButtonCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonCreate.AutoSize = true;
-            this.ButtonCreate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ButtonCreate.FlatAppearance.BorderSize = 0;
-            this.ButtonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCreate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonCreate.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonCreate.IconColor = System.Drawing.Color.Black;
-            this.ButtonCreate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonCreate.Location = new System.Drawing.Point(387, 313);
-            this.ButtonCreate.Name = "ButtonCreate";
-            this.ButtonCreate.Size = new System.Drawing.Size(262, 54);
-            this.ButtonCreate.TabIndex = 52;
-            this.ButtonCreate.Text = "Create Item";
-            this.ButtonCreate.UseVisualStyleBackColor = false;
-            this.ButtonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridViewAddItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAddItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewAddItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAddItem.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewAddItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewAddItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewAddItem.Location = new System.Drawing.Point(0, 491);
+            this.dataGridViewAddItem.Name = "dataGridViewAddItem";
+            this.dataGridViewAddItem.RowHeadersVisible = false;
+            this.dataGridViewAddItem.Size = new System.Drawing.Size(800, 84);
+            this.dataGridViewAddItem.TabIndex = 11;
+            this.dataGridViewAddItem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewAddItem.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridViewAddItem.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewAddItem.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridViewAddItem.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewAddItem.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewAddItem.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAddItem.ThemeStyle.HeaderStyle.Height = 4;
+            this.dataGridViewAddItem.ThemeStyle.ReadOnly = false;
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.Height = 22;
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewAddItem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // AddItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(800, 523);
+            this.ClientSize = new System.Drawing.Size(800, 575);
             this.ControlBox = false;
             this.Controls.Add(this.dataGridViewAddItem);
             this.Controls.Add(this.panelSearchContainer);
             this.Controls.Add(this.panelLoginContentContainerChild);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddItems";
             this.Text = "AddItems";
             this.Load += new System.EventHandler(this.AddItems_Load);
             this.panelSearchContainer.ResumeLayout(false);
-            this.panelSearchContainer.PerformLayout();
             this.panelLoginContentContainerChild.ResumeLayout(false);
-            this.panelLoginContentContainerChild.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxitem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,20 +411,21 @@
 
         private System.Windows.Forms.Panel panelSearchContainer;
         private FontAwesome.Sharp.IconButton iconButtonSearch;
-        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Panel panelLoginContentContainerChild;
-        private FontAwesome.Sharp.IconButton ButtonDelete;
-        private FontAwesome.Sharp.IconButton ButtonUpdate;
-        private System.Windows.Forms.TextBox textBoxItemPrice;
-        private System.Windows.Forms.Label labelItemPrice;
-        private FontAwesome.Sharp.IconButton ButtonCreate;
-        private System.Windows.Forms.TextBox textBoxItemName;
-        private System.Windows.Forms.Label ItemNameLabel;
-        private System.Windows.Forms.Label ItemCategoryLabel;
-        private System.Windows.Forms.Label ItemImgLabel;
-        private System.Windows.Forms.ComboBox comboBoxItemCategory;
         private FontAwesome.Sharp.IconButton iconButtonUploadItem;
-        private System.Windows.Forms.PictureBox pictureBoxItem;
-        private System.Windows.Forms.DataGridView dataGridViewAddItem;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox textName;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ComboBox comboCatelory;
+        private Guna.UI2.WinForms.Guna2TextBox textPrice;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btncreate;
+        private Guna.UI2.WinForms.Guna2Button btnupdate;
+        private System.Windows.Forms.Button btnReset;
+        private Guna.UI2.WinForms.Guna2PictureBox picboxitem;
+        private Guna.UI2.WinForms.Guna2TextBox texboxSearchitems;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewAddItem;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
