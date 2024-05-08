@@ -8,10 +8,10 @@ USE db_biamanager;
 GO
 
 CREATE TABLE [dbo].[table_type] (
-    [IdTableType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [TableIDType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableType_Name] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableType_Price] int NOT NULL DEFAULT '0',
-    PRIMARY KEY CLUSTERED ([IdTableType])
+    PRIMARY KEY CLUSTERED ([TableIDType])
 );
 GO
 
@@ -34,12 +34,12 @@ CREATE TABLE [dbo].[items_menu] (
 GO
 
 CREATE TABLE [dbo].[table_detail] (
-    [IdTable] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [TableID] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableNumber] int NOT NULL,
     [Status] int NOT NULL DEFAULT '0',
-    [IdTableType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
-    PRIMARY KEY CLUSTERED ([IdTable]),
-    CONSTRAINT [FK_table_tabletype] FOREIGN KEY ([IdTableType]) REFERENCES [dbo].[table_type] ([IdTableType])
+    [TableIDType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    PRIMARY KEY CLUSTERED ([TableID]),
+    CONSTRAINT [FK_table_tabletype] FOREIGN KEY ([TableIDType]) REFERENCES [dbo].[table_type] ([TableIDType])
 );
 GO
 
@@ -49,7 +49,7 @@ CREATE TABLE [dbo].[invoice] (
     [Invoice_time] datetime NOT NULL,
     [Invoice_Status] int NULL,
     PRIMARY KEY CLUSTERED ([IdInvoice]),
-    CONSTRAINT [FK_orders_table] FOREIGN KEY ([TableID]) REFERENCES [dbo].[table_detail] ([IdTable])
+    CONSTRAINT [FK_orders_table] FOREIGN KEY ([TableID]) REFERENCES [dbo].[table_detail] ([TableID])
 );
 GO
 
@@ -82,7 +82,7 @@ CREATE TABLE [dbo].[user_info] (
 GO
 
 INSERT INTO user_account (IdUser,UserName, UserPassword, UserRole) VALUES ('U0', 'admin', 'admin123', 0);
-INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TBT01', 'Carom billiards', 25000);
-INSERT INTO table_type (IdTableType,TableType_Name, TableType_Price) VALUES ('TBT02', 'Pocket Billiards', 30000);
+INSERT INTO table_type (TableIDType,TableType_Name, TableType_Price) VALUES ('TBT01', 'Carom billiards', 25000);
+INSERT INTO table_type (TableIDType,TableType_Name, TableType_Price) VALUES ('TBT02', 'Pocket Billiards', 30000);
 INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('ICD', 'Other');
 INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price) VALUES ('IHour', 'Playtime', 'ICD', 30000);

@@ -11,7 +11,6 @@ namespace BiaManager.Forms
     {
         private readonly DatabaseService databaseService = DatabaseService.Instance;
         private FoodTabWidget foodTabWidget;
-
         public FormMenu()
         {
             InitializeComponent();
@@ -23,9 +22,9 @@ namespace BiaManager.Forms
             ShowFoodTransition.Start();
         }
 
-        public void GetIDTable(string idTable)
+        public void GetTableID(string TableID)
         {
-            foodTabWidget.Tag = idTable;
+            foodTabWidget.Tag = TableID;
             LoadItem();
         }
 
@@ -39,7 +38,7 @@ namespace BiaManager.Forms
 
             // Lấy danh sách các chi tiết hóa đơn
 
-            string idTable = foodTabWidget.Tag.ToString();
+            string TableID = foodTabWidget.Tag.ToString();
 
             // Hiển thị thông tin mặt hàng theo từng danh mục
             foreach (var category in itemCategories)
@@ -62,7 +61,7 @@ namespace BiaManager.Forms
                             int itemCount = CountItemsByCategory(invoiceDetailItems, item.ItemName);
 
                             FoodWidget foodWidget = new FoodWidget();
-                            foodWidget.SetIDItem(item.IdItem, idTable);
+                            foodWidget.SetIDItem(item.IdItem, TableID);
                             foodWidget.SetFoodInfo(item.ItemName, item.ItemPrice, item.ItemImage);
                             foodTabWidgetNew.AddFood(foodWidget);
                             foodWidget.SetFoodInfoNum(itemCount);
@@ -118,7 +117,7 @@ namespace BiaManager.Forms
         // Hàm lấy danh sách các chi tiết hóa đơn từ cơ sở dữ liệu
         private List<InvoiceDetailItem> GetInvoiceDetailItems(string itemName)
         {
-            string idTable = foodTabWidget.Tag.ToString();
+            string TableID = foodTabWidget.Tag.ToString();
 
             string queryDetail = @"SELECT 
                 inv.IdInvoice,
@@ -129,7 +128,7 @@ namespace BiaManager.Forms
                 inv_det.Invoice_TotalAmount,
                 itm.item_Name,
                 itm.item_Price,
-                tbl_det.IdTable,
+                tbl_det.TableID,
                 tbl_det.Status AS TableStatus,
                 itm_cat.ItemCategory_Name,
                 itm_cat.IdItemCategory
@@ -140,10 +139,10 @@ namespace BiaManager.Forms
             JOIN 
                 items_menu AS itm ON inv_det.IdItem = itm.IdItem
             JOIN 
-                table_detail AS tbl_det ON inv.TableID = tbl_det.IdTable
+                table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
             JOIN
                 items_category AS itm_cat ON itm.IdItemCategory = itm_cat.IdItemCategory
-            WHERE inv.Invoice_Status = 0 AND inv.TableID ='" + idTable + "' " +
+            WHERE inv.Invoice_Status = 0 AND inv.TableID ='" + TableID + "' " +
             "AND itm.item_Name = '" + itemName + "'" +
             "AND itm.IdItem != 'IHour';";
 
@@ -158,7 +157,6 @@ namespace BiaManager.Forms
                 invoiceDetail.InvoiceTotalAmount = reader.GetInt32(5);
                 invoiceDetail.ItemName = reader.GetString(6);
                 invoiceDetail.ItemPrice = reader.GetInt32(7);
-                invoiceDetail.IdTable = reader.GetString(8);
                 invoiceDetail.TableStatus = reader.GetInt32(9);
                 invoiceDetail.ItemCategoryName = reader.GetString(10);
                 return invoiceDetail;

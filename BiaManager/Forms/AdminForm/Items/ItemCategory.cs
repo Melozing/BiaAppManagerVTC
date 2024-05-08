@@ -118,7 +118,7 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void ButtonDeleteItemCategoryManager_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this category?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
