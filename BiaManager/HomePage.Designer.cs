@@ -34,6 +34,13 @@
             this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelMenuItem = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
+<<<<<<< HEAD
+=======
+            this.TablesDetail = new FontAwesome.Sharp.IconButton();
+            this.TablesType = new FontAwesome.Sharp.IconButton();
+            this.Setting = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+>>>>>>> main
             this.PanelHideMenu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTittleBar = new System.Windows.Forms.Panel();
@@ -69,6 +76,7 @@
             this.flowLayoutPanelMenu.SuspendLayout();
             this.flowLayoutPanelMenuItem.SuspendLayout();
             this.flowLayoutPanelTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.PanelHideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTittleBar.SuspendLayout();
@@ -113,6 +121,7 @@
             this.flowLayoutPanelMenu.Controls.Add(this.TablesManagement);
             this.flowLayoutPanelMenu.Controls.Add(this.flowLayoutPanelTable);
             this.flowLayoutPanelMenu.Controls.Add(this.Setting);
+            this.flowLayoutPanelMenu.Controls.Add(this.iconPictureBox1);
             this.flowLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMenu.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -598,6 +607,7 @@
             // 
             // Setting
             // 
+            this.Setting.Dock = System.Windows.Forms.DockStyle.Top;
             this.Setting.FlatAppearance.BorderSize = 0;
             this.Setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Setting.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -619,6 +629,33 @@
             this.Setting.UseVisualStyleBackColor = true;
             this.Setting.Click += new System.EventHandler(this.Setting_Click);
             // 
+<<<<<<< HEAD
+=======
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 24;
+            this.iconPictureBox1.Location = new System.Drawing.Point(2, 542);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(24, 26);
+            this.iconPictureBox1.TabIndex = 19;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // PanelHideMenu
+            // 
+            this.PanelHideMenu.Controls.Add(this.HideMenuIcon);
+            this.PanelHideMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelHideMenu.Location = new System.Drawing.Point(0, 140);
+            this.PanelHideMenu.Name = "PanelHideMenu";
+            this.PanelHideMenu.Size = new System.Drawing.Size(253, 48);
+            this.PanelHideMenu.TabIndex = 1;
+            // 
+>>>>>>> main
             // HideMenuIcon
             // 
             this.HideMenuIcon.Dock = System.Windows.Forms.DockStyle.Top;
@@ -676,6 +713,7 @@
             this.flowLayoutPanelMenu.ResumeLayout(false);
             this.flowLayoutPanelMenuItem.ResumeLayout(false);
             this.flowLayoutPanelTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.PanelHideMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelTittleBar.ResumeLayout(false);
@@ -725,6 +763,7 @@
         private FontAwesome.Sharp.IconButton TablesDetail;
         private FontAwesome.Sharp.IconButton TablesType;
         private System.Windows.Forms.Timer menuTransition;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
 

@@ -7,7 +7,7 @@ namespace BiaManager.Forms.AdminForm.Tables
 {
     public partial class TableTypeManager : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
         private string tempID;
         private string tempName;
         public TableTypeManager()
@@ -44,6 +44,7 @@ namespace BiaManager.Forms.AdminForm.Tables
                 ButtonCreateTableTypeManager.PerformClick();
             }
         }
+
         private bool CheckInputTableType()
         {
             if (string.IsNullOrWhiteSpace(textBoxTableName.Text))
@@ -69,6 +70,31 @@ namespace BiaManager.Forms.AdminForm.Tables
             }
             return true;
         }
+        private bool CheckInputTableTypeUpdate()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxTableName.Text))
+            {
+                MessageFuctionConstans.WarningOK("Please enter a valid name!");
+                return false;
+            }
+
+            if (!int.TryParse(textBoxTablePrice.Text, out int price) || price < 0)
+            {
+                MessageFuctionConstans.WarningOK("Please enter a reasonable price level!");
+                return false;
+            }
+
+
+            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "' AND TableType_Name !='" + tempName + "'";
+            DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
+
+            if (checkQuery.Rows.Count > 0)
+            {
+                MessageFuctionConstans.WarningOK("This TableType name already exists. Please enter another name.");
+                return false;
+            }
+            return true;
+        }
         private string GrenateNewID()
         {
             // Tạo một UUID bằng cách sử dụng hàm NEWID() trong SQL Server
@@ -79,7 +105,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             string newId = "TBT" + uuid.Substring(0, 7);
 
             // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
-            string queryCheckExist = "SELECT COUNT(*) FROM table_type WHERE IdTableType = '" + newId + "'";
+            string queryCheckExist = "SELECT COUNT(*) FROM table_type WHERE TableIDType = '" + newId + "'";
             int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
 
             // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
@@ -111,12 +137,12 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void ButtonUpdateTableTypeManager_Click(object sender, System.EventArgs e)
         {
-            if (!CheckInputTableType()) return;
+            if (!CheckInputTableTypeUpdate()) return;
             string updateQuery = @"
                        UPDATE table_type 
                        SET TableType_Name = '" + textBoxTableName.Text + "'," +
                        "TableType_Price = '" + textBoxTablePrice.Text + "' " +
-                       "WHERE IdTableType = '" + tempID + "';";
+                       "WHERE TableIDType = '" + tempID + "';";
             databaseService.ExecuteNonQuery(updateQuery);
 
             MessageFuctionConstans.SuccessOK("Category updated successfully.");
@@ -131,11 +157,11 @@ namespace BiaManager.Forms.AdminForm.Tables
                 MessageFuctionConstans.WarningOK("You can't delete default table types.");
                 return;
             }
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this category?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM table_type WHERE IdTableType = '" + tempID + "';";
+                     DELETE FROM table_type WHERE TableIDType = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -150,9 +176,9 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             if (!CheckInputTableType()) return;
 
-            string idTableType = GrenateNewID();
+            string TableIDType = GrenateNewID();
             string insertQuery = @"
-                      INSERT INTO table_type (IdTableType, TableType_Name,TableType_Price) VALUES ('" + idTableType + "','" + textBoxTableName.Text + "','" + textBoxTablePrice.Text + "'); ";
+                      INSERT INTO table_type (TableIDType, TableType_Name,TableType_Price) VALUES ('" + TableIDType + "','" + textBoxTableName.Text + "','" + textBoxTablePrice.Text + "'); ";
             databaseService.ExecuteNonQuery(insertQuery);
 
             MessageFuctionConstans.SuccessOK("Table Type created successfully.");
@@ -172,7 +198,7 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             string searchQuery = @"
             SELECT * FROM table_type 
-            WHERE  IdTableType LIKE '%" + textBoxSearch.Text + @"%' OR
+            WHERE  TableIDType LIKE '%" + textBoxSearch.Text + @"%' OR
             TableType_Name LIKE '%" + textBoxSearch.Text + @"%' OR 
             TableType_Price LIKE '%" + textBoxSearch.Text + @"%';";
 
@@ -200,6 +226,11 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void textBoxTablePrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsNumber(e.KeyChar);
+        }
+
+        private void textBoxSearch_TextChanged(object sender, System.EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
         }
     }
 }

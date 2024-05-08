@@ -93,6 +93,11 @@ F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
 F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Staff.StaffManager.resources
 F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.ItemCategory.resources
 F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.TableTypeManager.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.TableWidget.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.AddItems.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.AddTables.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
+F:\ProjectCShaparVTC\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormSetting.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe.config
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.exe
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\bin\Debug\BiaManager.pdb
@@ -133,8 +138,10 @@ E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Staff.StaffManager.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.AddTables.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.TableTypeManager.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormLogin.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormMenu.resources
+E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormSetting.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormTables.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.item.table_item.resources
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.HomePage.resources
@@ -145,6 +152,7 @@ E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+<<<<<<< HEAD
 E:\ProjectVTC\BiaManager\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.TableWidget.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.AddItems.resources
@@ -154,3 +162,5 @@ E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.AddTa
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.TableTypeManager.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
 E:\BiaAppManagerVTC\BiaManager\bin\Debug\Guna.UI2.dll
+=======
+>>>>>>> main

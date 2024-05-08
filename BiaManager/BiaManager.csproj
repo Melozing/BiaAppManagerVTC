@@ -171,6 +171,12 @@
     <Compile Include="Forms\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,10 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Invoice.cs" />
+    <Compile Include="Model\InvoiceDetailItem.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemCategory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +211,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\Contants\MessageFuctionConstans.cs" />
     <Compile Include="Script\DatabaseCtrl\DatabaseService.cs" />
+    <Compile Include="Script\UI\ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Script\WindowSizeCtrl.cs" />
     <EmbeddedResource Include="Components\FoodTabWidget.resx">
       <DependentUpon>FoodTabWidget.cs</DependentUpon>
@@ -234,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTables.resx">
       <DependentUpon>FormTables.cs</DependentUpon>

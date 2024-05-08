@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.metroContextMenuTables = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanelTableContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelTables = new System.Windows.Forms.FlowLayoutPanel();
+<<<<<<< HEAD
             this.table_item1 = new BiaManager.Forms.item.table_item();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,18 +42,9 @@
             this.table_item2 = new BiaManager.Forms.item.table_item();
             this.metroContextMenuTables.SuspendLayout();
             this.flowLayoutPanelTables.SuspendLayout();
+=======
+>>>>>>> main
             this.SuspendLayout();
-            // 
-            // metroContextMenuTables
-            // 
-            this.metroContextMenuTables.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.metroContextMenuTables.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.metroContextMenuTables.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkToolStripMenuItem,
-            this.addTablesToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.metroContextMenuTables.Name = "metroContextMenu1";
-            this.metroContextMenuTables.Size = new System.Drawing.Size(147, 82);
             // 
             // metroTabPage2
             // 
@@ -79,6 +69,7 @@
             this.flowLayoutPanelTableContainer.TabIndex = 2;
             // 
             // flowLayoutPanelTables
+<<<<<<< HEAD
             // 
             this.flowLayoutPanelTables.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanelTables.Controls.Add(this.table_item1);
@@ -159,6 +150,16 @@
             this.table_item2.TabIndex = 1;
             this.table_item2.TableStatus = null;
             this.table_item2.UseSelectable = true;
+=======
+            // 
+            this.flowLayoutPanelTables.AutoScroll = true;
+            this.flowLayoutPanelTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.flowLayoutPanelTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTables.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTables.Name = "flowLayoutPanelTables";
+            this.flowLayoutPanelTables.Size = new System.Drawing.Size(973, 611);
+            this.flowLayoutPanelTables.TabIndex = 1;
+>>>>>>> main
             // 
             // FormTables
             // 
@@ -175,21 +176,16 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.FormTables_Load);
+<<<<<<< HEAD
             this.metroContextMenuTables.ResumeLayout(false);
             this.flowLayoutPanelTables.ResumeLayout(false);
+=======
+>>>>>>> main
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroContextMenu metroContextMenuTables;
-        private System.Windows.Forms.ToolStripMenuItem addTablesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tableEmptyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem playingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem repairToolStripMenuItem;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTableContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTables;

@@ -81,6 +81,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(348, 22);
             this.textBoxSearch.TabIndex = 12;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // panelLoginContentContainerChild

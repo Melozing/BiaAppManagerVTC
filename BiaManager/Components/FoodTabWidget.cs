@@ -19,6 +19,7 @@ namespace BiaManager.Components
             if (!typeFoodContainerExpand)
             {
                 panelTypeFoodContainer.Height += 10;
+                this.Height += 10;
                 if (panelTypeFoodContainer.Height >= 250)
                 {
                     ShowFoodTransition.Stop();
@@ -28,12 +29,30 @@ namespace BiaManager.Components
             else
             {
                 panelTypeFoodContainer.Height -= 10;
+                this.Height -= 10;
                 if (panelTypeFoodContainer.Height <= 40)
                 {
                     ShowFoodTransition.Stop();
                     typeFoodContainerExpand = false;
                 }
             }
+        }
+
+        public void AddFoodWidget(FoodWidget foodWidget)
+        {
+            flowLayoutPanelFoodContent.Controls.Add(foodWidget);
+        }
+
+        public void SetFoodTabInfo(string label)
+        {
+            TypeFoodBtn.Text = label;
+        }
+
+        public void AddFood(FoodWidget foodWidget)
+        {
+            flowLayoutPanelFoodContent.Controls.Add(foodWidget);
+            foodWidget.BringToFront();
+            foodWidget.Show();
         }
     }
 }

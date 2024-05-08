@@ -8,7 +8,7 @@ namespace BiaManager.Forms.AdminForm.Items
 {
     public partial class ItemCategory : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
         private string tempID;
         private string tempName;
         public ItemCategory()
@@ -118,7 +118,7 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void ButtonDeleteItemCategoryManager_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this category?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
@@ -174,6 +174,11 @@ namespace BiaManager.Forms.AdminForm.Items
             ButtonDeleteItemCategoryManager.Location = ButtonUpdateItemCategoryManager.Location;
             ButtonDeleteItemCategoryManager.Location = new Point(ButtonDeleteItemCategoryManager.Location.X, ButtonDeleteItemCategoryManager.Location.Y + 70);
             ButtonCreateItemCategoryManager.Hide();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
         }
     }
 }

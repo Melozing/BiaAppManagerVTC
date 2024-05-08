@@ -11,41 +11,51 @@ namespace BiaManager.Forms.AdminForm.Items
 {
     public partial class AddItems : Form
     {
-        DatabaseService databaseService = new DatabaseService();
-        Dictionary<string, string> itemCategoryDictionary = new Dictionary<string, string>();
+        private readonly DatabaseService databaseService = DatabaseService.Instance;
+        private readonly Dictionary<string, string> itemCategoryDictionary = new Dictionary<string, string>();
         private string tempName;
         private string tempID;
         private string tempIDItemCategory;
         private string tempNameItemCategory;
         private Image tempImg;
+
         public AddItems()
         {
             InitializeComponent();
             LoadDataTable();
         }
+
         private void LoadDataTable()
         {
-            string queryStaffInfo = "SELECT items_menu.IdItem, items_menu.item_Name, " +
-             "items_menu.item_Price, " +
-             "items_menu.item_image, " +
-             "items_category.ItemCategory_Name " +
-             "FROM items_menu JOIN items_category " +
-             "ON items_menu.IdItemCategory = items_category.IdItemCategory;";
-            DataTable table = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
+            string queryStaffInfo = @"
+                SELECT 
+                    items_menu.IdItem, 
+                    items_menu.item_Name, 
+                    items_menu.item_Price, 
+                    items_menu.item_image, 
+                    items_category.ItemCategory_Name 
+                FROM 
+                    items_menu 
+                JOIN 
+                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory;";
+            DataTable table = databaseService.LoadDataTable(queryStaffInfo);
 
             dataGridViewAddItem.DataSource = table;
             ResetSubmitButton();
         }
+
         private void textBoxItemPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsNumber(e.KeyChar);
         }
+
         private void ResetSubmitButton()
         {
             btnupdate.Hide();
             btnDelete.Hide();
             btncreate.Show();
         }
+
         private void CheckSubmitButton()
         {
             if (!btncreate.Visible && btnupdate.Visible)
@@ -57,6 +67,7 @@ namespace BiaManager.Forms.AdminForm.Items
                 btncreate.PerformClick();
             }
         }
+
         private bool CheckInput()
         {
             if (string.IsNullOrWhiteSpace(textName.Text) && comboCatelory.Text != tempNameItemCategory)
@@ -64,54 +75,74 @@ namespace BiaManager.Forms.AdminForm.Items
                 MessageFuctionConstans.WarningOK("Please enter a valid name!");
                 return false;
             }
+<<<<<<< HEAD
             if (string.IsNullOrWhiteSpace(comboCatelory.Text))
+=======
+
+            if (string.IsNullOrWhiteSpace(comboBoxItemCategory.Text))
+>>>>>>> main
             {
                 MessageFuctionConstans.WarningOK("Please enter a valid type of Item!");
                 return false;
             }
+<<<<<<< HEAD
             if (!int.TryParse(textPrice.Text, out int price) || price < 0)
+=======
+
+            if (!int.TryParse(textBoxItemPrice.Text, out int price) || price < 0)
+>>>>>>> main
             {
                 MessageFuctionConstans.WarningOK("Please enter a reasonable price level!");
                 return false;
             }
+<<<<<<< HEAD
             if (picboxitem.Image == null && tempImg == null)
+=======
+
+            if (pictureBoxItem.Image == null && tempImg == null)
+>>>>>>> main
             {
                 MessageFuctionConstans.WarningOK("Please enter an image!");
                 return false;
             }
 
+<<<<<<< HEAD
             string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textName.Text + "'";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheck);
             if (checkQuery.Rows.Count > 0 && tempName != textName.Text)
+=======
+            string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textBoxItemName.Text + "'";
+            DataTable checkQuery = databaseService.LoadDataTable(queryCheck);
+            if (checkQuery.Rows.Count > 0 && tempName != textBoxItemName.Text)
+>>>>>>> main
             {
                 MessageFuctionConstans.WarningOK("This Item already exists. Please enter another name.");
                 return false;
             }
+
             return true;
         }
+
         private string GrenateNewID()
         {
-            // Tạo một UUID bằng cách sử dụng hàm NEWID() trong SQL Server
             string queryGetUUID = "SELECT NEWID() AS UUID";
-            string uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+            string uuid = databaseService.ExecuteScalar<string>(queryGetUUID);
 
-            // Chỉ lấy 8 ký tự đầu của UUID để làm ID
             string newId = "I" + uuid.Substring(0, 7);
 
-            // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
-            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE IdTable = '" + newId + "'";
-            int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE TableID = '" + newId + "'";
+            int count = databaseService.ExecuteScalar<int>(queryCheckExist);
 
-            // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
             while (count > 0)
             {
-                uuid = DatabaseService.Instance.ExecuteScalar<string>(queryGetUUID);
+                uuid = databaseService.ExecuteScalar<string>(queryGetUUID);
                 newId = "I" + uuid.Substring(0, 7);
-                count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
+                count = databaseService.ExecuteScalar<int>(queryCheckExist);
             }
 
             return newId;
         }
+
         private void ResetFormInput()
         {
             textName.ResetText();
@@ -119,6 +150,7 @@ namespace BiaManager.Forms.AdminForm.Items
             picboxitem.Image = null;
             comboCatelory.ResetText();
         }
+
         private void textBoxItemName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -127,10 +159,14 @@ namespace BiaManager.Forms.AdminForm.Items
             }
         }
 
-        private void comboBoxItemCategory_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void comboBoxItemCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             tempNameItemCategory = comboCatelory.SelectedItem.ToString();
 
+=======
+            tempNameItemCategory = comboBoxItemCategory.SelectedItem.ToString();
+>>>>>>> main
             tempIDItemCategory = itemCategoryDictionary.FirstOrDefault(x => x.Value == tempNameItemCategory).Key;
         }
 
@@ -142,7 +178,7 @@ namespace BiaManager.Forms.AdminForm.Items
             }
         }
 
-        private void ButtonUpdate_Click(object sender, System.EventArgs e)
+        private void ButtonUpdate_Click(object sender, EventArgs e)
         {
             if (!CheckInput()) return;
 
@@ -153,21 +189,40 @@ namespace BiaManager.Forms.AdminForm.Items
                 string imageHex = BitConverter.ToString(imageData).Replace("-", "");
 
                 updateQuery = @"
+<<<<<<< HEAD
             UPDATE items_menu 
             SET item_Name = '" + textName.Text + "'," +
                         "IdItemCategory = '" + tempIDItemCategory + "', " +
                         "item_Price = '" + textPrice.Text + "', " +
                         "item_image = CONVERT(varbinary(MAX), 0x" + imageHex + ") " + // Sử dụng CONVERT function để chèn dữ liệu varbinary
                     "WHERE IdItem = '" + tempID + "';";
+=======
+                    UPDATE items_menu 
+                    SET 
+                        item_Name = '" + textBoxItemName.Text + "'," +
+                        "IdItemCategory = '" + tempIDItemCategory + "', " +
+                        "item_Price = '" + textBoxItemPrice.Text + "', " +
+                        "item_image = CONVERT(varbinary(MAX), 0x" + imageHex + ") " +
+                    "WHERE IdItem = '" + tempID + "'; ";
+>>>>>>> main
             }
             else
             {
                 updateQuery = @"
+<<<<<<< HEAD
                 UPDATE items_menu 
                 SET item_Name = '" + textName.Text + "'," +
                        "IdItemCategory = '" + tempIDItemCategory + "', " +
                        "item_Price = '" + textPrice.Text + "' " +
                     "WHERE IdItem = '" + tempID + "';";
+=======
+                    UPDATE items_menu 
+                    SET 
+                        item_Name = '" + textBoxItemName.Text + "'," +
+                        "IdItemCategory = '" + tempIDItemCategory + "', " +
+                        "item_Price = '" + textBoxItemPrice.Text + "' " +
+                    "WHERE IdItem = '" + tempID + "'; ";
+>>>>>>> main
             }
 
             databaseService.ExecuteNonQuery(updateQuery);
@@ -177,25 +232,34 @@ namespace BiaManager.Forms.AdminForm.Items
             LoadDataTable();
         }
 
-        private void ButtonCreate_Click(object sender, System.EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             if (!CheckInput()) return;
 
+<<<<<<< HEAD
             // Đọc dữ liệu hình ảnh từ PictureBox
             byte[] imageData = ImageToByteArray(picboxitem.Image);
+=======
+            byte[] imageData = ImageToByteArray(pictureBoxItem.Image);
+>>>>>>> main
 
-            string idTableType = GrenateNewID();
+            string TableIDType = GrenateNewID();
             string insertQuery = @"
+<<<<<<< HEAD
               INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price, item_image) 
               VALUES ('" + idTableType + "','" + textName.Text + "','" + tempIDItemCategory + "','" + textPrice.Text + "', @ImageData);";
+=======
+                INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price, item_image) 
+                VALUES ('" + TableIDType + "','" + textBoxItemName.Text + "','" + tempIDItemCategory + "','" + textBoxItemPrice.Text + "', @ImageData);";
+>>>>>>> main
 
-            // Thực hiện thêm dữ liệu vào cơ sở dữ liệu với mảng byte[] làm tham số
             databaseService.InsertImageData(insertQuery, imageData);
 
             MessageFuctionConstans.SuccessOK("Table Type created successfully.");
             ResetFormInput();
             LoadDataTable();
         }
+
         private byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -205,18 +269,19 @@ namespace BiaManager.Forms.AdminForm.Items
             }
         }
 
-        private void ButtonDelete_Click(object sender, System.EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
             if (tempID == "IHour")
             {
                 MessageFuctionConstans.WarningOK("You can't delete default table types.");
                 return;
             }
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this item?");
+
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this item?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM items_menu WHERE IdItem = '" + tempID + "';";
+                    DELETE FROM items_menu WHERE IdItem = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -227,20 +292,25 @@ namespace BiaManager.Forms.AdminForm.Items
             }
         }
 
-        private void iconButtonSearch_Click(object sender, System.EventArgs e)
+        private void iconButtonSearch_Click(object sender, EventArgs e)
         {
             string searchText = texboxSearchitems.Text;
             string searchQuery = @"
-             SELECT items_menu.IdItem, items_menu.item_Name,
-              items_menu.item_Price,
-              items_menu.item_image, 
-              items_category.ItemCategory_Name, 
-            FROM items_menu 
-            JOIN items_category ON items_menu.IdItemCategory = items_category.IdItemCategory
-            WHERE items_menu.IdItem LIKE '%" + searchText + @"%' OR
-              items_menu.item_Name LIKE '%" + searchText + @"%' OR
-              CONVERT(VARCHAR, items_menu.item_Price) LIKE '%" + searchText + @"%' OR 
-              items_category.ItemCategory_Name LIKE '%" + searchText + @"%';";
+                SELECT 
+                    items_menu.IdItem, 
+                    items_menu.item_Name,
+                    items_menu.item_Price,
+                    items_menu.item_image, 
+                    items_category.ItemCategory_Name
+                FROM 
+                    items_menu 
+                JOIN 
+                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory
+                WHERE 
+                    items_menu.IdItem LIKE '%" + searchText + @"%' OR
+                    items_menu.item_Name LIKE '%" + searchText + @"%' OR
+                    CONVERT(VARCHAR, items_menu.item_Price) LIKE '%" + searchText + @"%' OR 
+                    items_category.ItemCategory_Name LIKE '%" + searchText + @"%';";
 
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);
 
@@ -254,7 +324,8 @@ namespace BiaManager.Forms.AdminForm.Items
                 iconButtonSearch.PerformClick();
             }
         }
-        private void iconButtonUploadItem_Click(object sender, System.EventArgs e)
+
+        private void iconButtonUploadItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
@@ -277,7 +348,7 @@ namespace BiaManager.Forms.AdminForm.Items
             textName.Text = tempName;
             textPrice.Text = dataGridViewAddItem.CurrentRow.Cells[2].Value.ToString();
 
-            if ((byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value != null)
+            if (dataGridViewAddItem.CurrentRow.Cells[3].Value != null && dataGridViewAddItem.CurrentRow.Cells[3].Value != DBNull.Value)
             {
                 byte[] imageData = (byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value;
                 using (MemoryStream ms = new MemoryStream(imageData))
@@ -292,7 +363,7 @@ namespace BiaManager.Forms.AdminForm.Items
             comboCatelory.SelectedItem = selectedTableType;
 
             string query = "SELECT IdItemCategory FROM items_category WHERE ItemCategory_Name ='" + selectedTableType + "';";
-            DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
+            DataTable tableTypeData = databaseService.LoadDataTable(query);
 
             if (tableTypeData.Rows.Count > 0)
             {
@@ -307,11 +378,11 @@ namespace BiaManager.Forms.AdminForm.Items
             btncreate.Hide();
         }
 
-        private void AddItems_Load(object sender, System.EventArgs e)
+        private void AddItems_Load(object sender, EventArgs e)
         {
             comboCatelory.DropDownStyle = ComboBoxStyle.DropDownList;
             string query = "SELECT IdItemCategory,ItemCategory_Name FROM items_category";
-            DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
+            DataTable tableTypeData = databaseService.LoadDataTable(query);
 
             comboCatelory.Items.Clear();
 
@@ -332,31 +403,23 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void dataGridViewAddItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Chỉ áp dụng cho cột chứa hình ảnh
-            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name != "item_image")
+            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name == "item_image")
             {
-                // Kiểm tra nếu giá trị của ô không rỗng và là mảng byte
                 if (e.Value != null && e.Value.GetType() == typeof(byte[]))
                 {
-                    // Đọc dữ liệu hình ảnh từ mảng byte
                     byte[] imageData = (byte[])e.Value;
-
-                    // Tạo hình ảnh từ dữ liệu mảng byte
                     using (MemoryStream ms = new MemoryStream(imageData))
                     {
                         Image image = Image.FromStream(ms);
-
-                        // Đặt kích thước hiển thị cho hình ảnh
-                        int desiredWidth = 50; // Đặt chiều rộng mong muốn
-                        int desiredHeight = 50; // Đặt chiều cao mong muốn
+                        int desiredWidth = 50;
+                        int desiredHeight = 50;
                         Image resizedImage = ResizeImage(image, desiredWidth, desiredHeight);
-
-                        // Đặt giá trị hiển thị cho ô dữ liệu
                         e.Value = resizedImage;
                     }
                 }
             }
         }
+
         private Image ResizeImage(Image originalImage, int width, int height)
         {
             Bitmap resizedImage = new Bitmap(width, height);
@@ -368,10 +431,16 @@ namespace BiaManager.Forms.AdminForm.Items
             return resizedImage;
         }
 
+<<<<<<< HEAD
         private void btnReset_Click(object sender, EventArgs e)
         {
             textName.Text = String.Empty;
 
+=======
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+>>>>>>> main
         }
     }
 }

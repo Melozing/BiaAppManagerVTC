@@ -9,7 +9,7 @@ namespace BiaManager.Forms.AdminForm.Staff
 {
     internal partial class StaffManager : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
 
         private Size addStaffFormSize;
         private Rectangle usernameLabelRectangle;
@@ -466,7 +466,7 @@ namespace BiaManager.Forms.AdminForm.Staff
 
         private void ButtonDeleteStaffManager_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this account?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this account?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
@@ -482,5 +482,9 @@ namespace BiaManager.Forms.AdminForm.Staff
             }
         }
 
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
+        }
     }
 }

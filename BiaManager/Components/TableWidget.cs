@@ -1,4 +1,5 @@
-﻿using BiaManager.Script;
+﻿using BiaManager.Forms;
+using BiaManager.Script;
 using System;
 using System.Data;
 using System.Drawing;
@@ -8,7 +9,7 @@ namespace BiaManager.Components
 {
     public partial class TableWidget : UserControl
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
 
         public TableWidget()
         {
@@ -24,7 +25,7 @@ namespace BiaManager.Components
             BEGIN TRANSACTION;
             UPDATE table_detail 
             SET Status = 1 
-            WHERE IdTable = '" + IconButtonOrder.Tag + "';" +
+            WHERE TableID = '" + IconButtonOrder.Tag + "';" +
             "DECLARE @NewIDInvoice VARCHAR(10);" +
                    "SET @NewIDInvoice = '" + newIDInvoice + "';" +
                    "DECLARE @FormattedTime DATETIME;" +
@@ -36,6 +37,10 @@ namespace BiaManager.Components
                    "COMMIT TRANSACTION;";
             databaseService.ExecuteNonQuery(query);
             SetActiveOrder();
+            ShowBillDetail();
+        }
+        public void ShowBill()
+        {
             ShowBillDetail();
         }
         private void ShowBillDetail()
@@ -87,31 +92,32 @@ namespace BiaManager.Components
             "FROM items_menu AS it_mn " +
             "JOIN invoice_detail AS inv_dt ON inv_dt.IdItem = it_mn.IdItem " +
             "JOIN invoice AS inv ON inv.IdInvoice = inv_dt.IdInvoice " +
-            "JOIN table_detail AS tb_dt ON tb_dt.IdTable = inv.TableID " +
-            "JOIN table_type AS tbt ON tbt.IdTableType = tb_dt.IdTableType " +
+            "JOIN table_detail AS tb_dt ON tb_dt.TableID = inv.TableID " +
+            "JOIN table_type AS tbt ON tbt.TableIDType = tb_dt.TableIDType " +
             "WHERE inv.TableID = '" + IconButtonOrder.Tag + "';";
 
             databaseService.ExecuteNonQuery(updateHour);
 
             string queryInvoice = "SELECT " +
             "inv_det.Invoice_TotalAmount, " +
+            "tbl_iv.Invoice_time, " +
             "tbl_item.item_Price, " +
             "tbl_item.item_Name " +
             "FROM invoice inv JOIN " +
             "invoice_detail inv_det ON inv.IdInvoice = inv_det.IdInvoice " +
-            "JOIN table_detail tbl_det ON inv.TableID = tbl_det.IdTable " +
+            "JOIN table_detail tbl_det ON inv.TableID = tbl_det.TableID " +
             "JOIN invoice tbl_iv ON inv_det.IdInvoice = tbl_iv.IdInvoice " +
             "JOIN items_menu tbl_item ON inv_det.IdItem = tbl_item.IdItem " +
-            "JOIN table_type tbl_typ ON tbl_det.IdTableType = tbl_typ.IdTableType " +
+            "JOIN table_type tbl_typ ON tbl_det.TableIDType = tbl_typ.TableIDType " +
             "WHERE tbl_iv.TableID = '" + IconButtonOrder.Tag + "' " +
             "AND tbl_iv.Invoice_Status = 0;";
 
             HomePage.Instance.ShowDetailPanel(queryInvoice, IconButtonOrder.Tag.ToString());
         }
-        private bool CheckTableStatus(string idTable)
+        private bool CheckTableStatus(string TableID)
         {
             // Thực hiện truy vấn để lấy trường Status từ bảng table_detail
-            string query = "SELECT Status FROM table_detail WHERE IdTable = '" + idTable + "';";
+            string query = "SELECT Status FROM table_detail WHERE TableID = '" + TableID + "';";
 
             // Thực hiện truy vấn và lấy dữ liệu từ cơ sở dữ liệu
             DataTable result = DatabaseService.Instance.LoadDataTable(query);
@@ -198,17 +204,25 @@ namespace BiaManager.Components
 
         private void IconButtonOrder_Click(object sender, System.EventArgs e)
         {
-            ShowBillDetail();
+            ReloadOrderPage();
         }
-        void SetIconButtonTags(string tagId)
+        public void ReloadOrderPage()
+        {
+            ShowBillDetail();
+            FormMenu formMenu = new FormMenu();
+            HomePage.Instance.OpenChildForm(formMenu);
+            HomePage.Instance.ShowPanelDetail();
+            formMenu.GetTableID(IconButtonOrder.Tag.ToString());
+        }
+        public void SetIconButtonTags(string tagId)
         {
             IconButtonStartTable.Tag = tagId;
             IconButtonOrder.Tag = tagId;
         }
 
-        public void SetTableData(string idTable, int status, string tagId, string IdTableType)
+        public void SetTableData(string TableID, int status, string tagId, string TableIDType)
         {
-            LabelTableName.Text = "Table " + idTable;
+            LabelTableName.Text = "Table " + TableID;
             if (status > 0)
             {
                 SetIconButtonTags(tagId);
@@ -219,11 +233,11 @@ namespace BiaManager.Components
                 SetIconButtonTags(tagId);
                 SetInactiveOrder();
             }
-            if (IdTableType == "TBT01")
+            if (TableIDType == "TBT01")
             {
                 PictureBoxTable.Image = Properties.Resources.caromBilliards;
             }
-            else if (IdTableType == "TBT02")
+            else if (TableIDType == "TBT02")
             {
                 PictureBoxTable.Image = Properties.Resources.pocketBilliards;
             }

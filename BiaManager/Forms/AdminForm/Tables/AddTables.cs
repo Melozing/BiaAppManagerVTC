@@ -10,7 +10,7 @@ namespace BiaManager.Forms.AdminForm.Tables
 {
     public partial class AddTables : Form
     {
-        DatabaseService databaseService = new DatabaseService();
+        DatabaseService databaseService = DatabaseService.Instance;
         Dictionary<string, string> tableTypeDictionary = new Dictionary<string, string>();
         private string tempName;
         private string tempID;
@@ -32,7 +32,7 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void AddTables_Load(object sender, System.EventArgs e)
         {
             comboBoxTableType.DropDownStyle = ComboBoxStyle.DropDownList;
-            string query = "SELECT IdTableType,TableType_Name FROM table_type";
+            string query = "SELECT TableIDType,TableType_Name FROM table_type";
             DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
 
             comboBoxTableType.Items.Clear();
@@ -40,7 +40,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             foreach (DataRow row in tableTypeData.Rows)
             {
                 string tableName = row["TableType_Name"].ToString();
-                string tableTypeId = row["IdTableType"].ToString();
+                string tableTypeId = row["TableIDType"].ToString();
                 comboBoxTableType.Items.Add(tableName);
 
                 tableTypeDictionary.Add(tableTypeId, tableName);
@@ -70,15 +70,15 @@ namespace BiaManager.Forms.AdminForm.Tables
         }
         private void LoadDataTable()
         {
-            string queryStaffInfo = "SELECT table_detail.IdTable, table_detail.TableNumber, " +
+            string queryStaffInfo = "SELECT table_detail.TableID, table_detail.TableNumber, " +
                 "table_detail.Status," +
                 "table_type.TableType_Name, " +
                 "table_type.TableType_Price " +
                 "FROM table_detail JOIN table_type " +
-                "ON table_detail.IdTableType = table_type.IdTableType;";
+                "ON table_detail.TableIDType = table_type.TableIDType;";
             dataGridViewTablesAdd.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
 
-            dataGridViewTablesAdd.Columns["IdTable"].HeaderText = "Mã bàn";
+            dataGridViewTablesAdd.Columns["TableID"].HeaderText = "Mã bàn";
             dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Số bàn";
             dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Loại bàn";
             dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Giá";
@@ -95,7 +95,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             string newId = "TBD" + uuid.Substring(0, 7);
 
             // Kiểm tra xem ID đã tồn tại trong cơ sở dữ liệu chưa
-            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE IdTable = '" + newId + "'";
+            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE TableID = '" + newId + "'";
             int count = DatabaseService.Instance.ExecuteScalar<int>(queryCheckExist);
 
             // Nếu ID đã tồn tại, thử lại đến khi tạo ra một ID mới và duy nhất
@@ -164,8 +164,8 @@ namespace BiaManager.Forms.AdminForm.Tables
             string updateQuery = @"
                        UPDATE table_detail 
                        SET TableNumber = '" + textBoxTableName.Text + "'," +
-                       "IdTableType = '" + tempIDTypeTable + "' " +
-                       "WHERE IdTable = '" + tempID + "';";
+                       "TableIDType = '" + tempIDTypeTable + "' " +
+                       "WHERE TableID = '" + tempID + "';";
             databaseService.ExecuteNonQuery(updateQuery);
 
             MessageFuctionConstans.SuccessOK("Category updated successfully.");
@@ -175,11 +175,11 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void ButtonDeleteTableTypeManager_Click(object sender, System.EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this category?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this category?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM table_detail WHERE IdTable = '" + tempID + "';";
+                     DELETE FROM table_detail WHERE TableID = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -194,9 +194,9 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             if (!CheckInput()) return;
 
-            string idTableType = GrenateNewID();
+            string TableIDType = GrenateNewID();
             string insertQuery = @"
-                      INSERT INTO table_detail (IdTable, TableNumber,IdTableType) VALUES ('" + idTableType + "','" + textBoxTableName.Text + "','" + tempIDTypeTable + "'); ";
+                      INSERT INTO table_detail (TableID, TableNumber,TableIDType) VALUES ('" + TableIDType + "','" + textBoxTableName.Text + "','" + tempIDTypeTable + "'); ";
             databaseService.ExecuteNonQuery(insertQuery);
 
             MessageFuctionConstans.SuccessOK("Table Type created successfully.");
@@ -208,12 +208,12 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             string searchText = textBoxSearch.Text;
             string searchQuery = @"
-            SELECT table_detail.IdTable, table_detail.TableNumber, 
+            SELECT table_detail.TableID, table_detail.TableNumber, 
                    table_type.TableType_Name, 
                    table_type.TableType_Price 
             FROM table_detail 
-            JOIN table_type ON table_detail.IdTableType = table_type.IdTableType
-            WHERE table_detail.IdTable LIKE '%" + searchText + @"%' OR
+            JOIN table_type ON table_detail.TableIDType = table_type.TableIDType
+            WHERE table_detail.TableID LIKE '%" + searchText + @"%' OR
               table_detail.TableNumber LIKE '%" + searchText + @"%' OR
               CONVERT(VARCHAR, table_detail.TableNumber) LIKE '%" + searchText + @"%' OR 
               table_type.TableType_Name LIKE '%" + searchText + @"%' OR 
@@ -242,26 +242,35 @@ namespace BiaManager.Forms.AdminForm.Tables
 
         private void dataGridViewTablesAdd_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewTablesAdd.Columns["Status"].Index && e.Value != null)
+            if (e.ColumnIndex == dataGridViewTablesAdd.Columns[2].Index)
             {
-                int status = Convert.ToInt32(e.Value);
-                switch (status)
+                if (e.Value != null && e.Value.GetType() == typeof(int))
                 {
-                    case 0:
-                        e.Value = "empty";
-                        break;
-                    case 1:
-                        e.Value = "playing";
-                        break;
-                    case 2:
-                        e.Value = "repairing";
-                        break;
-                    default:
-                        e.Value = "unknown";
-                        break;
+                    int status = Convert.ToInt32(e.Value);
+                    switch (status)
+                    {
+                        case 0:
+
+                            e.Value = "empty";
+                            break;
+                        case 1:
+                            e.Value = "playing";
+                            break;
+                        case 2:
+                            e.Value = "repairing";
+                            break;
+                        default:
+                            e.Value = "unknown";
+                            break;
+                    }
+                    e.FormattingApplied = true;
                 }
-                e.FormattingApplied = true;
             }
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            iconButtonSearch.PerformClick();
         }
     }
 }
