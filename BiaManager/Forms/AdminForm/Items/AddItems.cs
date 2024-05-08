@@ -112,7 +112,7 @@ namespace BiaManager.Forms.AdminForm.Items
 
             string newId = "I" + uuid.Substring(0, 7);
 
-            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE TableID = '" + newId + "'";
+            string queryCheckExist = "SELECT COUNT(*) FROM table_detail WHERE IdTable = '" + newId + "'";
             int count = databaseService.ExecuteScalar<int>(queryCheckExist);
 
             while (count > 0)
@@ -198,10 +198,10 @@ namespace BiaManager.Forms.AdminForm.Items
 
             byte[] imageData = ImageToByteArray(pictureBoxItem.Image);
 
-            string TableIDType = GrenateNewID();
+            string idTableType = GrenateNewID();
             string insertQuery = @"
                 INSERT INTO items_menu (IdItem, item_Name, IdItemCategory, item_Price, item_image) 
-                VALUES ('" + TableIDType + "','" + textBoxItemName.Text + "','" + tempIDItemCategory + "','" + textBoxItemPrice.Text + "', @ImageData);";
+                VALUES ('" + idTableType + "','" + textBoxItemName.Text + "','" + tempIDItemCategory + "','" + textBoxItemPrice.Text + "', @ImageData);";
 
             databaseService.InsertImageData(insertQuery, imageData);
 
@@ -227,7 +227,7 @@ namespace BiaManager.Forms.AdminForm.Items
                 return;
             }
 
-            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this item?");
+            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this item?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"

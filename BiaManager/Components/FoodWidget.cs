@@ -28,13 +28,13 @@ namespace BiaManager.Components
         private void pictureBoxAdd_Click(object sender, System.EventArgs e)
         {
             string idItem = pictureBoxAdd.Tag.ToString();
-            string TableID = pictureBoxFood.Tag.ToString();
-            OrderItem(idItem, TableID);
+            string idTable = pictureBoxFood.Tag.ToString();
+            OrderItem(idItem, idTable);
             TableWidget tableWidget = new TableWidget();
-            tableWidget.SetIconButtonTags(TableID);
+            tableWidget.SetIconButtonTags(idTable);
             tableWidget.ShowBill();
 
-            UpdateOrderedQuantity(idItem, TableID);
+            UpdateOrderedQuantity(idItem, idTable);
         }
         private void UpdateOrderedQuantity(string itemId, string tableId)
         {
@@ -59,11 +59,11 @@ namespace BiaManager.Components
                 labelNum.Hide();
             }
         }
-        public void SetIDItem(string idItem, string TableID)
+        public void SetIDItem(string idItem, string idTable)
         {
             pictureBoxAdd.Tag = idItem;
-            pictureBoxFood.Tag = TableID;
-            CheckItemOrdered(idItem, TableID);
+            pictureBoxFood.Tag = idTable;
+            CheckItemOrdered(idItem, idTable);
         }
 
         public void SetFoodInfoNum(int num)

@@ -1,5 +1,4 @@
-﻿using BiaManager.Script;
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,7 +7,6 @@ namespace BiaManager.Forms
 {
     public partial class FormBill : Form
     {
-        DatabaseService databaseService = DatabaseService.Instance;
         private Size formBillSize;
 
         private Rectangle iconButtonPayRectangle;
@@ -18,8 +16,6 @@ namespace BiaManager.Forms
         private Size iconButtonCancelBillSize;
 
         bool sidebarExpand = true;
-
-        private string tableID;
 
         public FormBill()
         {
@@ -36,23 +32,6 @@ namespace BiaManager.Forms
         {
             resize_Control(iconButtonPay, iconButtonPayRectangle);
             resize_Control(iconButtonCancelBill, iconButtonCancelBillRectangle);
-        }
-        public void SetTittleBill(string tableName, string time)
-        {
-            labelTableName.Text = tableName;
-            labelTime.Text = time;
-        }
-
-        public void SetInvoiceInfo(string TableID)
-        {
-            tableID = TableID;
-        }
-        public void SetTotalDueText(string total)
-        {
-            if (decimal.TryParse(total, out decimal amount))
-            {
-                MoneyQuantity.Text = amount.ToString("N0");
-            }
         }
         private void resize_Control(Control c, Rectangle r)
         {
@@ -103,9 +82,6 @@ namespace BiaManager.Forms
                     dataGridViewBill.Visible = false;
                     iconButtonPay.Visible = false;
                     iconButtonCancelBill.Visible = false;
-                    labelTableName.Visible = false;
-                    labelTime.Visible = false;
-                    panelTotalMoney.Visible = false;
                     flowLayoutPanelTopControl.Height = 140;
                     flowLayoutPanelTopControl.FlowDirection = FlowDirection.TopDown;
                     sidebarExpand = false;
@@ -122,84 +98,11 @@ namespace BiaManager.Forms
                     dataGridViewBill.Visible = true;
                     iconButtonPay.Visible = true;
                     iconButtonCancelBill.Visible = true;
-                    labelTableName.Visible = true;
-                    labelTime.Visible = true;
-                    panelTotalMoney.Visible = true;
                     flowLayoutPanelTopControl.Height = 35;
                     flowLayoutPanelTopControl.FlowDirection = FlowDirection.RightToLeft;
                     sidebarExpand = true;
                     timerMinimize.Stop();
                     timerMinimize.Dispose();
-                }
-            }
-        }
-
-        private void iconButtonPay_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageFuctionConstans.OKCancel("Confirm payment for this bill?");
-            if (result == DialogResult.OK)
-            {
-
-                DialogResult resultExportBill = MessageFuctionConstans.YesNoCancel("Do you want to generate an invoice?");
-                if (resultExportBill == DialogResult.Yes)
-                {
-                    string queryPay = @"
-                    UPDATE inv
-                    SET inv.Invoice_Status = 1
-                    FROM invoice AS inv
-                    INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
-                    INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
-                    WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
-                "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-
-                    databaseService.ExecuteNonQuery(queryPay);
-                    this.Close();
-                    FormTables formTables = new FormTables();
-                    HomePage.Instance.OpenChildForm(formTables);
-                    HomePage.Instance.HidePanelDetail();
-                }
-                else if (resultExportBill == DialogResult.No)
-                {
-                    string queryPay = @"
-                    UPDATE inv
-                    SET inv.Invoice_Status = 1
-                    FROM invoice AS inv
-                    INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
-                    INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
-                    WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
-                    "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-
-                    databaseService.ExecuteNonQuery(queryPay);
-                    this.Close();
-                    FormTables formTables = new FormTables();
-                    HomePage.Instance.OpenChildForm(formTables);
-                    HomePage.Instance.HidePanelDetail();
-                }
-            }
-        }
-
-        private void iconButtonCancelBill_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageFuctionConstans.OKCancel("Do you want to cancel this bill?");
-            if (result == DialogResult.OK)
-            {
-                DialogResult resultExportBill = MessageFuctionConstans.OKCancel("The data after canceling the bill cannot be modified, do you still want to proceed with the confirmation?");
-                if (resultExportBill == DialogResult.OK)
-                {
-                    string queryPay = @"
-                    UPDATE inv
-                    SET inv.Invoice_Status = 2
-                    FROM invoice AS inv
-                    INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
-                    INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
-                    WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
-                   "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-
-                    databaseService.ExecuteNonQuery(queryPay);
-                    this.Close();
-                    FormTables formTables = new FormTables();
-                    HomePage.Instance.OpenChildForm(formTables);
-                    HomePage.Instance.HidePanelDetail();
                 }
             }
         }

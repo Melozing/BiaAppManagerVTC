@@ -90,53 +90,12 @@ namespace BiaManager
             currentUserRole = role;
         }
 
-        public void ShowDetailPanel(string query, string TableID)
+        public void ShowDetailPanel(string query, string idTarget)
         {
             FormBill form = new FormBill();
 
-            DataTable invoiceTable = DatabaseService.Instance.LoadDataTable(query);
-            if (invoiceTable.Rows.Count > 0)
-            {
-                Invoice invoice = new Invoice();
-                string invoiceTimeStr = invoiceTable.Rows[0]["Invoice_time"].ToString();
-                invoice.InvoiceTime = DateTime.Parse(invoiceTimeStr);
-                invoice.TableID = TableID;
-
-                string tableNumberQuery = "SELECT TableNumber FROM table_detail WHERE TableID = '" + TableID + "'";
-                DataTable tableNumberData = DatabaseService.Instance.LoadDataTable(tableNumberQuery);
-                string tableNumber = "";
-                if (tableNumberData.Rows.Count > 0)
-                {
-                    tableNumber = tableNumberData.Rows[0]["TableNumber"].ToString();
-                }
-
-                string tableNumberText = "Table " + tableNumber;
-                string timeText = invoice.InvoiceTime.ToString("dd/MM/yyyy HH:mm:ss");
-                form.SetTittleBill(tableNumberText, timeText);
-                form.SetInvoiceInfo(TableID);
-
-                query = "SELECT " +
-                    "SUM(CASE WHEN item.IdItem = 'IHour' " +
-                    "THEN inv_det.Invoice_TotalAmount * tbl_typ.TableType_Price " +
-                    "ELSE item.item_Price * inv_det.Invoice_TotalAmount END) AS TotalAmount " +
-                    "FROM invoice AS inv " +
-                    "JOIN invoice_detail AS inv_det " +
-                    "ON inv.IdInvoice = inv_det.IdInvoice " +
-                    "JOIN items_menu AS item " +
-                    "ON inv_det.IdItem = item.IdItem " +
-                    "JOIN table_detail AS tbl_det " +
-                    "ON inv.TableID = tbl_det.TableID " +
-                    "JOIN table_type AS tbl_typ " +
-                    "ON tbl_det.TableIDType = tbl_typ.TableIDType " +
-                    "WHERE inv.TableID = '" + invoice.TableID + "' " +
-                    "AND inv.Invoice_Status = 0;";
-
-                DataTable amoutDue = DatabaseService.Instance.LoadDataTable(query);
-                string amoutDueText = amoutDue.Rows[0]["TotalAmount"].ToString();
-                form.SetTotalDueText(amoutDueText);
-            }
-
-            form.LoadDataGridView(invoiceTable);
+            DataTable table = DatabaseService.Instance.LoadDataTable(query);
+            form.LoadDataGridView(table);
 
             form.TopLevel = false;
             panelDetail.Dock = DockStyle.Right;
@@ -386,22 +345,20 @@ namespace BiaManager
         {
             if (sidebarExpand)
             {
-                HideMenuIcon.Text = "";
-                Home.Text = "";
-                Tables.Text = "";
-                Menu.Text = "";
-                Bills.Text = "";
-                User.Text = "";
-                UserManagement.Text = "";
-                MenuManagement.Text = "";
-                TablesManagement.Text = "";
-                Setting.Text = "";
+                HideMenuIcon.Text = null;
+                Home.Text = null;
+                Tables.Text = null;
+                Menu.Text = null;
+                Bills.Text = null;
+                User.Text = null;
+                UserManagement.Text = null;
+                MenuManagement.Text = null;
+                TablesManagement.Text = null;
+                Setting.Text = null;
 
                 panelSidebarMenu.Width -= 5;
                 if (panelSidebarMenu.Width <= 50)
                 {
-                    flowLayoutPanelMenu.Width = panelSidebarMenu.Width;
-
                     btnHome.Size = new Size(24, 24);
                     btnHome.Padding = new Padding(0, 0, 0, 0);
                     btnHome.Dock = DockStyle.Fill;
@@ -422,6 +379,7 @@ namespace BiaManager
             }
             else
             {
+                flowLayoutPanelMenu.AutoScroll = true;
                 btnHome.SizeMode = PictureBoxSizeMode.Zoom;
                 btnHome.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -439,8 +397,6 @@ namespace BiaManager
 
                 if (panelSidebarMenu.Width >= 229)
                 {
-                    flowLayoutPanelMenu.Width = panelSidebarMenu.Width;
-
                     btnHome.Padding = new Padding(80, 40, 80, 40);
                     btnHome.Dock = DockStyle.Fill;
 

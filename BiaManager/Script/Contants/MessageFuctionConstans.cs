@@ -9,20 +9,10 @@ namespace BiaManager.Script
         {
             MessageBox.Show(content, MessageNameContants.Warning, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static DialogResult OKCancel(string content)
+        public static DialogResult WarningOKCancell(string content)
         {
             return MessageBox.Show(content, "Confirm",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-        }
-        public static DialogResult YesNoCancel(string content)
-        {
-            return MessageBox.Show(content, "Confirm",
-                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-        }
-        public static DialogResult YesNo(string content)
-        {
-            return MessageBox.Show(content, "Confirm",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         public static void SuccessOK(string content)

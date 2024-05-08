@@ -22,7 +22,7 @@ namespace BiaManager.Forms
 
         private void ButtonSignOut_Click(object sender, System.EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.OKCancel("Would you like to log out of this account?");
+            DialogResult result = MessageFuctionConstans.WarningOKCancell("Would you like to log out of this account?");
             if (result == DialogResult.OK)
             {
                 HomePage.Instance.Close();

@@ -193,7 +193,6 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
-    <Compile Include="Model\Invoice.cs" />
     <Compile Include="Model\InvoiceDetailItem.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCategory.cs" />
