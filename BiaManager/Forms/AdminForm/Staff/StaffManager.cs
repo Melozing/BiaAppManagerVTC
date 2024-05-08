@@ -466,7 +466,7 @@ namespace BiaManager.Forms.AdminForm.Staff
 
         private void ButtonDeleteStaffManager_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Confirm deletion of this account?");
+            DialogResult result = MessageFuctionConstans.OKCancel("Confirm deletion of this account?");
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"

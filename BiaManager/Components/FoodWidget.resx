@@ -121,7 +121,7 @@
   <data name="pictureBoxMinus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAClsSURBVHhe7d0J
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAClsSURBVHhe7d0J
         lF1VmejxYp5BEFFUJGphiPfsU8H7FIuk9j43iZFg87RZXU9bW23ltUNDi4hAOwHdONsO4PQcAccWB6AB
         QRGBVlEGUXFqiIiQWLnnnKrKRCBkqHp7V75o5dQOqeHeumf4/9f6LXT1ajzj/mq653QRERERERERERER
         ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERWx0f7+
@@ -301,7 +301,4 @@
         RERERERERERERERERERERERERERERERERERERERUoLq6/j/SZnXauMpqKQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

@@ -22,7 +22,7 @@ namespace BiaManager.Forms
         }
         private void btclose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.WarningOKCancell("Bạn muốn thoát chương trình !");
+            DialogResult result = MessageFuctionConstans.OKCancel("Bạn muốn thoát chương trình !");
             if (result == DialogResult.OK)
             {
                 Application.Exit();

@@ -12,7 +12,6 @@ namespace BiaManager.Model
         public int InvoiceTotalAmount { get; set; }
         public string ItemName { get; set; }
         public int ItemPrice { get; set; }
-        public string IdTable { get; set; }
         public int TableStatus { get; set; }
         public string ItemCategoryName { get; set; }
     }
