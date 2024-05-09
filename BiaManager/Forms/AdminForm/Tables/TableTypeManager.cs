@@ -18,6 +18,8 @@ namespace BiaManager.Forms.AdminForm.Tables
         }
         private void ResetSubmitButton()
         {
+            textBoxTableName.Text = "";
+            textBoxTablePrice.Text = "";
             ButtonUpdateTableTypeManager.Hide();
             ButtonDeleteTableTypeManager.Hide();
             ButtonCreateTableTypeManager.Show();
@@ -29,8 +31,12 @@ namespace BiaManager.Forms.AdminForm.Tables
         }
         private void LoadDataTable()
         {
-            string queryStaffInfo = "SELECT * FROM table_type";
+            string queryStaffInfo = "SELECT * FROM table_type WHERE TableTypeStatus != 1";
             dataGridViewTableTypeInfo.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
+            dataGridViewTableTypeInfo.Columns["TableIDType"].HeaderText = "Table Type ID";
+            dataGridViewTableTypeInfo.Columns["TableType_Name"].HeaderText = "Table Type Name";
+            dataGridViewTableTypeInfo.Columns["TableType_Price"].HeaderText = "Table Type Price";
+            dataGridViewTableTypeInfo.Columns["TableTypeStatus"].HeaderText = "Status";
             ResetSubmitButton();
         }
         private void CheckSubmitButton()
@@ -60,7 +66,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             }
 
 
-            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "'";
+            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "' AND TableTypeStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
             if (checkQuery.Rows.Count > 0)
@@ -85,7 +91,7 @@ namespace BiaManager.Forms.AdminForm.Tables
             }
 
 
-            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "' AND TableType_Name !='" + tempName + "'";
+            string queryCheckPhone = "SELECT * FROM table_type WHERE TableType_Name = '" + textBoxTableName.Text + "' AND TableType_Name !='" + tempName + "' AND TableTypeStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
             if (checkQuery.Rows.Count > 0)
@@ -161,7 +167,9 @@ namespace BiaManager.Forms.AdminForm.Tables
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM table_type WHERE TableIDType = '" + tempID + "';";
+                     UPDATE table_type 
+                     SET TableTypeStatus = 1   
+                     WHERE TableIDType = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -200,7 +208,8 @@ namespace BiaManager.Forms.AdminForm.Tables
             SELECT * FROM table_type 
             WHERE  TableIDType LIKE '%" + textBoxSearch.Text + @"%' OR
             TableType_Name LIKE '%" + textBoxSearch.Text + @"%' OR 
-            TableType_Price LIKE '%" + textBoxSearch.Text + @"%';";
+            TableType_Price LIKE '%" + textBoxSearch.Text + @"%'
+            AND TableTypeStatus != 1;";
 
             // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);

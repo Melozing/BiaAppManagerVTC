@@ -1,5 +1,6 @@
 ﻿using BiaManager.Model;
 using BiaManager.Script;
+using BiaManager.Script.Utility;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -66,7 +67,11 @@ namespace BiaManager.Forms
             }
             else
             {
-                string query = "Select * from user_account where UserName = '" + tbusername.Text + "'and UserPassword ='" + tbpassword.Text + "'";
+                string hashedPassword = PasswordHasher.HashPassword(tbpassword.Text);
+                string query = "Select * from user_account " +
+                    "where UserName = '" + tbusername.Text + "'" +
+                    "and UserPassword ='" + hashedPassword + "'" +
+                    "and AccountStatus != 1;";
                 List<Account> accounts = databaseService.GetData(query, (reader) =>
                 {
                     Account account = new Account();

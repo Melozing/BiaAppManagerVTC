@@ -153,10 +153,7 @@ namespace BiaManager.Forms
                 "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
 
                     databaseService.ExecuteNonQuery(queryPay);
-                    this.Close();
-                    FormTables formTables = new FormTables();
-                    HomePage.Instance.OpenChildForm(formTables);
-                    HomePage.Instance.HidePanelDetail();
+                    PaySuccessful();
                 }
                 else if (resultExportBill == DialogResult.No)
                 {
@@ -168,14 +165,19 @@ namespace BiaManager.Forms
                     INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
                     WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
                     "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-
                     databaseService.ExecuteNonQuery(queryPay);
-                    this.Close();
-                    FormTables formTables = new FormTables();
-                    HomePage.Instance.OpenChildForm(formTables);
-                    HomePage.Instance.HidePanelDetail();
+                    PaySuccessful();
                 }
             }
+        }
+
+        private void PaySuccessful()
+        {
+            this.Close();
+            FormTables formTables = new FormTables();
+            HomePage.Instance.OpenChildForm(formTables);
+            HomePage.Instance.HidePanelDetail();
+            MessageFuctionConstans.SuccessOK("Payment successful!");
         }
 
         private void iconButtonCancelBill_Click(object sender, EventArgs e)
@@ -200,6 +202,7 @@ namespace BiaManager.Forms
                     FormTables formTables = new FormTables();
                     HomePage.Instance.OpenChildForm(formTables);
                     HomePage.Instance.HidePanelDetail();
+                    MessageFuctionConstans.SuccessOK("Cancel bill successfully!");
                 }
             }
         }

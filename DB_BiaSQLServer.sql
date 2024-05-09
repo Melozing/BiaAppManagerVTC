@@ -68,7 +68,7 @@ GO
 
 CREATE TABLE [dbo].[user_account] (
     [IdUser] varchar(15) COLLATE Vietnamese_CI_AS NOT NULL,
-    [UserName] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
+    [UserName] varchar(200) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserPassword] varchar(70) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserRole] int NULL,
     [AccountStatus] int NOT NULL DEFAULT '0',
@@ -86,7 +86,7 @@ CREATE TABLE [dbo].[user_info] (
 );
 GO
 
-INSERT INTO user_account (IdUser,UserName, UserPassword, UserRole) VALUES ('U0', 'admin', 'admin123', 0);
+INSERT INTO user_account (IdUser,UserName, UserPassword, UserRole) VALUES ('U0', 'admin', 'b7a9ec0a7805f019e2f237d1abf1fbee361b97e5cc9c107f49b393f7fa7a9812', 0);
 INSERT INTO table_type (TableIDType,TableType_Name, TableType_Price) VALUES ('TBT01', 'Carom billiards', 25000);
 INSERT INTO table_type (TableIDType,TableType_Name, TableType_Price) VALUES ('TBT02', 'Pocket Billiards', 30000);
 INSERT INTO items_category (IdItemCategory, ItemCategory_Name) VALUES ('ICD', 'Other');

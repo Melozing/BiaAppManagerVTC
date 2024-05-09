@@ -124,6 +124,12 @@
     <Compile Include="Components\TableWidget.Designer.cs">
       <DependentUpon>TableWidget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForm\Bills\BillsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm\Bills\BillsManager.Designer.cs">
+      <DependentUpon>BillsManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm\Items\AddItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="Forms\FormBill.Designer.cs">
       <DependentUpon>FormBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
@@ -215,6 +227,7 @@
     <Compile Include="Script\UI\ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Script\Utility\PasswordHasher.cs" />
     <Compile Include="Script\WindowSizeCtrl.cs" />
     <EmbeddedResource Include="Components\FoodTabWidget.resx">
       <DependentUpon>FoodTabWidget.cs</DependentUpon>
@@ -224,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\TableWidget.resx">
       <DependentUpon>TableWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForm\Bills\BillsManager.resx">
+      <DependentUpon>BillsManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm\Items\AddItems.resx">
       <DependentUpon>AddItems.cs</DependentUpon>
@@ -242,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBill.resx">
       <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

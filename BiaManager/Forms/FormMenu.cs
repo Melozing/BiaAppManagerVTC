@@ -3,6 +3,7 @@ using BiaManager.Model;
 using BiaManager.Script;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BiaManager.Forms
@@ -36,35 +37,45 @@ namespace BiaManager.Forms
             // Lấy danh sách các danh mục mặt hàng
             List<ItemCategory> itemCategories = GetItemCategories();
 
-            // Lấy danh sách các chi tiết hóa đơn
+            // Lấy danh sách các mặt hàng đã đặt cho bàn hiện tại
+            List<string> orderedItems = GetOrderedItems();
 
             string TableID = foodTabWidget.Tag.ToString();
 
             // Hiển thị thông tin mặt hàng theo từng danh mục
             foreach (var category in itemCategories)
             {
-                FoodTabWidget foodTabWidgetNew = new FoodTabWidget();
-                this.Controls.Add(foodTabWidgetNew);
-                foodTabWidgetNew.Dock = DockStyle.Top;
-                foodTabWidgetNew.AutoSize = false;
+                // Kiểm tra xem danh mục có ít nhất một mặt hàng nào không
+                bool categoryHasItems = items.Any(item => item.CategoryName == category.CategoryName);
 
-
-                foodTabWidgetNew.SetFoodTabInfo(category.CategoryName);
-                foreach (var item in items)
+                if (categoryHasItems)
                 {
-                    if (item.ItemImage != null && category.CategoryName == item.CategoryName)
-                    {
-                        if (!string.IsNullOrWhiteSpace(item.ItemName))
-                        {
-                            List<InvoiceDetailItem> invoiceDetailItems = GetInvoiceDetailItems(item.ItemName);
-                            // Đếm số lượng mặt hàng thuộc danh mục hiện tại
-                            int itemCount = CountItemsByCategory(invoiceDetailItems, item.ItemName);
+                    FoodTabWidget foodTabWidgetNew = new FoodTabWidget();
+                    this.Controls.Add(foodTabWidgetNew);
+                    foodTabWidgetNew.Dock = DockStyle.Top;
+                    foodTabWidgetNew.AutoSize = false;
 
-                            FoodWidget foodWidget = new FoodWidget();
-                            foodWidget.SetIDItem(item.IdItem, TableID);
-                            foodWidget.SetFoodInfo(item.ItemName, item.ItemPrice, item.ItemImage);
-                            foodTabWidgetNew.AddFood(foodWidget);
-                            foodWidget.SetFoodInfoNum(itemCount);
+                    foodTabWidgetNew.SetFoodTabInfo(category.CategoryName);
+
+                    foreach (var item in items)
+                    {
+                        if (item.CategoryName == category.CategoryName)
+                        {
+                            if (item.ItemImage != null)
+                            {
+                                if (!string.IsNullOrWhiteSpace(item.ItemName))
+                                {
+                                    List<InvoiceDetailItem> invoiceDetailItems = GetInvoiceDetailItems(item.ItemName);
+                                    // Đếm số lượng mặt hàng thuộc danh mục hiện tại
+                                    int itemCount = CountItemsByCategory(invoiceDetailItems, item.ItemName);
+
+                                    FoodWidget foodWidget = new FoodWidget();
+                                    foodWidget.SetIDItem(item.IdItem, TableID);
+                                    foodWidget.SetFoodInfo(item.ItemName, item.ItemPrice, item.ItemImage);
+                                    foodTabWidgetNew.AddFood(foodWidget);
+                                    foodWidget.SetFoodInfoNum(itemCount);
+                                }
+                            }
                         }
                     }
                 }
@@ -176,6 +187,21 @@ namespace BiaManager.Forms
             }
             return count;
         }
+        private List<string> GetOrderedItems()
+        {
+            string TableID = foodTabWidget.Tag.ToString();
 
+            string query = @"SELECT DISTINCT itm.item_Name
+                    FROM invoice AS inv
+                    JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
+                    JOIN items_menu AS itm ON inv_det.IdItem = itm.IdItem
+                    WHERE inv.Invoice_Status = 0 AND inv.TableID ='" + TableID + "' AND itm.IdItem != 'IHour'";
+
+            return databaseService.GetData(query, (reader) =>
+            {
+                string itemName = reader.GetString(0);
+                return itemName;
+            });
+        }
     }
 }

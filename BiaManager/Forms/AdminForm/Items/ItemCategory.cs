@@ -42,7 +42,7 @@ namespace BiaManager.Forms.AdminForm.Items
                 return false;
             }
 
-            string queryCheckPhone = "SELECT * FROM items_category WHERE ItemCategory_Name = '" + textBoxItemCategoryName.Text + "'";
+            string queryCheckPhone = "SELECT * FROM items_category WHERE ItemCategory_Name = '" + textBoxItemCategoryName.Text + "' AND ItemCategoryStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
             if (checkQuery.Rows.Count > 0)
@@ -54,9 +54,12 @@ namespace BiaManager.Forms.AdminForm.Items
         }
         private void LoadCategory()
         {
-            string queryStaffInfo = "SELECT * " +
-                "FROM items_category";
+            string queryStaffInfo = "SELECT IdItemCategory, ItemCategory_Name " +
+                "FROM items_category WHERE ItemCategoryStatus != 1";
             dataGridViewItemsCategory.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
+            dataGridViewItemsCategory.Columns["IdItemCategory"].HeaderText = "Item Category ID";
+            dataGridViewItemsCategory.Columns["ItemCategory_Name"].HeaderText = "Item Category Name";
+
             ResetSubmitButton();
         }
         private string GrenateNewID()
@@ -92,7 +95,7 @@ namespace BiaManager.Forms.AdminForm.Items
             string updateQuery = @"
                        UPDATE items_category 
                        SET ItemCategory_Name = '" + textBoxItemCategoryName.Text + "'" +
-                       "WHERE IdItemCategory = '" + tempID + "';";
+                       " WHERE IdItemCategory = '" + tempID + "';";
 
 
             databaseService.ExecuteNonQuery(updateQuery);
@@ -122,7 +125,7 @@ namespace BiaManager.Forms.AdminForm.Items
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM items_category WHERE IdItemCategory = '" + tempID + "';";
+                     UPDATE items_category SET ItemCategoryStatus = 1 WHERE IdItemCategory = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -152,9 +155,9 @@ namespace BiaManager.Forms.AdminForm.Items
         private void iconButtonSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = @"
-        SELECT * FROM items_category 
-        WHERE IdItemCategory LIKE '%" + textBoxSearch.Text + @"%' OR
-              ItemCategory_Name LIKE '%" + textBoxSearch.Text + @"%';";
+            SELECT IdItemCategory,ItemCategory_Name FROM items_category 
+            WHERE IdItemCategory LIKE '%" + textBoxSearch.Text + @"%' OR
+            ItemCategory_Name LIKE '%" + textBoxSearch.Text + @"%' AND ItemCategoryStatus != 1;";
 
             // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);

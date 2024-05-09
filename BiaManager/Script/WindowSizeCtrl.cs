@@ -33,9 +33,9 @@ namespace BiaManager.Script
             }
         }
 
-        public static void MinimizeForm(ref Form form)
+        public static FormWindowState MinimizeForm(FormWindowState windowState)
         {
-            form.WindowState = FormWindowState.Minimized;
+            return FormWindowState.Minimized;
         }
     }
 }
