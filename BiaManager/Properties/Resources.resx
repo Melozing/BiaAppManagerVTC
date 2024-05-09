@@ -136,17 +136,20 @@
   <data name="defaultTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defaultTable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Status_Playing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\status_table\Status_Playing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logovtc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logovtc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Photo Gallery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Photo Gallery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pocketBilliards" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pocketBilliards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caromBilliards" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caromBilliards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,11 @@
   <data name="Maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gifmaker_me" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gifmaker_me.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="anhlogin (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginimage\anhlogin (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Check Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Check Mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Status_Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\status_table\Status_Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,28 +196,25 @@
   <data name="8713724" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8713724.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Online" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Online.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="attachment_145244312" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\attachment_145244312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="anhlogin (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginimage\anhlogin (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anhlogin (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginimage\anhlogin (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caromBilliards" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caromBilliards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gifmaker_me" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifmaker_me.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anhlogin (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginimage\anhlogin (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="attachment_145244312" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attachment_145244312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anhlogin (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginimage\anhlogin (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Photo Gallery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Photo Gallery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Check Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Check Mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Online" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Online.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logohomepage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logohomepage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

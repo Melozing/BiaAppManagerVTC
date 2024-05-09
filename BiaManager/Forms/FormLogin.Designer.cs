@@ -33,8 +33,10 @@
             this.labelTaskbarLogin = new System.Windows.Forms.Label();
             this.PanelTaskbarLogin = new System.Windows.Forms.Panel();
             this.btnmini = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btchangeimg = new System.Windows.Forms.Button();
             this.btnclose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pannel_login = new System.Windows.Forms.Panel();
+            this.AvatarGif = new System.Windows.Forms.PictureBox();
             this.btnsingup = new Guna.UI2.WinForms.Guna2Button();
             this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -42,21 +44,19 @@
             this.btnshowpass = new Guna.UI2.WinForms.Guna2Button();
             this.tb_pass = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.logi_pic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_running = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.AvatarGif = new System.Windows.Forms.PictureBox();
-            this.logi_pic = new System.Windows.Forms.PictureBox();
-            this.btchangeimg = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelTaskbarLogin.SuspendLayout();
             this.pannel_login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logi_pic)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logi_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,22 @@
             this.btnmini.TabIndex = 13;
             this.btnmini.Click += new System.EventHandler(this.MinimizeIconButton_Click);
             // 
+            // btchangeimg
+            // 
+            this.btchangeimg.BackColor = System.Drawing.Color.Transparent;
+            this.btchangeimg.BackgroundImage = global::BiaManager.Properties.Resources.setting;
+            this.btchangeimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btchangeimg.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btchangeimg.FlatAppearance.BorderSize = 0;
+            this.btchangeimg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btchangeimg.ForeColor = System.Drawing.Color.Transparent;
+            this.btchangeimg.Location = new System.Drawing.Point(0, 0);
+            this.btchangeimg.Name = "btchangeimg";
+            this.btchangeimg.Size = new System.Drawing.Size(46, 43);
+            this.btchangeimg.TabIndex = 10;
+            this.btchangeimg.UseVisualStyleBackColor = false;
+            this.btchangeimg.Click += new System.EventHandler(this.button4_Click);
+            // 
             // btnclose
             // 
             this.btnclose.Dock = System.Windows.Forms.DockStyle.Right;
@@ -132,10 +148,24 @@
             this.pannel_login.Controls.Add(this.logi_pic);
             this.pannel_login.Dock = System.Windows.Forms.DockStyle.Left;
             this.pannel_login.Location = new System.Drawing.Point(0, 0);
-            this.pannel_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pannel_login.Margin = new System.Windows.Forms.Padding(2);
             this.pannel_login.Name = "pannel_login";
             this.pannel_login.Size = new System.Drawing.Size(367, 789);
             this.pannel_login.TabIndex = 11;
+            // 
+            // AvatarGif
+            // 
+            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AvatarGif.ErrorImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.ErrorImage")));
+            this.AvatarGif.Image = global::BiaManager.Properties.Resources.gifmaker_me;
+            this.AvatarGif.InitialImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.InitialImage")));
+            this.AvatarGif.Location = new System.Drawing.Point(0, 594);
+            this.AvatarGif.Name = "AvatarGif";
+            this.AvatarGif.Size = new System.Drawing.Size(367, 195);
+            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AvatarGif.TabIndex = 14;
+            this.AvatarGif.TabStop = false;
+            this.AvatarGif.Click += new System.EventHandler(this.AvatarGif_Click);
             // 
             // btnsingup
             // 
@@ -205,15 +235,17 @@
             // 
             // btnshowpass
             // 
+            this.btnshowpass.BorderColor = System.Drawing.Color.Transparent;
             this.btnshowpass.BorderRadius = 7;
-            this.btnshowpass.BorderThickness = 2;
+            this.btnshowpass.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnshowpass.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnshowpass.CheckedState.Parent = this.btnshowpass;
             this.btnshowpass.CustomImages.Parent = this.btnshowpass;
             this.btnshowpass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.btnshowpass.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnshowpass.ForeColor = System.Drawing.Color.White;
             this.btnshowpass.HoverState.Parent = this.btnshowpass;
-            this.btnshowpass.Location = new System.Drawing.Point(237, 359);
+            this.btnshowpass.Location = new System.Drawing.Point(235, 360);
             this.btnshowpass.Name = "btnshowpass";
             this.btnshowpass.ShadowDecoration.Parent = this.btnshowpass;
             this.btnshowpass.Size = new System.Drawing.Size(71, 24);
@@ -283,6 +315,16 @@
             this.tb_username.TabIndex = 1;
             this.tb_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbusername_KeyDown);
             // 
+            // logi_pic
+            // 
+            this.logi_pic.Image = global::BiaManager.Properties.Resources.logovtc;
+            this.logi_pic.Location = new System.Drawing.Point(32, 4);
+            this.logi_pic.Name = "logi_pic";
+            this.logi_pic.Size = new System.Drawing.Size(291, 172);
+            this.logi_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logi_pic.TabIndex = 0;
+            this.logi_pic.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
@@ -290,7 +332,7 @@
             this.panel1.Controls.Add(this.PanelTaskbarLogin);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(364, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(958, 788);
             this.panel1.TabIndex = 12;
@@ -301,7 +343,7 @@
             this.panel2.Controls.Add(this.label_running);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 751);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(958, 37);
             this.panel2.TabIndex = 10;
@@ -327,46 +369,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(958, 788);
             this.panel3.TabIndex = 11;
-            // 
-            // AvatarGif
-            // 
-            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AvatarGif.ErrorImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.ErrorImage")));
-            this.AvatarGif.Image = global::BiaManager.Properties.Resources.gifmaker_me;
-            this.AvatarGif.InitialImage = ((System.Drawing.Image)(resources.GetObject("AvatarGif.InitialImage")));
-            this.AvatarGif.Location = new System.Drawing.Point(0, 594);
-            this.AvatarGif.Name = "AvatarGif";
-            this.AvatarGif.Size = new System.Drawing.Size(367, 195);
-            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AvatarGif.TabIndex = 14;
-            this.AvatarGif.TabStop = false;
-            this.AvatarGif.Click += new System.EventHandler(this.AvatarGif_Click);
-            // 
-            // logi_pic
-            // 
-            this.logi_pic.Image = global::BiaManager.Properties.Resources.logovtc;
-            this.logi_pic.Location = new System.Drawing.Point(32, 4);
-            this.logi_pic.Name = "logi_pic";
-            this.logi_pic.Size = new System.Drawing.Size(291, 172);
-            this.logi_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logi_pic.TabIndex = 0;
-            this.logi_pic.TabStop = false;
-            // 
-            // btchangeimg
-            // 
-            this.btchangeimg.BackColor = System.Drawing.Color.Transparent;
-            this.btchangeimg.BackgroundImage = global::BiaManager.Properties.Resources.setting;
-            this.btchangeimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btchangeimg.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btchangeimg.FlatAppearance.BorderSize = 0;
-            this.btchangeimg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btchangeimg.ForeColor = System.Drawing.Color.Transparent;
-            this.btchangeimg.Location = new System.Drawing.Point(0, 0);
-            this.btchangeimg.Name = "btchangeimg";
-            this.btchangeimg.Size = new System.Drawing.Size(46, 43);
-            this.btchangeimg.TabIndex = 10;
-            this.btchangeimg.UseVisualStyleBackColor = false;
-            this.btchangeimg.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -400,12 +402,12 @@
             this.PanelTaskbarLogin.ResumeLayout(false);
             this.pannel_login.ResumeLayout(false);
             this.pannel_login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logi_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logi_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
