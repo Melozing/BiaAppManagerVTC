@@ -37,8 +37,7 @@ namespace BiaManager.Forms.AdminForm.Items
                 FROM 
                     items_menu 
                 JOIN 
-                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory
-                WHERE items_menu.IdItem != 'IHour';";
+                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory;";
             DataTable table = databaseService.LoadDataTable(queryStaffInfo);
 
             dataGridViewAddItem.DataSource = table;
