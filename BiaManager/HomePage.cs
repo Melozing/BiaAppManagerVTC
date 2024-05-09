@@ -35,8 +35,7 @@ namespace BiaManager
         private string tempMenuManagementText;
         private string tempTablesManagementText;
         private string tempSettingText;
-        private int originalLogoWidth;
-        private int originalLogoHeight;
+
         public HomePage()
         {
             InitializeComponent();
@@ -406,9 +405,7 @@ namespace BiaManager
                     btnHome.Size = new Size(24, 24);
                     btnHome.Padding = new Padding(0, 0, 0, 0);
                     btnHome.Dock = DockStyle.Fill;
-                    int newLogoWidth = panelTittleBar.Width / 2;
-                    btnHome.Size = new Size(newLogoWidth, panelTittleBar.Height); 
-                    panelLogo.Size = new Size(newLogoWidth, panelTittleBar.Height);
+
                     Home.Width = panelSidebarMenu.Width;
                     Tables.Width = panelSidebarMenu.Width;
                     Menu.Width = panelSidebarMenu.Width;
@@ -439,8 +436,7 @@ namespace BiaManager
                 MenuManagement.Width = panelSidebarMenu.Width;
                 TablesManagement.Width = panelSidebarMenu.Width;
                 Setting.Width = panelSidebarMenu.Width;
-                btnHome.Size = new Size(originalLogoWidth, originalLogoHeight);
-                panelLogo.Size = new Size(originalLogoWidth, originalLogoHeight);
+
                 if (panelSidebarMenu.Width >= 229)
                 {
                     flowLayoutPanelMenu.Width = panelSidebarMenu.Width;
@@ -519,9 +515,6 @@ namespace BiaManager
                 Setting.Show();
                 User.Show();
             }
-
-            originalLogoWidth = btnHome.Width;
-            originalLogoHeight = btnHome.Height;
         }
     }
 }

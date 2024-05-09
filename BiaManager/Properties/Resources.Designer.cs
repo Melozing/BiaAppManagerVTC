@@ -263,16 +263,6 @@ namespace BiaManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logohomepage {
-            get {
-                object obj = ResourceManager.GetObject("logohomepage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logovtc {
             get {
                 object obj = ResourceManager.GetObject("logovtc", resourceCulture);

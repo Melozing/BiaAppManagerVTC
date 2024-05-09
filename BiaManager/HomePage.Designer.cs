@@ -470,7 +470,7 @@
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 24;
             this.iconPictureBox1.Location = new System.Drawing.Point(2, 542);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(24, 26);
             this.iconPictureBox1.TabIndex = 19;
@@ -520,7 +520,7 @@
             // btnHome
             // 
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.Image = global::BiaManager.Properties.Resources.logohomepage;
+            this.btnHome.Image = global::BiaManager.Properties.Resources.attachment_145244312;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(80, 40, 80, 40);

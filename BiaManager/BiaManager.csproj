@@ -348,7 +348,6 @@
     <None Include="Resources\status_table\Status_Repair.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logohomepage.png" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\loginimage\anhlogin %285%29.jpg" />
     <None Include="Resources\loginimage\anhlogin %282%29.jpg" />
