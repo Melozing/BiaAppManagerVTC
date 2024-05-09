@@ -33,32 +33,32 @@
             this.labelTaskbarLogin = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2ToggleSwitch2 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnsignup = new Guna.UI2.WinForms.Guna2Button();
             this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
             this.showpass = new Guna.UI2.WinForms.Guna2Button();
             this.forgotpassword = new System.Windows.Forms.LinkLabel();
             this.textbox_username = new Guna.UI2.WinForms.Guna2TextBox();
-            this.AvatarGif = new System.Windows.Forms.PictureBox();
             this.textbox_pass = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_textruning = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btchangeimg = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.MinimizeIconButton = new FontAwesome.Sharp.IconButton();
             this.MaximizeBtn = new FontAwesome.Sharp.IconButton();
             this.btclose = new FontAwesome.Sharp.IconButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.AvatarGif = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btchangeimg = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
             this.panel_textruning.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,17 +105,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(340, 674);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(93, 351);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Remember";
-            // 
             // guna2ToggleSwitch2
             // 
             this.guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -131,19 +120,6 @@
             this.guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::BiaManager.Properties.Resources.logovtc;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(70, 3);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(218, 140);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 20;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // btnsignup
             // 
@@ -239,20 +215,6 @@
             this.textbox_username.TabIndex = 0;
             this.textbox_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbusername_KeyDown);
             // 
-            // AvatarGif
-            // 
-            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AvatarGif.ErrorImage = null;
-            this.AvatarGif.Image = global::BiaManager.Properties.Resources.gifmaker_me;
-            this.AvatarGif.InitialImage = null;
-            this.AvatarGif.Location = new System.Drawing.Point(0, 495);
-            this.AvatarGif.Name = "AvatarGif";
-            this.AvatarGif.Size = new System.Drawing.Size(340, 179);
-            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AvatarGif.TabIndex = 14;
-            this.AvatarGif.TabStop = false;
-            this.AvatarGif.Click += new System.EventHandler(this.AvatarGif_Click);
-            // 
             // textbox_pass
             // 
             this.textbox_pass.Animated = true;
@@ -334,20 +296,16 @@
             this.panel2.TabIndex = 18;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTaskbarLogin_MouseDown);
             // 
-            // btchangeimg
+            // label2
             // 
-            this.btchangeimg.BackColor = System.Drawing.Color.Transparent;
-            this.btchangeimg.BackgroundImage = global::BiaManager.Properties.Resources.Photo_Gallery;
-            this.btchangeimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btchangeimg.FlatAppearance.BorderSize = 0;
-            this.btchangeimg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btchangeimg.Image = global::BiaManager.Properties.Resources.setting;
-            this.btchangeimg.Location = new System.Drawing.Point(4, 3);
-            this.btchangeimg.Name = "btchangeimg";
-            this.btchangeimg.Size = new System.Drawing.Size(39, 34);
-            this.btchangeimg.TabIndex = 10;
-            this.btchangeimg.UseVisualStyleBackColor = false;
-            this.btchangeimg.Click += new System.EventHandler(this.button4_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(93, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Remember";
             // 
             // panel3
             // 
@@ -407,6 +365,33 @@
             this.btclose.UseVisualStyleBackColor = true;
             this.btclose.Click += new System.EventHandler(this.btclose_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::BiaManager.Properties.Resources.logovtc;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(70, 3);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(218, 140);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 20;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // AvatarGif
+            // 
+            this.AvatarGif.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AvatarGif.ErrorImage = null;
+            this.AvatarGif.Image = global::BiaManager.Properties.Resources.gifmaker_me;
+            this.AvatarGif.InitialImage = null;
+            this.AvatarGif.Location = new System.Drawing.Point(0, 495);
+            this.AvatarGif.Name = "AvatarGif";
+            this.AvatarGif.Size = new System.Drawing.Size(340, 179);
+            this.AvatarGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AvatarGif.TabIndex = 14;
+            this.AvatarGif.TabStop = false;
+            this.AvatarGif.Click += new System.EventHandler(this.AvatarGif_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BiaManager.Properties.Resources.anhlogin;
@@ -416,6 +401,21 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // btchangeimg
+            // 
+            this.btchangeimg.BackColor = System.Drawing.Color.Transparent;
+            this.btchangeimg.BackgroundImage = global::BiaManager.Properties.Resources.Photo_Gallery;
+            this.btchangeimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btchangeimg.FlatAppearance.BorderSize = 0;
+            this.btchangeimg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btchangeimg.Image = global::BiaManager.Properties.Resources.setting;
+            this.btchangeimg.Location = new System.Drawing.Point(4, 3);
+            this.btchangeimg.Name = "btchangeimg";
+            this.btchangeimg.Size = new System.Drawing.Size(39, 34);
+            this.btchangeimg.TabIndex = 10;
+            this.btchangeimg.UseVisualStyleBackColor = false;
+            this.btchangeimg.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormLogin
             // 
@@ -445,11 +445,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
             this.panel_textruning.ResumeLayout(false);
             this.panel_textruning.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
