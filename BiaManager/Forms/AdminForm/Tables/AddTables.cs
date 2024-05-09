@@ -78,11 +78,11 @@ namespace BiaManager.Forms.AdminForm.Tables
                 "ON table_detail.TableIDType = table_type.TableIDType;";
             dataGridViewTablesAdd.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
 
-            dataGridViewTablesAdd.Columns["TableID"].HeaderText = "Mã bàn";
-            dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Số bàn";
-            dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Loại bàn";
-            dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Giá";
-            dataGridViewTablesAdd.Columns["Status"].HeaderText = "Tình trạng";
+            dataGridViewTablesAdd.Columns["TableID"].HeaderText = "Table ID";
+            dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Table Number";
+            dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Table Type Name";
+            dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Table Type Price";
+            dataGridViewTablesAdd.Columns["Status"].HeaderText = "Status";
             ResetSubmitButton();
         }
         private string GrenateNewID()
