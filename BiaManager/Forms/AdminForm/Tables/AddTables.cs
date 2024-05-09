@@ -32,7 +32,8 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void AddTables_Load(object sender, System.EventArgs e)
         {
             comboBoxTableType.DropDownStyle = ComboBoxStyle.DropDownList;
-            string query = "SELECT TableIDType,TableType_Name FROM table_type";
+            string query = "SELECT TableIDType,TableType_Name FROM table_type " +
+                "WHERE TableTypeStatus != 1";
             DataTable tableTypeData = DatabaseService.Instance.LoadDataTable(query);
 
             comboBoxTableType.Items.Clear();
@@ -71,18 +72,19 @@ namespace BiaManager.Forms.AdminForm.Tables
         private void LoadDataTable()
         {
             string queryStaffInfo = "SELECT table_detail.TableID, table_detail.TableNumber, " +
-                "table_detail.Status," +
+                "table_detail.Status, " +
                 "table_type.TableType_Name, " +
                 "table_type.TableType_Price " +
                 "FROM table_detail JOIN table_type " +
-                "ON table_detail.TableIDType = table_type.TableIDType;";
+                "ON table_detail.TableIDType = table_type.TableIDType " +
+                "WHERE table_detail.TableStatus != 1;";
             dataGridViewTablesAdd.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
 
-            dataGridViewTablesAdd.Columns["TableID"].HeaderText = "Mã bàn";
-            dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Số bàn";
-            dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Loại bàn";
-            dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Giá";
-            dataGridViewTablesAdd.Columns["Status"].HeaderText = "Tình trạng";
+            dataGridViewTablesAdd.Columns["TableID"].HeaderText = "Table ID";
+            dataGridViewTablesAdd.Columns["TableNumber"].HeaderText = "Table Number";
+            dataGridViewTablesAdd.Columns["TableType_Name"].HeaderText = "Table Type Name";
+            dataGridViewTablesAdd.Columns["TableType_Price"].HeaderText = "Table Type Price";
+            dataGridViewTablesAdd.Columns["Status"].HeaderText = "Status";
             ResetSubmitButton();
         }
         private string GrenateNewID()
@@ -121,7 +123,7 @@ namespace BiaManager.Forms.AdminForm.Tables
                 return false;
             }
 
-            string queryCheck = "SELECT TableNumber FROM table_detail WHERE TableNumber = '" + textBoxTableName.Text + "'";
+            string queryCheck = "SELECT TableNumber FROM table_detail WHERE TableNumber = '" + textBoxTableName.Text + "' AND TableStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheck);
             if (checkQuery.Rows.Count > 0 && tempName != textBoxTableName.Text)
             {
@@ -179,7 +181,9 @@ namespace BiaManager.Forms.AdminForm.Tables
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM table_detail WHERE TableID = '" + tempID + "';";
+                     UPDATE table_detail 
+                     SET TableStatus = 1 
+                     WHERE TableID = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -208,7 +212,9 @@ namespace BiaManager.Forms.AdminForm.Tables
         {
             string searchText = textBoxSearch.Text;
             string searchQuery = @"
-            SELECT table_detail.TableID, table_detail.TableNumber, 
+            SELECT table_detail.TableID, 
+                   table_detail.TableNumber, 
+                   table_detail.Status, 
                    table_type.TableType_Name, 
                    table_type.TableType_Price 
             FROM table_detail 
@@ -217,7 +223,8 @@ namespace BiaManager.Forms.AdminForm.Tables
               table_detail.TableNumber LIKE '%" + searchText + @"%' OR
               CONVERT(VARCHAR, table_detail.TableNumber) LIKE '%" + searchText + @"%' OR 
               table_type.TableType_Name LIKE '%" + searchText + @"%' OR 
-              CONVERT(VARCHAR, table_type.TableType_Price) LIKE '%" + searchText + @"%';";
+              CONVERT(VARCHAR, table_type.TableType_Price) LIKE '%" + searchText + @"%'
+            AND table_detail.TableStatus != 1;";
 
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);
 

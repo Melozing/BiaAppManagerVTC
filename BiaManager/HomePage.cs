@@ -1,4 +1,5 @@
 ﻿using BiaManager.Forms;
+using BiaManager.Forms.AdminForm.Bills;
 using BiaManager.Forms.AdminForm.Items;
 using BiaManager.Forms.AdminForm.Staff;
 using BiaManager.Forms.AdminForm.Tables;
@@ -35,8 +36,7 @@ namespace BiaManager
         private string tempMenuManagementText;
         private string tempTablesManagementText;
         private string tempSettingText;
-        private int originalLogoWidth;
-        private int originalLogoHeight;
+
         public HomePage()
         {
             InitializeComponent();
@@ -54,8 +54,6 @@ namespace BiaManager
             tempHideIconMenuText = HideMenuIcon.Text;
             tempHomeText = Home.Text;
             tempTablesText = Tables.Text;
-            tempMenuText = Menu.Text;
-            tempBillsText = Bills.Text;
             tempUserText = User.Text;
             tempUserManagementText = UserManagement.Text;
             tempMenuManagementText = MenuManagement.Text;
@@ -72,6 +70,8 @@ namespace BiaManager
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            Home.PerformClick();
         }
 
         public static HomePage Instance
@@ -184,6 +184,26 @@ namespace BiaManager
             public static Color color7 = Color.FromArgb(0, 255, 255);
             public static Color color8 = Color.FromArgb(210, 105, 30);
             public static Color color9 = Color.FromArgb(173, 255, 47);
+            public static Color color10 = Color.FromArgb(255, 165, 0);
+            public static Color color11 = Color.FromArgb(218, 112, 214);
+            public static Color color12 = Color.FromArgb(0, 128, 0);
+            public static Color color13 = Color.FromArgb(255, 0, 0);
+            public static Color color14 = Color.FromArgb(0, 0, 255);
+            public static Color color15 = Color.FromArgb(128, 0, 128);
+            public static Color color16 = Color.FromArgb(128, 128, 0);
+            public static Color color17 = Color.FromArgb(0, 255, 0);
+            public static Color color18 = Color.FromArgb(255, 192, 203);
+            public static Color color19 = Color.FromArgb(0, 255, 255);
+            public static Color color20 = Color.FromArgb(255, 20, 147);
+            public static Color color21 = Color.FromArgb(255, 140, 0);
+            public static Color color22 = Color.FromArgb(255, 0, 255);
+            public static Color color23 = Color.FromArgb(192, 192, 192);
+            public static Color color24 = Color.FromArgb(255, 215, 0);
+            public static Color color25 = Color.FromArgb(0, 255, 127);
+            public static Color color26 = Color.FromArgb(75, 0, 130);
+            public static Color color27 = Color.FromArgb(255, 69, 0);
+            public static Color color28 = Color.FromArgb(0, 128, 128);
+
         }
 
         private void ActivateButton(object sender, Color color)
@@ -245,6 +265,7 @@ namespace BiaManager
         {
             ActivateButton(sender, RGBColor.color1);
             panelDetail.Hide();
+            OpenChildForm(new FormHome());
         }
 
         private void Tables_Click(object sender, System.EventArgs e)
@@ -335,7 +356,7 @@ namespace BiaManager
 
         private void MinimizedIcon_Click(object sender, System.EventArgs e)
         {
-            this.WindowState = WindowSizeCtrl.MinimizeAndScale(this.WindowState);
+            this.WindowState = WindowSizeCtrl.MinimizeForm(this.WindowState);
         }
         private void HideMenuIcon_Click(object sender, System.EventArgs e)
         {
@@ -368,10 +389,6 @@ namespace BiaManager
                     }
                 }
             }
-            else
-            {
-                // Xử lý trường hợp panel hoặc Tag của nó là null
-            }
         }
 
         private void PerformFlowLayoutTransition(FlowLayoutPanel panel)
@@ -390,8 +407,6 @@ namespace BiaManager
                 HideMenuIcon.Text = "";
                 Home.Text = "";
                 Tables.Text = "";
-                Menu.Text = "";
-                Bills.Text = "";
                 User.Text = "";
                 UserManagement.Text = "";
                 MenuManagement.Text = "";
@@ -406,13 +421,9 @@ namespace BiaManager
                     btnHome.Size = new Size(24, 24);
                     btnHome.Padding = new Padding(0, 0, 0, 0);
                     btnHome.Dock = DockStyle.Fill;
-                    int newLogoWidth = panelTittleBar.Width / 2;
-                    btnHome.Size = new Size(newLogoWidth, panelTittleBar.Height); 
-                    panelLogo.Size = new Size(newLogoWidth, panelTittleBar.Height);
+
                     Home.Width = panelSidebarMenu.Width;
                     Tables.Width = panelSidebarMenu.Width;
-                    Menu.Width = panelSidebarMenu.Width;
-                    Bills.Width = panelSidebarMenu.Width;
                     User.Width = panelSidebarMenu.Width;
                     UserManagement.Width = panelSidebarMenu.Width;
                     MenuManagement.Width = panelSidebarMenu.Width;
@@ -432,15 +443,12 @@ namespace BiaManager
 
                 Home.Width = panelSidebarMenu.Width;
                 Tables.Width = panelSidebarMenu.Width;
-                Menu.Width = panelSidebarMenu.Width;
-                Bills.Width = panelSidebarMenu.Width;
                 User.Width = panelSidebarMenu.Width;
                 UserManagement.Width = panelSidebarMenu.Width;
                 MenuManagement.Width = panelSidebarMenu.Width;
                 TablesManagement.Width = panelSidebarMenu.Width;
                 Setting.Width = panelSidebarMenu.Width;
-                btnHome.Size = new Size(originalLogoWidth, originalLogoHeight);
-                panelLogo.Size = new Size(originalLogoWidth, originalLogoHeight);
+
                 if (panelSidebarMenu.Width >= 229)
                 {
                     flowLayoutPanelMenu.Width = panelSidebarMenu.Width;
@@ -454,8 +462,6 @@ namespace BiaManager
                     HideMenuIcon.Text = tempHideIconMenuText;
                     Home.Text = tempHomeText;
                     Tables.Text = tempTablesText;
-                    Menu.Text = tempMenuText;
-                    Bills.Text = tempBillsText;
                     User.Text = tempUserText;
                     UserManagement.Text = tempUserManagementText;
                     MenuManagement.Text = tempMenuManagementText;
@@ -499,29 +505,31 @@ namespace BiaManager
             {
                 Home.Show();
                 Tables.Show();
-                Menu.Show();
-                Bills.Show();
                 UserManagement.Show();
                 MenuManagement.Show();
                 TablesManagement.Show();
                 Setting.Show();
                 User.Hide();
+                Bills.Show();
             }
             else
             {
                 Home.Show();
                 Tables.Show();
-                Menu.Show();
-                Bills.Show();
                 UserManagement.Hide();
                 MenuManagement.Hide();
                 TablesManagement.Hide();
                 Setting.Show();
                 User.Show();
+                Bills.Show();
             }
+        }
 
-            originalLogoWidth = btnHome.Width;
-            originalLogoHeight = btnHome.Height;
+        private void iconButtonBill_Click(object sender, EventArgs e)
+        {
+            ActivateButton(Bills, RGBColor.color10);
+            panelDetail.Hide();
+            OpenChildForm(new BillsManager());
         }
     }
 }

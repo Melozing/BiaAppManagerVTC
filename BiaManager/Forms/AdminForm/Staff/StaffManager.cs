@@ -1,4 +1,5 @@
 ﻿using BiaManager.Script;
+using BiaManager.Script.Utility;
 using System;
 using System.Data;
 using System.Drawing;
@@ -82,7 +83,7 @@ namespace BiaManager.Forms.AdminForm.Staff
             iconButtonSearchSize = iconButtonSearch.Size;
             ButtonStaffManagerSize = ButtonCreateStaffManager.Size;
 
-            this.Resize += AddStaff_Resize;
+            //this.Resize += AddStaff_Resize;
             addStaffFormSize = this.Size;
 
             usernameLabelRectangle = new Rectangle(UsernameLabel.Location, UsernameLabel.Size);
@@ -122,13 +123,16 @@ namespace BiaManager.Forms.AdminForm.Staff
 
         private void LoadStaff()
         {
-            string queryStaffInfo = "SELECT user_account.idUser, user_account.UserName, " +
+            string queryStaffInfo = "SELECT " +
+                "user_account.idUser, " +
+                "user_account.UserName, " +
                 "user_account.UserPassword, " +
                 "user_info.User_FullName, user_info.User_Phone, " +
                 "user_info.User_BankAccountNumber, " +
                 "user_info.User_BankName " +
                 "FROM user_account JOIN user_info " +
-                "ON user_account.idUser = user_info.idUser;";
+                "ON user_account.idUser = user_info.idUser " +
+                "WHERE user_account.AccountStatus != 1;";
 
             dataGridViewStaffInfo.DataSource = DatabaseService.Instance.LoadDataTable(queryStaffInfo);
 
@@ -307,14 +311,15 @@ namespace BiaManager.Forms.AdminForm.Staff
         private void iconButtonSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = @"
-            SELECT ua.UserName, ui.User_FullName, ui.User_Phone, ui.User_BankAccountNumber, ui.User_BankName
+            SELECT ua.IdUser, ua.UserName, ui.User_FullName, ui.User_Phone, ui.User_BankAccountNumber, ui.User_BankName
             FROM user_account ua
             JOIN user_info ui ON ua.IdUser = ui.IdUser
             WHERE ua.UserName LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_FullName LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_Phone LIKE '%" + textBoxSearch.Text + @"%' OR
               ui.User_BankAccountNumber LIKE '%" + textBoxSearch.Text + @"%' OR
-              ui.User_BankName LIKE '%" + textBoxSearch.Text + @"%';";
+              ui.User_BankName LIKE '%" + textBoxSearch.Text + @"%'
+            AND ua.AccountStatus != 1;";
 
             // Sử dụng phương thức LoadDataTable để lấy dữ liệu từ câu truy vấn search
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);
@@ -329,9 +334,10 @@ namespace BiaManager.Forms.AdminForm.Staff
             if (!CheckUserInputCreate()) return;
 
             string idUser = GrenateNewID();
+            string hashedPassword = PasswordHasher.HashPassword(textBoxPassword.Text);
             // Thực hiện truy vấn INSERT cho bảng user_account và user_info
             string insertQuery = @"DECLARE @idUser INT;
-                      INSERT INTO user_account (IdUser, UserName, UserPassword, UserRole) VALUES ('" + idUser + "', '" + textBoxUsername.Text + "', '" + textBoxPassword.Text + "', 1); " +
+                      INSERT INTO user_account (IdUser, UserName, UserPassword, UserRole) VALUES ('" + idUser + "', '" + textBoxUsername.Text + "', '" + hashedPassword + "', 1); " +
                                  "SET @idUser = SCOPE_IDENTITY();" +
                                  "INSERT INTO user_info (idUser, User_FullName, User_Phone, User_BankAccountNumber, User_BankName) VALUES ('" + idUser + "', '" + textBoxFullname.Text + "', '" + textBoxPhone.Text + "', '" + textBoxBankNumber.Text + "', '" + textBoxBankName.Text + "')";
 
@@ -369,24 +375,32 @@ namespace BiaManager.Forms.AdminForm.Staff
         private bool CheckUserInputUpdate()
         {
             // Kiểm tra tính hợp lệ của tên đăng nhập và mật khẩu
-            if (!CheckAccount(textBoxUsername.Text) || !CheckAccount(textBoxPassword.Text))
+            if (!CheckAccount(textBoxUsername.Text))
             {
-                MessageFuctionConstans.WarningOK("Please enter a valid username and password. They should be 6-24 characters long and should not contain any special characters!");
+                MessageFuctionConstans.WarningOK("Please enter a valid username. They should be 6-24 characters long and should not contain any special characters!");
                 return false;
             }
 
             // Kiểm tra xác nhận mật khẩu
-            if (textBoxPassword.Text != textBoxConfirmPassword.Text)
+            if (!string.IsNullOrWhiteSpace(textBoxPassword.Text) || !string.IsNullOrWhiteSpace(textBoxConfirmPassword.Text))
             {
-                MessageFuctionConstans.WarningOK("The password and the confirmation password do not match.");
-                return false;
+                if (textBoxPassword.Text != textBoxConfirmPassword.Text || !CheckAccount(textBoxPassword.Text) || !CheckAccount(textBoxConfirmPassword.Text))
+                {
+                    MessageFuctionConstans.WarningOK("The password or password confirmation does not match or is invalid.. They should be 6-24 characters long and should not contain any special characters!");
+                    return false;
+                }
             }
 
             // Kiểm tra số điện thoại đã tồn tại trong cơ sở dữ liệu hay chưa
-            string queryCheckPhone = "SELECT * FROM user_info WHERE User_Phone = '" + textBoxPhone.Text + "' AND '" + tempPhone + "' != '" + textBoxPhone.Text + "'";
+            string queryCheckPhone = "SELECT ua.*, ui.* " +
+                "FROM user_account AS ua " +
+                "JOIN user_info AS ui " +
+                "ON ua.IdUser = ui.IdUser " +
+                "WHERE ui.User_Phone = '" + textBoxPhone.Text + "' " +
+                "AND ua.AccountStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
-            if (checkQuery.Rows.Count > 0)
+            if (checkQuery.Rows.Count > 0 && textBoxPhone.Text != tempPhone)
             {
                 MessageFuctionConstans.WarningOK("This phone number already exists. Please enter another number.");
                 return false;
@@ -410,7 +424,12 @@ namespace BiaManager.Forms.AdminForm.Staff
             }
 
             // Kiểm tra số điện thoại đã tồn tại trong cơ sở dữ liệu hay chưa
-            string queryCheckPhone = "SELECT * FROM user_info WHERE User_Phone = '" + textBoxPhone.Text + "'";
+            string queryCheckPhone = "SELECT ua.*, ui.* " +
+                "FROM user_account AS ua " +
+                "JOIN user_info AS ui " +
+                "ON ua.IdUser = ui.IdUser " +
+                "WHERE ui.User_Phone = '" + textBoxPhone.Text + "' " +
+                "AND ua.AccountStatus != 1";
             DataTable checkQuery = DatabaseService.Instance.LoadDataTable(queryCheckPhone);
 
             if (checkQuery.Rows.Count > 0)
@@ -426,8 +445,8 @@ namespace BiaManager.Forms.AdminForm.Staff
         {
             tempID = dataGridViewStaffInfo.CurrentRow.Cells[0].Value.ToString();
             textBoxUsername.Text = dataGridViewStaffInfo.CurrentRow.Cells[1].Value.ToString();
-            textBoxPassword.Text = dataGridViewStaffInfo.CurrentRow.Cells[2].Value.ToString();
-            textBoxConfirmPassword.Text = dataGridViewStaffInfo.CurrentRow.Cells[2].Value.ToString();
+            textBoxPassword.Text = "";
+            textBoxConfirmPassword.Text = "";
             textBoxFullname.Text = dataGridViewStaffInfo.CurrentRow.Cells[3].Value.ToString();
             textBoxPhone.Text = dataGridViewStaffInfo.CurrentRow.Cells[4].Value.ToString();
             tempPhone = dataGridViewStaffInfo.CurrentRow.Cells[4].Value.ToString();
@@ -444,17 +463,41 @@ namespace BiaManager.Forms.AdminForm.Staff
         private void ButtonUpdateStaffManager_Click(object sender, EventArgs e)
         {
             if (!CheckUserInputUpdate()) return;
-            string updateQuery = @"
-                       UPDATE user_account 
-                       SET UserName = '" + textBoxUsername.Text + "', " +
-                           "UserPassword = '" + textBoxPassword.Text + "' " +
-                       "WHERE idUser = '" + tempID +
-                       "';UPDATE user_info SET User_FullName = '" + textBoxFullname.Text +
-                       "', " +
-                           "User_Phone = '" + textBoxPhone.Text + "', " +
-                           "User_BankAccountNumber = '" + textBoxBankNumber.Text + "', " +
-                           "User_BankName = '" + textBoxBankName.Text + "' " +
-                       "WHERE idUser = '" + tempID + "';";
+            // Mã hóa mật khẩu mới
+            string hashedPassword = PasswordHasher.HashPassword(textBoxPassword.Text);
+            string updateQuery;
+            if (textBoxPassword.Text != textBoxConfirmPassword.Text
+                || !string.IsNullOrWhiteSpace(textBoxPassword.Text)
+                || !string.IsNullOrWhiteSpace(textBoxConfirmPassword.Text)
+                || !CheckAccount(textBoxPassword.Text)
+                || !CheckAccount(textBoxConfirmPassword.Text))
+            {
+                updateQuery = @"
+               UPDATE user_account 
+               SET UserName = '" + textBoxUsername.Text + "', " +
+                         "UserPassword = '" + hashedPassword + "' " +
+                     "WHERE idUser = '" + tempID + "';" +
+                     "UPDATE user_info SET User_FullName = '" + textBoxFullname.Text +
+                     "', " +
+                         "User_Phone = '" + textBoxPhone.Text + "', " +
+                         "User_BankAccountNumber = '" + textBoxBankNumber.Text + "', " +
+                         "User_BankName = '" + textBoxBankName.Text + "' " +
+                     "WHERE idUser = '" + tempID + "';";
+            }
+            else
+            {
+                updateQuery = @"
+               UPDATE user_account 
+               SET UserName = '" + textBoxUsername.Text + "' " +
+                     "WHERE idUser = '" + tempID + "';" +
+                     "UPDATE user_info SET User_FullName = '" + textBoxFullname.Text +
+                     "', " +
+                         "User_Phone = '" + textBoxPhone.Text + "', " +
+                         "User_BankAccountNumber = '" + textBoxBankNumber.Text + "', " +
+                         "User_BankName = '" + textBoxBankName.Text + "' " +
+                     "WHERE idUser = '" + tempID + "';";
+            }
+
 
 
             databaseService.ExecuteNonQuery(updateQuery);
@@ -470,8 +513,9 @@ namespace BiaManager.Forms.AdminForm.Staff
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                     DELETE FROM user_info WHERE idUser = '" + tempID + "';" +
-                    "DELETE FROM user_account WHERE idUser = '" + tempID + "';";
+                    UPDATE user_account 
+                    SET AccountStatus = 1 
+                    WHERE idUser = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 

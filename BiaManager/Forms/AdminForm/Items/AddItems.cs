@@ -32,15 +32,20 @@ namespace BiaManager.Forms.AdminForm.Items
                     items_menu.IdItem, 
                     items_menu.item_Name, 
                     items_menu.item_Price, 
-                    items_menu.item_image, 
                     items_category.ItemCategory_Name 
                 FROM 
                     items_menu 
                 JOIN 
-                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory;";
+                    items_category ON items_menu.IdItemCategory = items_category.IdItemCategory
+                WHERE items_menu.IdItem != 'IHour' 
+                AND items_menu.ItemStatus != 1;";
             DataTable table = databaseService.LoadDataTable(queryStaffInfo);
 
             dataGridViewAddItem.DataSource = table;
+            dataGridViewAddItem.Columns["IdItem"].HeaderText = "Item ID";
+            dataGridViewAddItem.Columns["item_Name"].HeaderText = "Item Name";
+            dataGridViewAddItem.Columns["item_Price"].HeaderText = "Item Price";
+            dataGridViewAddItem.Columns["ItemCategory_Name"].HeaderText = "Item Category Name";
             ResetSubmitButton();
         }
 
@@ -94,7 +99,7 @@ namespace BiaManager.Forms.AdminForm.Items
                 return false;
             }
 
-            string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textBoxItemName.Text + "'";
+            string queryCheck = "SELECT item_Name FROM items_menu WHERE item_Name = '" + textBoxItemName.Text + "' AND ItemStatus != 1";
             DataTable checkQuery = databaseService.LoadDataTable(queryCheck);
             if (checkQuery.Rows.Count > 0 && tempName != textBoxItemName.Text)
             {
@@ -231,7 +236,8 @@ namespace BiaManager.Forms.AdminForm.Items
             if (result == DialogResult.OK)
             {
                 string deleteQuery = @"
-                    DELETE FROM items_menu WHERE IdItem = '" + tempID + "';";
+                    UPDATE items_menu 
+                    SET ItemStatus = 1 WHERE IdItem = '" + tempID + "';";
 
                 databaseService.ExecuteNonQuery(deleteQuery);
 
@@ -250,7 +256,6 @@ namespace BiaManager.Forms.AdminForm.Items
                     items_menu.IdItem, 
                     items_menu.item_Name,
                     items_menu.item_Price,
-                    items_menu.item_image, 
                     items_category.ItemCategory_Name
                 FROM 
                     items_menu 
@@ -260,7 +265,8 @@ namespace BiaManager.Forms.AdminForm.Items
                     items_menu.IdItem LIKE '%" + searchText + @"%' OR
                     items_menu.item_Name LIKE '%" + searchText + @"%' OR
                     CONVERT(VARCHAR, items_menu.item_Price) LIKE '%" + searchText + @"%' OR 
-                    items_category.ItemCategory_Name LIKE '%" + searchText + @"%';";
+                    items_category.ItemCategory_Name LIKE '%" + searchText + @"%' 
+                    AND items_menu.ItemStatus != 1 AND items_menu.IdItem != 'IHour';";
 
             DataTable searchResult = databaseService.LoadDataTable(searchQuery);
 
@@ -297,22 +303,10 @@ namespace BiaManager.Forms.AdminForm.Items
             tempName = dataGridViewAddItem.CurrentRow.Cells[1].Value.ToString();
             textBoxItemName.Text = tempName;
             textBoxItemPrice.Text = dataGridViewAddItem.CurrentRow.Cells[2].Value.ToString();
-
-            if (dataGridViewAddItem.CurrentRow.Cells[3].Value != null && dataGridViewAddItem.CurrentRow.Cells[3].Value != DBNull.Value)
-            {
-                byte[] imageData = (byte[])dataGridViewAddItem.CurrentRow.Cells[3].Value;
-                using (MemoryStream ms = new MemoryStream(imageData))
-                {
-                    pictureBoxItem.Image = Image.FromStream(ms);
-                    tempImg = pictureBoxItem.Image;
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-            }
-
-            string selectedTableType = dataGridViewAddItem.CurrentRow.Cells[4].Value.ToString();
+            string selectedTableType = dataGridViewAddItem.CurrentRow.Cells[3].Value.ToString();
             comboBoxItemCategory.SelectedItem = selectedTableType;
 
-            string query = "SELECT IdItemCategory FROM items_category WHERE ItemCategory_Name ='" + selectedTableType + "';";
+            string query = "SELECT IdItemCategory FROM items_category WHERE ItemCategory_Name ='" + selectedTableType + "' AND ItemCategoryStatus != 1;";
             DataTable tableTypeData = databaseService.LoadDataTable(query);
 
             if (tableTypeData.Rows.Count > 0)
@@ -326,12 +320,31 @@ namespace BiaManager.Forms.AdminForm.Items
             ButtonDelete.Location = ButtonUpdate.Location;
             ButtonDelete.Location = new Point(ButtonDelete.Location.X, ButtonDelete.Location.Y + 70);
             ButtonCreate.Hide();
+
+            string imageQuery = "SELECT item_image FROM items_menu WHERE IdItem ='" + tempID + "'";
+            DataTable imageData = databaseService.LoadDataTable(imageQuery);
+
+            if (imageData.Rows.Count > 0 && imageData.Rows[0]["Item_Image"] != DBNull.Value)
+            {
+                byte[] imageDataBytes = (byte[])imageData.Rows[0]["Item_Image"];
+                using (MemoryStream ms = new MemoryStream(imageDataBytes))
+                {
+                    pictureBoxItem.Image = Image.FromStream(ms);
+                    tempImg = pictureBoxItem.Image;
+                    pictureBoxItem.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+            else
+            {
+                pictureBoxItem.Image = null; // Nếu không có dữ liệu hình ảnh, set pictureBoxItem.Image thành null
+            }
         }
+
 
         private void AddItems_Load(object sender, EventArgs e)
         {
             comboBoxItemCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            string query = "SELECT IdItemCategory,ItemCategory_Name FROM items_category";
+            string query = "SELECT IdItemCategory,ItemCategory_Name FROM items_category WHERE ItemCategoryStatus != 1";
             DataTable tableTypeData = databaseService.LoadDataTable(query);
 
             comboBoxItemCategory.Items.Clear();
@@ -353,21 +366,21 @@ namespace BiaManager.Forms.AdminForm.Items
 
         private void dataGridViewAddItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name == "item_image")
-            {
-                if (e.Value != null && e.Value.GetType() == typeof(byte[]))
-                {
-                    byte[] imageData = (byte[])e.Value;
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        Image image = Image.FromStream(ms);
-                        int desiredWidth = 50;
-                        int desiredHeight = 50;
-                        Image resizedImage = ResizeImage(image, desiredWidth, desiredHeight);
-                        e.Value = resizedImage;
-                    }
-                }
-            }
+            //if (e.Value != null && dataGridViewAddItem.Columns[e.ColumnIndex].Name == "item_image")
+            //{
+            //    if (e.Value != null && e.Value.GetType() == typeof(byte[]))
+            //    {
+            //        byte[] imageData = (byte[])e.Value;
+            //        using (MemoryStream ms = new MemoryStream(imageData))
+            //        {
+            //            Image image = Image.FromStream(ms);
+            //            int desiredWidth = 50;
+            //            int desiredHeight = 50;
+            //            Image resizedImage = ResizeImage(image, desiredWidth, desiredHeight);
+            //            e.Value = resizedImage;
+            //        }
+            //    }
+            //}
         }
 
         private Image ResizeImage(Image originalImage, int width, int height)
