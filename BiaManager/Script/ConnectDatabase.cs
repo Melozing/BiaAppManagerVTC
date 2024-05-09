@@ -6,7 +6,9 @@ namespace BiaManager.Script
     {
         //DESKTOP-NQD44KU\MYMSSQLSERVER
         //DESKTOP-G0D14LK
-        public static string stringConnection = @"Data Source=DESKTOP-NQD44KU\MYMSSQLSERVER;Initial Catalog=db_biamanager;Integrated Security=True";
+        //Status = 0 = Default = No Deleted
+        //Status = 1 = Deleted
+        public static string stringConnection = @"Data Source=DESKTOP-G0D14LK;Initial Catalog=db_biamanager;Integrated Security=True";
 
         public static SqlConnection GetqlConnession()
         {
