@@ -1,7 +1,6 @@
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.AssemblyReference.cache
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.FoodTabWidget.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.FoodWidget.resources
-E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Staff.AddStaff.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormLogin.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormMenu.resources
 E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormTables.resources
@@ -208,3 +207,12 @@ E:\clonevtc\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.CoreCompileI
 E:\clonevtc\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.csproj.Up2Date
 E:\clonevtc\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.exe
 E:\clonevtc\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.pdb
+E:\BiaAppManagerVTC\BiaManager\bin\Debug\Guna.UI2.dll
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Components.TableWidget.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.AddItems.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Items.ItemCategory.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Staff.StaffManager.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.AddTables.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.AdminForm.Tables.TableTypeManager.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormBill.resources
+E:\BiaAppManagerVTC\BiaManager\obj\Debug\BiaManager.Forms.FormSetting.resources

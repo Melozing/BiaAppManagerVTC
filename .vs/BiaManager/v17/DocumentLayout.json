@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\clonevtc\\BiaAppManagerVTC\\",
+  "WorkspaceRootPath": "E:\\BiaAppManagerVTC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\clonevtc\\biaappmanagervtc\\biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\biaappmanagervtc\\biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|e:\\clonevtc\\biaappmanagervtc\\biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\BiaAppManagerVTC\\biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\BiaAppManagerVTC\\biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|E:\\BiaAppManagerVTC\\biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43B4422-DCB2-4723-8F50-B7A85EA76F78}|BiaManager\\BiaManager.csproj|solutionrelative:biamanager\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +43,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "E:\\clonevtc\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs",
+              "Title": "FormLogin.cs [Design]",
+              "DocumentMoniker": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs",
               "RelativeDocumentMoniker": "BiaManager\\Forms\\FormLogin.cs",
-              "ToolTip": "E:\\clonevtc\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs*",
-              "RelativeToolTip": "BiaManager\\Forms\\FormLogin.cs*",
-              "ViewState": "AQIAANAAAAAAAAAAAAAWwOUAAAAPAAAA",
+              "ToolTip": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs [Design]",
+              "RelativeToolTip": "BiaManager\\Forms\\FormLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T16:59:21.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T14:42:00.044Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormLogin.cs [Design]",
-              "DocumentMoniker": "E:\\clonevtc\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs",
-              "RelativeDocumentMoniker": "BiaManager\\Forms\\FormLogin.cs",
-              "ToolTip": "E:\\clonevtc\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs [Design]*",
-              "RelativeToolTip": "BiaManager\\Forms\\FormLogin.cs [Design]*",
+              "Title": "FormTables.cs [Design]",
+              "DocumentMoniker": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormTables.cs",
+              "RelativeDocumentMoniker": "BiaManager\\Forms\\FormTables.cs",
+              "ToolTip": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormTables.cs [Design]",
+              "RelativeToolTip": "BiaManager\\Forms\\FormTables.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T01:46:52.058Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-07T21:40:25.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs",
+              "RelativeDocumentMoniker": "BiaManager\\Forms\\FormLogin.cs",
+              "ToolTip": "E:\\BiaAppManagerVTC\\BiaManager\\Forms\\FormLogin.cs*",
+              "RelativeToolTip": "BiaManager\\Forms\\FormLogin.cs*",
+              "ViewState": "AQIAANQAAAAAAAAAAAAjwN4AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T23:11:51.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomePage.cs [Design]",
+              "DocumentMoniker": "E:\\BiaAppManagerVTC\\BiaManager\\HomePage.cs",
+              "RelativeDocumentMoniker": "BiaManager\\HomePage.cs",
+              "ToolTip": "E:\\BiaAppManagerVTC\\BiaManager\\HomePage.cs [Design]",
+              "RelativeToolTip": "BiaManager\\HomePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T17:58:24.239Z"
             }
           ]
         }
