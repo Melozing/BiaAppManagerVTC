@@ -21,6 +21,7 @@ namespace BiaManager.Forms
 
         private string tableID;
 
+        private FormExportBill panelPrint;
         public FormBill()
         {
             InitializeComponent();
@@ -139,38 +140,50 @@ namespace BiaManager.Forms
             DialogResult result = MessageFuctionConstans.OKCancel("Confirm payment for this bill?");
             if (result == DialogResult.OK)
             {
-
                 DialogResult resultExportBill = MessageFuctionConstans.YesNoCancel("Do you want to generate an invoice?");
                 if (resultExportBill == DialogResult.Yes)
                 {
-                    string queryPay = @"
-                    UPDATE inv
-                    SET inv.Invoice_Status = 1
-                    FROM invoice AS inv
-                    INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
-                    INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
-                    WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
-                "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-
-                    databaseService.ExecuteNonQuery(queryPay);
+                    ExportAndPrintInvoice();
+                    UpdateInvoiceAndTableStatus();
                     PaySuccessful();
                 }
                 else if (resultExportBill == DialogResult.No)
                 {
-                    string queryPay = @"
-                    UPDATE inv
-                    SET inv.Invoice_Status = 1
-                    FROM invoice AS inv
-                    INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
-                    INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
-                    WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
-                    "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
-                    databaseService.ExecuteNonQuery(queryPay);
+                    UpdateInvoiceAndTableStatus();
                     PaySuccessful();
                 }
             }
         }
-
+        private void ExportAndPrintInvoice()
+        {
+            FormExportBill.Instance.Show();
+            FormExportBill.Instance.BringToFront();
+            FormExportBill.Instance.SetPagePrint();
+            FormExportBill.Instance.GetQueryItem();
+            panelPrint = FormExportBill.Instance;
+            GetPrintArea(FormExportBill.Instance);
+            printPreviewDialogBill.Document = printDocumentBill;
+            printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocumentBill_PrintPage);
+            printPreviewDialogBill.ShowDialog();
+        }
+        private Bitmap memoryImg;
+        private void GetPrintArea(FormExportBill pnl)
+        {
+            memoryImg = new Bitmap(pnl.Width, pnl.Height);
+            pnl.DrawToBitmap(memoryImg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+        }
+        private void UpdateInvoiceAndTableStatus()
+        {
+            string queryPay = @"
+            UPDATE inv
+            SET inv.Invoice_Status = 1
+            FROM invoice AS inv
+            INNER JOIN invoice_detail AS inv_det ON inv.IdInvoice = inv_det.IdInvoice
+            INNER JOIN table_detail AS tbl_det ON inv.TableID = tbl_det.TableID
+            WHERE inv.TableID = '" + tableID + "' AND inv.Invoice_Status = 0;" +
+            "UPDATE table_detail SET Status = 0 WHERE TableID = '" + tableID + "'; ";
+            databaseService.ExecuteNonQuery(queryPay);
+        }
         private void PaySuccessful()
         {
             this.Close();
@@ -205,6 +218,12 @@ namespace BiaManager.Forms
                     MessageFuctionConstans.SuccessOK("Cancel bill successfully!");
                 }
             }
+        }
+
+        private void printDocumentBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Rectangle pageArea = e.PageBounds;
+            e.Graphics.DrawImage(memoryImg, (pageArea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
         }
     }
 }

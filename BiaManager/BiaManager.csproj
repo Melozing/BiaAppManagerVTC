@@ -106,6 +106,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\BillDetailItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\BillDetailItems.Designer.cs">
+      <DependentUpon>BillDetailItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\FoodTabWidget.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,12 @@
     <Compile Include="Forms\FormBill.Designer.cs">
       <DependentUpon>FormBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormExportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExportBill.Designer.cs">
+      <DependentUpon>FormExportBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,12 +208,6 @@
     <Compile Include="Forms\FormTables.Designer.cs">
       <DependentUpon>FormTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\item\table_item.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\item\table_item.Designer.cs">
-      <DependentUpon>table_item.cs</DependentUpon>
-    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </Compile>
     <Compile Include="Script\Utility\PasswordHasher.cs" />
     <Compile Include="Script\WindowSizeCtrl.cs" />
+    <EmbeddedResource Include="Components\BillDetailItems.resx">
+      <DependentUpon>BillDetailItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\FoodTabWidget.resx">
       <DependentUpon>FoodTabWidget.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +268,9 @@
     <EmbeddedResource Include="Forms\FormBill.resx">
       <DependentUpon>FormBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormExportBill.resx">
+      <DependentUpon>FormExportBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,9 +285,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTables.resx">
       <DependentUpon>FormTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\item\table_item.resx">
-      <DependentUpon>table_item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

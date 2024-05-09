@@ -111,7 +111,7 @@ namespace BiaManager.Components
             "JOIN table_type tbl_typ ON tbl_det.TableIDType = tbl_typ.TableIDType " +
             "WHERE tbl_iv.TableID = '" + IconButtonOrder.Tag + "' " +
             "AND tbl_iv.Invoice_Status = 0;";
-
+            FormExportBill.Instance.GetQuery(queryInvoice);
             HomePage.Instance.ShowDetailPanel(queryInvoice, IconButtonOrder.Tag.ToString());
         }
         private bool CheckTableStatus(string TableID)

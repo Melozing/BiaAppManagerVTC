@@ -1,4 +1,5 @@
-﻿using BiaManager.Forms;
+﻿using BiaManager.Components;
+using BiaManager.Forms;
 using BiaManager.Forms.AdminForm.Bills;
 using BiaManager.Forms.AdminForm.Items;
 using BiaManager.Forms.AdminForm.Staff;
@@ -29,8 +30,6 @@ namespace BiaManager
         private string tempHideIconMenuText;
         private string tempHomeText;
         private string tempTablesText;
-        private string tempMenuText;
-        private string tempBillsText;
         private string tempUserText;
         private string tempUserManagementText;
         private string tempMenuManagementText;
@@ -115,6 +114,7 @@ namespace BiaManager
                 string timeText = invoice.InvoiceTime.ToString("dd/MM/yyyy HH:mm:ss");
                 form.SetTittleBill(tableNumberText, timeText);
                 form.SetInvoiceInfo(TableID);
+                FormExportBill.Instance.SetTittleBill(tableNumberText, timeText);
 
                 query = "SELECT " +
                     "SUM(CASE WHEN item.IdItem = 'IHour' " +
@@ -135,6 +135,7 @@ namespace BiaManager
                 DataTable amoutDue = DatabaseService.Instance.LoadDataTable(query);
                 string amoutDueText = amoutDue.Rows[0]["TotalAmount"].ToString();
                 form.SetTotalDueText(amoutDueText);
+                FormExportBill.Instance.SetPriceBill(amoutDueText);
             }
 
             form.LoadDataGridView(invoiceTable);
@@ -149,6 +150,17 @@ namespace BiaManager
             form.Dock = DockStyle.Fill;
             form.BringToFront();
             form.Show();
+            int numItem = 0;
+            foreach (DataRow row in invoiceTable.Rows)
+            {
+                numItem++;
+                int invoiceTotalAmount = Convert.ToInt32(row["Invoice_TotalAmount"]);
+                DateTime invoiceTime = Convert.ToDateTime(row["Invoice_time"]);
+                int itemPrice = Convert.ToInt32(row["item_Price"]);
+                string itemName = row["item_Name"].ToString();
+                BillDetailItems billDetailItems = new BillDetailItems();
+                billDetailItems.SetInfoItems(numItem, itemName, invoiceTotalAmount, itemPrice);
+            }
         }
         public void ShowPanelDetail()
         {
