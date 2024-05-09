@@ -11,6 +11,7 @@ CREATE TABLE [dbo].[table_type] (
     [TableIDType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableType_Name] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [TableType_Price] int NOT NULL DEFAULT '0',
+	[TableTypeStatus] int NOT NULL DEFAULT '0',
     PRIMARY KEY CLUSTERED ([TableIDType])
 );
 GO
@@ -18,6 +19,7 @@ GO
 CREATE TABLE [dbo].[items_category] (
     [IdItemCategory] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [ItemCategory_Name] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
+    [ItemCategoryStatus] int NOT NULL DEFAULT '0',
     PRIMARY KEY CLUSTERED ([IdItemCategory])
 );
 GO
@@ -28,6 +30,7 @@ CREATE TABLE [dbo].[items_menu] (
     [IdItemCategory] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
     [item_Price] int NOT NULL,
     [item_image] varbinary(max) NULL,
+    [ItemStatus] int NOT NULL DEFAULT '0',
     PRIMARY KEY CLUSTERED ([IdItem]),
     CONSTRAINT [FK_items_menu_items_category] FOREIGN KEY ([IdItemCategory]) REFERENCES [dbo].[items_category] ([IdItemCategory])
 );
@@ -38,6 +41,7 @@ CREATE TABLE [dbo].[table_detail] (
     [TableNumber] int NOT NULL,
     [Status] int NOT NULL DEFAULT '0',
     [TableIDType] varchar(10) COLLATE Vietnamese_CI_AS NOT NULL,
+    [TableStatus] int NOT NULL DEFAULT '0',
     PRIMARY KEY CLUSTERED ([TableID]),
     CONSTRAINT [FK_table_tabletype] FOREIGN KEY ([TableIDType]) REFERENCES [dbo].[table_type] ([TableIDType])
 );
@@ -67,6 +71,7 @@ CREATE TABLE [dbo].[user_account] (
     [UserName] varchar(50) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserPassword] varchar(70) COLLATE Vietnamese_CI_AS NOT NULL,
     [UserRole] int NULL,
+    [AccountStatus] int NOT NULL DEFAULT '0',
     PRIMARY KEY CLUSTERED ([IdUser])
 );
 GO
