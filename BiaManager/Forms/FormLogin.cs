@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BiaManager.Forms
@@ -19,14 +20,30 @@ namespace BiaManager.Forms
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+
+            //string directoryPath = @"\BiaAppManagerVTC\BiaManager\Resources\loginimage";
+
+            //var imagePaths = Directory.GetFiles(directoryPath, "anhlogin*.jpg");
+
+            //if (imagePaths.Length > 0)
+            //{
+            //    Random random = new Random();
+            //    string randomImagePath = imagePaths[random.Next(imagePaths.Length)];
+            //    pictureBox1.ImageLocation = randomImagePath;
+            //}
+            //else
+            //{
+            //    pictureBox1.Image = Properties.Resources.anhlogin__5_;
+            //}
+
+            timer.Interval = 120;
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
         private void btclose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageFuctionConstans.OKCancel("Bạn muốn thoát chương trình !");
-            if (result == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+
         }
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
@@ -52,21 +69,21 @@ namespace BiaManager.Forms
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            if (tbusername.Text == "")
+            if (tb_username.Text == "")
             {
                 MessageFuctionConstans.WarningOK("Bạn chưa nhập tên đăng nhập !");
-                tbusername.Focus();
+                tb_username.Focus();
                 return;
             }
-            else if (tbpassword.Text == "")
+            else if (tb_pass.Text == "")
             {
                 MessageFuctionConstans.WarningOK("Bạn chưa nhập mật khẩu !");
-                tbpassword.Focus();
+                tb_pass.Focus();
                 return;
             }
             else
             {
-                string query = "Select * from user_account where UserName = '" + tbusername.Text + "'and UserPassword ='" + tbpassword.Text + "'";
+                string query = "Select * from user_account where UserName = '" + tb_username.Text + "'and UserPassword ='" + tb_pass.Text + "'";
                 List<Account> accounts = databaseService.GetData(query, (reader) =>
                 {
                     Account account = new Account();
@@ -116,12 +133,12 @@ namespace BiaManager.Forms
 
         private void HidePassword_MouseDown(object sender, MouseEventArgs e)
         {
-            tbpassword.UseSystemPasswordChar = false;
+            tb_pass.UseSystemPasswordChar = false;
         }
 
         private void HidePassword_MouseUp(object sender, MouseEventArgs e)
         {
-            tbpassword.UseSystemPasswordChar = true;
+            tb_pass.UseSystemPasswordChar = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -153,7 +170,7 @@ namespace BiaManager.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                buttonLogin.PerformClick();
+                btnlogin.PerformClick();
             }
         }
 
@@ -161,23 +178,56 @@ namespace BiaManager.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                buttonLogin.PerformClick();
+                btnlogin.PerformClick();
             }
         }
 
         private void panelLogin_Click(object sender, EventArgs e)
         {
-            tbusername.Focus();
+            tb_username.Focus();
         }
 
         private void PanelLoginContent_Click(object sender, EventArgs e)
         {
-            tbusername.Focus();
+            tb_username.Focus();
         }
 
         private void AvatarGif_Click(object sender, EventArgs e)
         {
-            tbusername.Focus();
+            tb_username.Focus();
+        }
+
+        private Timer timer = new Timer();
+        private int currentPosition = 0;
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Di chuyển chữ chạy
+            currentPosition += 10; // Điều chỉnh tốc độ chạy tại đây (ví dụ: 5 pixel mỗi lần cập nhật)
+
+            // Nếu chữ di chuyển ra khỏi khung của label, đặt lại vị trí cho nó
+            if (currentPosition > label_running.Width)
+            {
+                currentPosition = -label_running.Width;
+            }
+
+            // Cập nhật vị trí của label
+            label_running.Location = new System.Drawing.Point(currentPosition, label_running.Location.Y);
+        }
+
+        private void btnsingup_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tính năng đăng ký đang tạm khóa!", "Bảo trì tính năng", MessageBoxButtons.OK);
+            return; 
+        }
+
+        
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            //DialogResult result = MessageFuctionConstans.WarningOK("Bạn muốn thoát chương trình");
+            //if (result == DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
         }
     }
 }
