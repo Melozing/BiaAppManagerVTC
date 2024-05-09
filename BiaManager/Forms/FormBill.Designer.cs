@@ -65,8 +65,9 @@
             this.panelBillContainer.Controls.Add(this.iconButtonPay);
             this.panelBillContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBillContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelBillContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBillContainer.Name = "panelBillContainer";
-            this.panelBillContainer.Size = new System.Drawing.Size(307, 608);
+            this.panelBillContainer.Size = new System.Drawing.Size(409, 748);
             this.panelBillContainer.TabIndex = 0;
             // 
             // panelTotalMoney
@@ -74,18 +75,20 @@
             this.panelTotalMoney.Controls.Add(this.panelTotalMoneyBill);
             this.panelTotalMoney.Controls.Add(this.panelTextTotal);
             this.panelTotalMoney.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTotalMoney.Location = new System.Drawing.Point(0, 447);
+            this.panelTotalMoney.Location = new System.Drawing.Point(0, 550);
+            this.panelTotalMoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTotalMoney.Name = "panelTotalMoney";
-            this.panelTotalMoney.Size = new System.Drawing.Size(307, 33);
+            this.panelTotalMoney.Size = new System.Drawing.Size(409, 41);
             this.panelTotalMoney.TabIndex = 14;
             // 
             // panelTotalMoneyBill
             // 
             this.panelTotalMoneyBill.Controls.Add(this.MoneyQuantity);
             this.panelTotalMoneyBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalMoneyBill.Location = new System.Drawing.Point(104, 0);
+            this.panelTotalMoneyBill.Location = new System.Drawing.Point(139, 0);
+            this.panelTotalMoneyBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTotalMoneyBill.Name = "panelTotalMoneyBill";
-            this.panelTotalMoneyBill.Size = new System.Drawing.Size(203, 33);
+            this.panelTotalMoneyBill.Size = new System.Drawing.Size(270, 41);
             this.panelTotalMoneyBill.TabIndex = 16;
             // 
             // MoneyQuantity
@@ -106,7 +109,7 @@
             this.MoneyQuantity.Location = new System.Drawing.Point(0, 0);
             this.MoneyQuantity.Margin = new System.Windows.Forms.Padding(0);
             this.MoneyQuantity.Name = "MoneyQuantity";
-            this.MoneyQuantity.Size = new System.Drawing.Size(203, 33);
+            this.MoneyQuantity.Size = new System.Drawing.Size(270, 41);
             this.MoneyQuantity.TabIndex = 2;
             this.MoneyQuantity.Text = "30.000";
             this.MoneyQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,8 +122,9 @@
             this.panelTextTotal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelTextTotal.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelTextTotal.Location = new System.Drawing.Point(0, 0);
+            this.panelTextTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTextTotal.Name = "panelTextTotal";
-            this.panelTextTotal.Size = new System.Drawing.Size(104, 33);
+            this.panelTextTotal.Size = new System.Drawing.Size(139, 41);
             this.panelTextTotal.TabIndex = 15;
             // 
             // labelTextTotalDue
@@ -129,8 +133,9 @@
             this.labelTextTotalDue.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalDue.ForeColor = System.Drawing.Color.Gold;
             this.labelTextTotalDue.Location = new System.Drawing.Point(0, 0);
+            this.labelTextTotalDue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTextTotalDue.Name = "labelTextTotalDue";
-            this.labelTextTotalDue.Size = new System.Drawing.Size(104, 36);
+            this.labelTextTotalDue.Size = new System.Drawing.Size(139, 44);
             this.labelTextTotalDue.TabIndex = 2;
             this.labelTextTotalDue.Text = "Total due :";
             this.labelTextTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,9 +150,11 @@
             this.dataGridViewBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBill.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridViewBill.Location = new System.Drawing.Point(0, 125);
+            this.dataGridViewBill.Location = new System.Drawing.Point(0, 154);
+            this.dataGridViewBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewBill.Name = "dataGridViewBill";
-            this.dataGridViewBill.Size = new System.Drawing.Size(307, 322);
+            this.dataGridViewBill.RowHeadersWidth = 51;
+            this.dataGridViewBill.Size = new System.Drawing.Size(409, 396);
             this.dataGridViewBill.TabIndex = 13;
             // 
             // panelTittleInfo
@@ -155,9 +162,10 @@
             this.panelTittleInfo.Controls.Add(this.labelTime);
             this.panelTittleInfo.Controls.Add(this.labelTableName);
             this.panelTittleInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTittleInfo.Location = new System.Drawing.Point(0, 35);
+            this.panelTittleInfo.Location = new System.Drawing.Point(0, 43);
+            this.panelTittleInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTittleInfo.Name = "panelTittleInfo";
-            this.panelTittleInfo.Size = new System.Drawing.Size(307, 90);
+            this.panelTittleInfo.Size = new System.Drawing.Size(409, 111);
             this.panelTittleInfo.TabIndex = 12;
             // 
             // labelTime
@@ -165,9 +173,10 @@
             this.labelTime.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelTime.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.Gold;
-            this.labelTime.Location = new System.Drawing.Point(0, 36);
+            this.labelTime.Location = new System.Drawing.Point(0, 44);
+            this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(307, 36);
+            this.labelTime.Size = new System.Drawing.Size(409, 44);
             this.labelTime.TabIndex = 1;
             this.labelTime.Text = "05/07/2024";
             this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,8 +187,9 @@
             this.labelTableName.Font = new System.Drawing.Font("Microsoft PhagsPa", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTableName.ForeColor = System.Drawing.Color.Gold;
             this.labelTableName.Location = new System.Drawing.Point(0, 0);
+            this.labelTableName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTableName.Name = "labelTableName";
-            this.labelTableName.Size = new System.Drawing.Size(307, 36);
+            this.labelTableName.Size = new System.Drawing.Size(409, 44);
             this.labelTableName.TabIndex = 0;
             this.labelTableName.Text = "Table 1";
             this.labelTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,8 +201,9 @@
             this.flowLayoutPanelTopControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanelTopControl.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanelTopControl.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTopControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanelTopControl.Name = "flowLayoutPanelTopControl";
-            this.flowLayoutPanelTopControl.Size = new System.Drawing.Size(307, 35);
+            this.flowLayoutPanelTopControl.Size = new System.Drawing.Size(409, 43);
             this.flowLayoutPanelTopControl.TabIndex = 10;
             // 
             // iconButtonClose
@@ -204,9 +215,10 @@
             this.iconButtonClose.IconColor = System.Drawing.Color.White;
             this.iconButtonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonClose.IconSize = 20;
-            this.iconButtonClose.Location = new System.Drawing.Point(258, 3);
+            this.iconButtonClose.Location = new System.Drawing.Point(344, 4);
+            this.iconButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonClose.Name = "iconButtonClose";
-            this.iconButtonClose.Size = new System.Drawing.Size(46, 35);
+            this.iconButtonClose.Size = new System.Drawing.Size(61, 43);
             this.iconButtonClose.TabIndex = 0;
             this.iconButtonClose.UseVisualStyleBackColor = true;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
@@ -220,9 +232,10 @@
             this.iconButtonMinimize.IconColor = System.Drawing.Color.White;
             this.iconButtonMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonMinimize.IconSize = 20;
-            this.iconButtonMinimize.Location = new System.Drawing.Point(206, 3);
+            this.iconButtonMinimize.Location = new System.Drawing.Point(275, 4);
+            this.iconButtonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonMinimize.Name = "iconButtonMinimize";
-            this.iconButtonMinimize.Size = new System.Drawing.Size(46, 35);
+            this.iconButtonMinimize.Size = new System.Drawing.Size(61, 43);
             this.iconButtonMinimize.TabIndex = 2;
             this.iconButtonMinimize.UseVisualStyleBackColor = true;
             this.iconButtonMinimize.Click += new System.EventHandler(this.iconButtonMinimize_Click);
@@ -239,10 +252,10 @@
             this.iconButtonCancelBill.IconColor = System.Drawing.Color.Gold;
             this.iconButtonCancelBill.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCancelBill.IconSize = 30;
-            this.iconButtonCancelBill.Location = new System.Drawing.Point(159, 511);
+            this.iconButtonCancelBill.Location = new System.Drawing.Point(212, 629);
             this.iconButtonCancelBill.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonCancelBill.Name = "iconButtonCancelBill";
-            this.iconButtonCancelBill.Size = new System.Drawing.Size(133, 61);
+            this.iconButtonCancelBill.Size = new System.Drawing.Size(204, 75);
             this.iconButtonCancelBill.TabIndex = 8;
             this.iconButtonCancelBill.Text = "Cancel bill";
             this.iconButtonCancelBill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -261,10 +274,10 @@
             this.iconButtonPay.IconColor = System.Drawing.Color.Gold;
             this.iconButtonPay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonPay.IconSize = 30;
-            this.iconButtonPay.Location = new System.Drawing.Point(14, 511);
+            this.iconButtonPay.Location = new System.Drawing.Point(19, 629);
             this.iconButtonPay.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonPay.Name = "iconButtonPay";
-            this.iconButtonPay.Size = new System.Drawing.Size(133, 61);
+            this.iconButtonPay.Size = new System.Drawing.Size(179, 75);
             this.iconButtonPay.TabIndex = 7;
             this.iconButtonPay.Text = "Pay now";
             this.iconButtonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -278,12 +291,13 @@
             // 
             // FormBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(85)))));
-            this.ClientSize = new System.Drawing.Size(307, 608);
+            this.ClientSize = new System.Drawing.Size(409, 748);
             this.ControlBox = false;
             this.Controls.Add(this.panelBillContainer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormBill";
             this.Text = "FormBill";
             this.panelBillContainer.ResumeLayout(false);
