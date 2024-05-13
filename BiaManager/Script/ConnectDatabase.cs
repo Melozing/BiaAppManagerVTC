@@ -8,7 +8,7 @@ namespace BiaManager.Script
     class ConnectDatabase
     {
         private static string stringConnection = @"Data Source=DESKTOP-G0D14LK;Initial Catalog=db_biamanager;Integrated Security=True";
-       
+
         private IFirebaseConfig firebaseConfig = new FirebaseConfig()
         {
             AuthSecret = "41Rmtw0Qltxh9d27BhTqCCmAVF8QcWadDcZk9KPE",
@@ -27,7 +27,7 @@ namespace BiaManager.Script
                 firebaseClient = new FireSharp.FirebaseClient(firebaseConfig);
                 MessageFuctionConstans.WarningOK("Connect Successful!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageFuctionConstans.WarningOK(ex.Message);
             }
